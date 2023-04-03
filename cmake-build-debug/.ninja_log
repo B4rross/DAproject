@@ -1,0 +1,27 @@
+# ninja log v5
+25	816	7021924359852007	CMakeFiles/DAproject.dir/Station.cpp.obj	f6cb49849c053360
+1	1314	7021924364830164	CMakeFiles/DAproject.dir/main.cpp.obj	824558d6548c9e38
+33	1349	7021924365201370	CMakeFiles/DAproject.dir/CPheadquarters.cpp.obj	b17edb30c7de8800
+4	809	7021926235426682	CMakeFiles/DAproject.dir/main.cpp.obj	824558d6548c9e38
+23	896	7021926236320496	CMakeFiles/DAproject.dir/CPheadquarters.cpp.obj	b17edb30c7de8800
+21	807	7022358341897911	CMakeFiles/DAproject.dir/CPheadquarters.cpp.obj	b17edb30c7de8800
+4	811	7022358341955725	CMakeFiles/DAproject.dir/main.cpp.obj	824558d6548c9e38
+10	879	7022358342646809	CMakeFiles/DAproject.dir/Graph.cpp.obj	c87f7834ab969b3
+15	890	7022358342756819	CMakeFiles/DAproject.dir/VertexEdge.cpp.obj	4e867e082d2d839d
+891	1415	7022358347931107	DAproject.exe	21fc42407230f809
+5	752	7022360079719813	CMakeFiles/DAproject.dir/CPheadquarters.cpp.obj	b17edb30c7de8800
+753	886	7022360081021951	DAproject.exe	21fc42407230f809
+4	911	7022362612238976	CMakeFiles/DAproject.dir/main.cpp.obj	824558d6548c9e38
+16	1028	7022362613302775	CMakeFiles/DAproject.dir/VertexEdge.cpp.obj	4e867e082d2d839d
+3	753	7022363298337084	CMakeFiles/DAproject.dir/main.cpp.obj	824558d6548c9e38
+9	859	7022363299452274	CMakeFiles/DAproject.dir/Graph.cpp.obj	c87f7834ab969b3
+3	789	7022363427498032	CMakeFiles/DAproject.dir/CPheadquarters.cpp.obj	b17edb30c7de8800
+790	944	7022363428958617	DAproject.exe	21fc42407230f809
+3	721	7022364580236666	CMakeFiles/DAproject.dir/CPheadquarters.cpp.obj	b17edb30c7de8800
+722	859	7022364581568111	DAproject.exe	21fc42407230f809
+15	377	7022376440229091	CMakeFiles/DAproject.dir/Station.cpp.obj	f6cb49849c053360
+3	788	7022376444337473	CMakeFiles/DAproject.dir/main.cpp.obj	824558d6548c9e38
+10	930	7022376445753113	CMakeFiles/DAproject.dir/CPheadquarters.cpp.obj	b17edb30c7de8800
+930	1096	7022376447367877	DAproject.exe	21fc42407230f809
+4	780	7022376981632761	CMakeFiles/DAproject.dir/CPheadquarters.cpp.obj	b17edb30c7de8800
+780	938	7022376983159245	DAproject.exe	21fc42407230f809
