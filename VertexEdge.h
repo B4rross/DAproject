@@ -54,7 +54,9 @@ protected:
     std::vector<Edge *> incoming; // incoming edges
 
     int queueIndex = 0; 		// required by MutablePriorityQueue and UFDS
+    void print() const;
 };
+
 
 /********************** Edge  ****************************/
 
@@ -63,7 +65,7 @@ public:
     Edge(Vertex *orig, Vertex *dest, int w, std::string service);
 
     Vertex * getDest() const;
-    double getWeight() const;
+    int getWeight() const;
     bool isSelected() const;
     Vertex * getOrig() const;
     Edge *getReverse() const;
@@ -72,9 +74,12 @@ public:
     void setSelected(bool selected);
     void setReverse(Edge *reverse);
     void setFlow(double flow);
+
+    std::string getService() const;
+
 protected:
     Vertex * dest; // destination vertex
-    double weight; // edge weight, can also be used for capacity
+    int weight; // edge weight, can also be used for capacity
     int capacity;
     std::string service;
     // auxiliary fields

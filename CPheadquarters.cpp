@@ -63,4 +63,9 @@ void CPheadquarters::read_files() {
 
         line1 = "";
     }
+
+}
+
+Graph CPheadquarters::getLines() const {
+    return this->lines;
 }

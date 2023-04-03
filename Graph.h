@@ -35,6 +35,9 @@ public:
 
     [[nodiscard]] int getNumVertex() const;
     [[nodiscard]] std::vector<Vertex *> getVertexSet() const;
+
+    void print() const;
+
 protected:
     std::vector<Vertex *> vertexSet;    // vertex set
 
@@ -45,6 +48,7 @@ protected:
      * Finds the index of the vertex with a given content.
      */
     int findVertexIdx(const std::string  &id) const;
+
 };
 
 void deleteMatrix(int **m, int n);
