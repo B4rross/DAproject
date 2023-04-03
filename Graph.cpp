@@ -66,6 +66,26 @@ bool Graph::addBidirectionalEdge(const std::string  &sourc, const std::string  &
     return true;
 }
 
+/*
+ *  print graph content
+ */
+void Graph::print() const {
+    std::cout << "---------------- Graph----------------\n";
+    std::cout << "Number of vertices: " << vertexSet.size() << std::endl;
+    std::cout << "Vertices:\n";
+    for (const auto &vertex : vertexSet) {
+        std::cout << vertex->getId() << " ";
+    }
+    std::cout << "\nEdges:\n";
+    for (const auto &vertex : vertexSet) {
+        for (const auto &edge : vertex->getAdj()) {
+            std::cout << vertex->getId() << " -> " << edge->getDest()->getId() << " (weight: " << edge->getWeight()
+            << ", service: " << edge->getService() << ")\n";
+        }
+    }
+}
+
+
 void deleteMatrix(int **m, int n) {
     if (m != nullptr) {
         for (int i = 0; i < n; i++)

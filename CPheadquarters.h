@@ -16,6 +16,8 @@ class CPheadquarters {
     unordered_map<string,Station> stations;
 public:
     void read_files();
+
+    Graph getLines() const;
 };
 
 

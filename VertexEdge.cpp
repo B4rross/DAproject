@@ -110,15 +110,30 @@ void Vertex::setPath(Edge *path) {
     this->path = path;
 }
 
+
+void Vertex::print() const {
+    std::cout << "Vertex: " << id << std::endl;
+    std::cout << "Adjacent to: ";
+    for (const Edge* e : adj) {
+        std::cout << e->getDest()->getId() << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "Visited: " << visited << std::endl;
+    std::cout << "Indegree: " << indegree << std::endl;
+    std::cout << "Distance: " << dist << std::endl;
+    std::cout << "Path: " << path << std::endl;
+}
+
+
 /********************** Edge  ****************************/
 
-Edge::Edge(Vertex *orig, Vertex *dest, int w, std::string service): orig(orig), dest(dest), capacity(w), service(service) {}
+Edge::Edge(Vertex *orig, Vertex *dest, int w, std::string service): orig(orig), dest(dest), weight(w), service(service) {}
 
 Vertex * Edge::getDest() const {
     return this->dest;
 }
 
-double Edge::getWeight() const {
+int Edge::getWeight() const {
     return this->weight;
 }
 
@@ -148,4 +163,8 @@ void Edge::setReverse(Edge *reverse) {
 
 void Edge::setFlow(double flow) {
     this->flow = flow;
+}
+
+std::string Edge::getService() const {
+    return this->service;
 }
