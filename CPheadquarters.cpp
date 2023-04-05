@@ -92,3 +92,19 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
     return 1;
 }
 
+int CPheadquarters::T2_2maxflowAllStations() {
+    vector<pair<pair<int, int>, int>> maxFlows;
+    auto length = graph.getVertexSet().size();
+    for (int i = 0; i < length; ++i) {
+        for (int j = i + 1; j < length; ++j) {
+            int flow = graph.edmondsKarp(graph.getVertexSet()[i]->getId(), graph.getVertexSet()[j]->getId());
+            if(flow != 0)
+                cout << "i: "<< i << "j: " << j << "graph.edmondsKarp(" << graph.getVertexSet()[i]->getId() << ", " << graph.getVertexSet()[j]->getId() << "):\t" << flow << endl;
+            maxFlows.emplace_back(make_pair(i, j), flow);
+        }
+    }
+    return 0;
+}
+
+
+

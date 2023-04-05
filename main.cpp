@@ -8,20 +8,20 @@ int main() {
 
     int n;
     do{
-        cout<<"T2.1 - Numero maximo de comboios entre duas estacoes\n";
+        cout<<"T2.1 - Max number of trains between stations\n";
         cout<<"T2.2 -\n";
         cout<<"T2.3 -\n";
         cout<<"T2.4 -\n";
         cout<<"T3.1 -\n";
         cout<<"T4.1 -\n";
         cout<<"T4.2 -\n";
-        cout<<"Insira a sua opcao:\n";
+        cout<<"Insert your option:\n";
         cin>>n;
         if(n==1){
-            cout<<"Insira o nome da estacao A\n";
+            cout<<"Insert station A\n";
             string a;
             cin>>a;
-            cout<<"Insira o nome da estacao B\n";
+            cout<<"Insert station B\n";
             string b;
             cin>>b;
             CP.T2_1maxflow(a,b);
@@ -45,7 +45,7 @@ int main() {
 
         }
         if(n>8){
-            cout<<"Opcao invalida\n";
+            cout<<"Invalid option\n";
         }
     }
     while(n!=8);
