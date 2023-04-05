@@ -20,7 +20,7 @@ using Doxygen, indicating for each implemented algorithm the corresponding time 
 
 * [T2.1: 3.5 points] Calculate the maximum number of trains that can simultaneously travel between
 two specific stations. Note that your implementation should take any valid source and destination
-stations as input;
+stations as input;    :heavy_check_mark:
 
 
 * [T2.2: 2.0 points] Determine, from all pairs of stations, which ones (if more than one) require the
