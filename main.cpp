@@ -9,7 +9,7 @@ int main() {
     int n;
     do{
         cout<<"T2.1 - Max number of trains between stations\n";
-        cout<<"T2.2 -\n";
+        cout<<"T2.2 - Stations that require the Max num of trains among all pairs of stations\n";
         cout<<"T2.3 -\n";
         cout<<"T2.4 -\n";
         cout<<"T3.1 -\n";
