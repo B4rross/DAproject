@@ -16,9 +16,9 @@ int main() {
     // "Morgado","Portalegre"
     // "Morgado","Cuba"
     // "Morgado" "Canha"
-    
+
     string stationA = "Morgado";
-    string stationB = "Canha";
+    string stationB = "Cuba";
 
     Vertex* source = graph.findVertex(stationA); // set source vertex
     Vertex* sink = graph.findVertex(stationB); // set sink vertex
