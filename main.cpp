@@ -16,6 +16,7 @@ int main() {
     // "Morgado","Portalegre"
     // "Morgado","Cuba"
     // "Morgado" "Canha"
+    
     string stationA = "Morgado";
     string stationB = "Canha";
 
