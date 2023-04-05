@@ -38,6 +38,7 @@ public:
 
     void print() const;
     int edmondsKarp(const std::string &s, const std::string &t);
+    int maxFlow();
 
 protected:
     std::vector<Vertex *> vertexSet;    // vertex set
@@ -58,6 +59,7 @@ protected:
     bool findAugmentingPath(const std::string &s, const std::string &t);
 
     void testAndVisit(std::queue<Vertex *> &q, Edge *e, Vertex *w, double residual);
+
 
 
 };
