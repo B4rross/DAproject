@@ -18,12 +18,12 @@ network and enables the correct application of the required algorithms.
 * [T1.3: 2.0 points] In addition, you should also include documentation of all the implemented code,
 using Doxygen, indicating for each implemented algorithm the corresponding time complexity
 
-* [T2.1: 3.5 points] Calculate the maximum number of trains that can simultaneously travel between
+* [T2.1: 3.5 points] :heavy_check_mark: Calculate the maximum number of trains that can simultaneously travel between
 two specific stations. Note that your implementation should take any valid source and destination
-stations as input;    :heavy_check_mark:
+stations as input;    
 
 
-* [T2.2: 2.0 points] Determine, from all pairs of stations, which ones (if more than one) require the
+* [T2.2: 2.0 points] :heavy_check_mark: Determine, from all pairs of stations, which ones (if more than one) require the
 most amount of trains when taking full advantage of the existing network capacity;
 
 
