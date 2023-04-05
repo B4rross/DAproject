@@ -93,14 +93,28 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
 }
 
 int CPheadquarters::T2_2maxflowAllStations() {
-    vector<pair<pair<int, int>, int>> maxFlows;
-    auto length = graph.getVertexSet().size();
+    vector<string> stations;
+    int maxFlow=0;
+    auto length = lines.getVertexSet().size();
     for (int i = 0; i < length; ++i) {
         for (int j = i + 1; j < length; ++j) {
-            int flow = graph.edmondsKarp(graph.getVertexSet()[i]->getId(), graph.getVertexSet()[j]->getId());
-            if(flow != 0)
-                cout << "i: "<< i << "j: " << j << "graph.edmondsKarp(" << graph.getVertexSet()[i]->getId() << ", " << graph.getVertexSet()[j]->getId() << "):\t" << flow << endl;
-            maxFlows.emplace_back(make_pair(i, j), flow);
+            cout << "------" << '\n';
+            string stationA = lines.getVertexSet()[i]->getId();
+            cout << i <<"stationA" << stationA << '\n';
+            string stationB = lines.getVertexSet()[j]->getId();
+            cout << j <<"stationA" << stationB << '\n';
+            int flow = lines.edmondsKarp(stationA, stationB);
+            cout <<"edmunddone"<< '\n';
+            if(flow == maxFlow){
+                stations.push_back(stationB);
+                stations.push_back(stationA);
+            }
+            else if(flow > maxFlow){
+                stations.empty();
+                stations.push_back(stationB);
+                stations.push_back(stationA);
+                maxFlow=flow;
+            }
         }
     }
     return 0;

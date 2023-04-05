@@ -27,7 +27,7 @@ int main() {
             CP.T2_1maxflow(a,b);
         }
         if(n==2){
-
+            CP.T2_2maxflowAllStations();
         }
         if(n==3){
 
