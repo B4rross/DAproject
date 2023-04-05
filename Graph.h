@@ -37,6 +37,7 @@ public:
     [[nodiscard]] std::vector<Vertex *> getVertexSet() const;
 
     void print() const;
+    int edmondsKarp(const std::string &s, const std::string &t);
 
 protected:
     std::vector<Vertex *> vertexSet;    // vertex set
@@ -48,6 +49,16 @@ protected:
      * Finds the index of the vertex with a given content.
      */
     int findVertexIdx(const std::string  &id) const;
+
+
+    void updateFlow(Vertex *s, Vertex *t, int bottleneck);
+
+    int findMinResidual(Vertex *s, Vertex *t);
+
+    bool findAugmentingPath(const std::string &s, const std::string &t);
+
+    void testAndVisit(std::queue<Vertex *> &q, Edge *e, Vertex *w, double residual);
+
 
 };
 

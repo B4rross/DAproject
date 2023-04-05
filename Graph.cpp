@@ -1,5 +1,7 @@
 // By: Gonçalo Leão
 
+#include <climits>
+#include <queue>
 #include "Graph.h"
 
 int Graph::getNumVertex() const {
@@ -66,24 +68,7 @@ bool Graph::addBidirectionalEdge(const std::string  &sourc, const std::string  &
     return true;
 }
 
-/*
- *  print graph content
- */
-void Graph::print() const {
-    std::cout << "---------------- Graph----------------\n";
-    std::cout << "Number of vertices: " << vertexSet.size() << std::endl;
-    std::cout << "Vertices:\n";
-    for (const auto &vertex : vertexSet) {
-        std::cout << vertex->getId() << " ";
-    }
-    std::cout << "\nEdges:\n";
-    for (const auto &vertex : vertexSet) {
-        for (const auto &edge : vertex->getAdj()) {
-            std::cout << vertex->getId() << " -> " << edge->getDest()->getId() << " (weight: " << edge->getWeight()
-            << ", service: " << edge->getService() << ")\n";
-        }
-    }
-}
+
 
 
 void deleteMatrix(int **m, int n) {
@@ -107,4 +92,106 @@ void deleteMatrix(double **m, int n) {
 Graph::~Graph() {
     deleteMatrix(distMatrix, vertexSet.size());
     deleteMatrix(pathMatrix, vertexSet.size());
+}
+
+
+
+/*
+ *  print graph content
+ */
+void Graph::print() const {
+    std::cout << "---------------- Graph----------------\n";
+    std::cout << "Number of vertices: " << vertexSet.size() << std::endl;
+    std::cout << "Vertices:\n";
+    for (const auto &vertex : vertexSet) {
+        std::cout << vertex->getId() << " ";
+    }
+    std::cout << "\nEdges:\n";
+    for (const auto &vertex : vertexSet) {
+        for (const auto &edge : vertex->getAdj()) {
+            std::cout << vertex->getId() << " -> " << edge->getDest()->getId() << " (weight: " << edge->getWeight()
+                      << ", service: " << edge->getService() << ")\n";
+        }
+    }
+}
+
+// --------------------------------- Edmonds-Karp ---------------------------------
+
+void Graph::testAndVisit(std::queue<Vertex*> &q, Edge *e, Vertex *w, double residual) {
+    if (!w->isVisited() && residual > 0) {
+        w->setVisited(true);
+        w->setPath(e);
+        q.push(w);
+    }
+}
+
+bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
+    Vertex *source = findVertex(s);
+    Vertex *target = findVertex(t);
+    if (source == nullptr || target == nullptr) {
+        return false;
+    }
+    for (auto v : vertexSet) {
+        v->setVisited(false);
+        v->setPath(nullptr);
+    }
+    source->setVisited(true);
+    std::queue<Vertex*> q;
+    q.push(source);
+    while (!q.empty()) {
+        auto v = q.front();
+        q.pop();
+        for (auto e : v->getAdj()) {
+            auto w = e->getDest();
+            double residual = e->getWeight() - e->getFlow();
+            testAndVisit(q, e, w, residual);
+        }
+        for (auto e : v->getIncoming()) {
+            auto w = e->getDest();
+            double residual = e->getFlow();
+            testAndVisit(q, e->getReverse(), w, residual);
+        }
+        if (target->isVisited()) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int Graph::findMinResidual(Vertex *s, Vertex *t) {
+    int minResidual = INT_MAX;
+    for (auto v = t; v != s; v = v->getPath()->getOrig()) {
+        auto e = v->getPath();
+        double residual;
+        if (e->getDest() == v) {
+            residual = e->getWeight() - e->getFlow();
+        } else {
+            residual = e->getFlow();
+        }
+        if (residual < minResidual) {
+            minResidual = static_cast<int>(residual);
+        }
+    }
+    return minResidual;
+}
+
+void Graph::updateFlow(Vertex *s, Vertex *t, int bottleneck) {
+    for (auto v = t; v != s; v = v->getPath()->getOrig()) {
+        auto e = v->getPath();
+        if (e->getDest() == v) {
+            e->setFlow(bottleneck);
+        } else {
+            e->setFlow(-bottleneck);
+        }
+    }
+}
+
+int Graph::edmondsKarp(const std::string &s, const std::string &t) {
+    int maxFlow = 0;
+    while (findAugmentingPath(s, t)) {
+        int bottleneck = findMinResidual(findVertex(s), findVertex(t));
+        updateFlow(findVertex(s), findVertex(t), bottleneck);
+        maxFlow += bottleneck;
+    }
+    return maxFlow;
 }
