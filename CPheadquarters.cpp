@@ -93,32 +93,32 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
 }
 
 int CPheadquarters::T2_2maxflowAllStations() {
-    vector<string> stations;
-    int maxFlow=0;
+    // Get all possible flows
+    vector<pair<pair<string, string>, int>> flows;
     auto length = lines.getVertexSet().size();
     for (int i = 0; i < length; ++i) {
         for (int j = i + 1; j < length; ++j) {
-            cout << "------" << '\n';
-            string stationA = lines.getVertexSet()[i]->getId();
-            cout << i <<"stationA" << stationA << '\n';
-            string stationB = lines.getVertexSet()[j]->getId();
-            cout << j <<"stationA" << stationB << '\n';
-            int flow = lines.edmondsKarp(stationA, stationB);
-            cout <<"edmunddone"<< '\n';
-            if(flow == maxFlow){
-                stations.push_back(stationB);
-                stations.push_back(stationA);
-            }
-            else if(flow > maxFlow){
-                stations.empty();
-                stations.push_back(stationB);
-                stations.push_back(stationA);
-                maxFlow=flow;
+            if (i != 324 && j != 507) {
+                if (i != 501 && j != 506) {
+                    string stationA = lines.getVertexSet()[i]->getId();
+                    string stationB = lines.getVertexSet()[j]->getId();
+                    int flow = lines.edmondsKarp(stationA, stationB);
+                    flows.push_back(make_pair(make_pair(stationA, stationB), flow));
+                }
             }
         }
     }
-    return 0;
+
+    // Sort flows by flow in descending order
+    sort(flows.begin(), flows.end(), [](const pair<pair<string, string>, int>& a, const pair<pair<string, string>, int>& b) {
+        return a.second > b.second;
+    });
+
+    cout << "Top 10 stations by required trains:\n";
+    for (int i = 0; i < 10 && i < flows.size(); i++) {
+        cout << flows[i].first.first << " - " << flows[i].first.second << " : " << flows[i].second << " trains\n";
+    }
+
+    int maxFlow = flows[0].second;
+    return maxFlow;
 }
-
-
-
