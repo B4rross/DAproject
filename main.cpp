@@ -5,38 +5,48 @@ using namespace std;
 int main() {
     CPheadquarters CP;
     CP.read_files();
-    Graph graph = CP.getLines();
-    graph.print();
 
-    // tests stations that don't have Porguguese letters:
-    // Lapa, Faria
-    // Mafra, Amieira
-    // "Morgado", "Arronches"
-    // "Bombel","Portalegre"
-    // "Morgado","Portalegre"
-    // "Morgado","Cuba"
-    // "Morgado" "Canha"
+    int n;
+    do{
+        cout<<"T2.1 - Numero maximo de comboios entre duas estacoes\n";
+        cout<<"T2.2 -\n";
+        cout<<"T2.3 -\n";
+        cout<<"T2.4 -\n";
+        cout<<"T3.1 -\n";
+        cout<<"T4.1 -\n";
+        cout<<"T4.2 -\n";
+        cout<<"Insira a sua opcao:\n";
+        cin>>n;
+        if(n==1){
+            cout<<"Insira o nome da estacao A\n";
+            string a;
+            cin>>a;
+            cout<<"Insira o nome da estacao B\n";
+            string b;
+            cin>>b;
+            CP.T2_1maxflow(a,b);
+        }
+        if(n==2){
 
-    string stationA = "Morgado";
-    string stationB = "Cuba";
+        }
+        if(n==3){
 
-    Vertex* source = graph.findVertex(stationA); // set source vertex
-    Vertex* sink = graph.findVertex(stationB); // set sink vertex
+        }
+        if(n==4){
 
-    // Check if these stations even exist
-    if(source == nullptr || sink == nullptr) {
-        std::cerr << "Source or sink vertex not found." << std::endl;
-        return 1;
+        }
+        if(n==5){
+
+        }
+        if(n==6){
+
+        }
+        if(n==7){
+
+        }
+        if(n>8){
+            cout<<"Opcao invalida\n";
+        }
     }
-
-
-    int maxFlow = graph.edmondsKarp(stationA, stationB);
-
-    if(maxFlow == 0){
-        cerr << "Stations are not connected. Try stationB to stationA instead. " << stationB << " -> " << stationA << endl;
-    } else {
-        cout << "maxFlow:\t" << maxFlow << endl;
-    }
-
-    return 1;
+    while(n!=8);
 }
