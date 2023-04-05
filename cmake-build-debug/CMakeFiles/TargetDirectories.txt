@@ -1,3 +1,0 @@
-/home/david/Desktop/DA/DAproject/cmake-build-debug/CMakeFiles/DAproject.dir
-/home/david/Desktop/DA/DAproject/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/david/Desktop/DA/DAproject/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/DAproject.dir/main.cpp.o CMakeFiles/DAproject.dir/Graph.cpp.o CMakeFiles/DAproject.dir/VertexEdge.cpp.o CMakeFiles/DAproject.dir/Station.cpp.o CMakeFiles/DAproject.dir/CPheadquarters.cpp.o -o DAproject 
