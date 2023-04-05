@@ -18,6 +18,7 @@ public:
     void read_files();
 
     Graph getLines() const;
+    int T2_1maxflow(string station_A, string station_B);
 };
 
 

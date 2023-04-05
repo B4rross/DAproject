@@ -69,3 +69,26 @@ void CPheadquarters::read_files() {
 Graph CPheadquarters::getLines() const {
     return this->lines;
 }
+
+int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
+    Vertex* source = lines.findVertex(stationA); // set source vertex
+    Vertex* sink = lines.findVertex(stationB); // set sink vertex
+
+    // Check if these stations even exist
+    if(source == nullptr || sink == nullptr) {
+        std::cerr << "Source or sink vertex not found." << std::endl;
+        return 1;
+    }
+
+
+    int maxFlow = lines.edmondsKarp(stationA, stationB);
+
+    if(maxFlow == 0){
+        cerr << "Stations are not connected. Try stationB to stationA instead. " << stationB << " -> " << stationA << endl;
+    } else {
+        cout << "maxFlow:\t" << maxFlow << endl;
+    }
+
+    return 1;
+}
+
