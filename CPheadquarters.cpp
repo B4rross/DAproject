@@ -128,6 +128,3 @@ int CPheadquarters::T2_2maxflowAllStations() {
     }
     return 0;
 }
-
-
-

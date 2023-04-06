@@ -2,34 +2,35 @@
 #include "CPheadquarters.h"
 
 using namespace std;
+
 int main() {
     CPheadquarters CP;
     CP.read_files();
 
     int n;
     do {
-        std::cout << "T2.1 - Max number of trains between stations\n";
-        std::cout << "T2.2 - Stations that require the Max num of trains among all pairs of stations\n";
-        std::cout << "T2.3 -\n";
-        std::cout << "T2.4 -\n";
-        std::cout << "T3.1 -\n";
-        std::cout << "T4.1 -\n";
-        std::cout << "T4.2 -\n";
-        std::cout << "Insert your option:\n";
-        std::cin >> n;
+        cout << "T2.1 - Max number of trains between stations\n";
+        cout << "T2.2 - Stations that require the Max num of trains among all pairs of stations\n";
+        cout << "T2.3 -\n";
+        cout << "T2.4 -\n";
+        cout << "T3.1 -\n";
+        cout << "T4.1 -\n";
+        cout << "T4.2 -\n";
+        cout << "Insert your option:\n";
+        cin >> n;
 
         switch (n) {
             case 1: {
-                std::cin.ignore(); // ignore newline character left in the input stream
-                std::string a, b;
-                std::cout << "Enter station A: ";
-                std::getline(std::cin, a);
+                cin.ignore(); // ignore newline character left in the input stream
+                string a, b;
+                cout << "Enter station A: ";
+                getline(cin, a);
 
-                std::cout << "Enter station B: ";
-                std::getline(std::cin, b);
+                cout << "Enter station B: ";
+                getline(cin, b);
 
                 if (a.empty() || b.empty()) {
-                    std::cerr << "Error: Station names cannot be empty." << std::endl;
+                    cerr << "Error: Station names cannot be empty." << endl;
                     break;
                 }
 
@@ -69,15 +70,16 @@ int main() {
             }
 
             case 8: {
-                std::cout << "Exiting program..." << std::endl;
+                cout << "Exiting program..." << endl;
                 break;
             }
 
             default: {
-                std::cerr << "Error: Invalid option selected." << std::endl;
+                cerr << "Error: Invalid option selected." << endl;
                 break;
             }
         }
     } while (n != 8);
 
+    return 0;
 }
