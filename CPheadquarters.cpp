@@ -91,18 +91,22 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
 
     return 1;
 }
-
+void CPheadquarters::test(){
+    int flow = lines.edmondsKarp(lines.getVertexSet()[324]->getId(), lines.getVertexSet()[507]->getId());
+}
+//entrecampos
+//
 int CPheadquarters::T2_2maxflowAllStations() {
     vector<string> stations;
     int maxFlow=0;
     auto length = lines.getVertexSet().size();
     for (int i = 0; i < length; ++i) {
         for (int j = i + 1; j < length; ++j) {
-            cout << "------" << '\n';
             string stationA = lines.getVertexSet()[i]->getId();
-            cout << i <<"stationA" << stationA << '\n';
             string stationB = lines.getVertexSet()[j]->getId();
-            cout << j <<"stationA" << stationB << '\n';
+            if(stationA=="Trofa" && stationB=="Espinho"){
+                cout<<"stop";
+            }
             int flow = lines.edmondsKarp(stationA, stationB);
             cout <<"edmunddone"<< '\n';
             if(flow == maxFlow){

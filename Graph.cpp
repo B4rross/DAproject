@@ -53,6 +53,7 @@ bool Graph::addEdge(const std::string  &sourc, const std::string  &dest, int w, 
     if (v1 == nullptr || v2 == nullptr)
         return false;
     v1->addEdge(v2, w, service);
+
     return true;
 }
 
@@ -159,34 +160,41 @@ bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
 }
 
 int Graph::findMinResidual(Vertex *s, Vertex *t) {
-    int minResidual = INT_MAX;
-    for (auto v = t; v != s; v = v->getPath()->getOrig()) {
+    double minResidual = INT_MAX;
+    for (auto v = t; v != s; ) {
         auto e = v->getPath();
-        double residual;
         if (e->getDest() == v) {
-            residual = e->getWeight() - e->getFlow();
+            minResidual = std::min(minResidual, e->getWeight() - e->getFlow());
+            v = e->getOrig();
         } else {
-            residual = e->getFlow();
-        }
-        if (residual < minResidual) {
-            minResidual = static_cast<int>(residual);
+            minResidual = std::min(minResidual, e->getFlow());
+            v = e->getDest();
         }
     }
     return minResidual;
 }
 
 void Graph::updateFlow(Vertex *s, Vertex *t, int bottleneck) {
-    for (auto v = t; v != s; v = v->getPath()->getOrig()) {
+    for (auto v = t; v != s;){
         auto e = v->getPath();
+        double flow = e->getFlow();
         if (e->getDest() == v) {
-            e->setFlow(bottleneck);
-        } else {
-            e->setFlow(-bottleneck);
+            e->setFlow(flow + bottleneck);
+            v = e->getOrig();
+        }
+        else {
+            e->setFlow(flow - bottleneck);
+            v = e->getDest();
         }
     }
 }
 
 int Graph::edmondsKarp(const std::string &s, const std::string &t) {
+    for(auto e :vertexSet){
+        for(auto i: e->getAdj()){
+            i->setFlow(0);
+        }
+    }
     int maxFlow = 0;
     while (findAugmentingPath(s, t)) {
         int bottleneck = findMinResidual(findVertex(s), findVertex(t));
