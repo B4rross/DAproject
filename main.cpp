@@ -30,7 +30,7 @@ int main() {
             CP.T2_2maxflowAllStations();
         }
         if(n==3){
-
+            CP.test();
         }
         if(n==4){
 

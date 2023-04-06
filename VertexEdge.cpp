@@ -127,7 +127,7 @@ void Vertex::print() const {
 
 /********************** Edge  ****************************/
 
-Edge::Edge(Vertex *orig, Vertex *dest, int w, std::string service): orig(orig), dest(dest), weight(w), service(service) {}
+Edge::Edge(Vertex *orig, Vertex *dest, int w, std::string service): orig(orig), dest(dest), weight(w), service(service),flow(0) {}
 
 Vertex * Edge::getDest() const {
     return this->dest;
