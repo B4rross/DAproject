@@ -79,8 +79,6 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
         std::cerr << "Source or sink vertex not found." << std::endl;
         return 1;
     }
-
-
     int maxFlow = lines.edmondsKarp(stationA, stationB);
 
     if(maxFlow == 0){
@@ -114,7 +112,7 @@ int CPheadquarters::T2_2maxflowAllStations() {
                 stations.push_back(stationA);
             }
             else if(flow > maxFlow){
-                stations.empty();
+                stations.clear();
                 stations.push_back(stationB);
                 stations.push_back(stationA);
                 maxFlow=flow;
@@ -124,8 +122,8 @@ int CPheadquarters::T2_2maxflowAllStations() {
     cout<<"Pairs of stations with the most flow ["<<maxFlow<<"]:\n";
     for (int i = 0; i < stations.size(); i=i+2) {
         cout<<"------------------------\n";
-        cout<<"Source:"<<stations[i]<<'\n';
-        cout<<"Target:"<<stations[i+1]<<'\n';
+        cout<<"Source:"<<stations[i+1]<<'\n';
+        cout<<"Target:"<<stations[i]<<'\n';
         cout<<"------------------------\n";
     }
     return 0;
