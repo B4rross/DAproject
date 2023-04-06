@@ -121,6 +121,13 @@ int CPheadquarters::T2_2maxflowAllStations() {
             }
         }
     }
+    cout<<"Pairs of stations with the most flow ["<<maxFlow<<"]:\n";
+    for (int i = 0; i < stations.size(); i=i+2) {
+        cout<<"------------------------\n";
+        cout<<"Source:"<<stations[i]<<'\n';
+        cout<<"Target:"<<stations[i+1]<<'\n';
+        cout<<"------------------------\n";
+    }
     return 0;
 }
 
