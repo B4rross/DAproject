@@ -32,7 +32,7 @@ maintenance of trains. That is, your implementation should be able to report the
 and districts, regarding their transportation needs;
 
 
-* [T2.4: 1 point] Report the maximum number of trains that can simultaneously arrive at a given station,
+* [T2.4: 1 point] :heavy_check_mark: Report the maximum number of trains that can simultaneously arrive at a given station,
 taking into consideration the entire railway grid
 
 
