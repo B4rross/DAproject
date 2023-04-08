@@ -70,6 +70,11 @@ Graph CPheadquarters::getLines() const {
     return this->lines;
 }
 
+/*
+ * Calculate the maximum number of trains that can simultaneously travel between
+ * two specific stations. Note that your implementation should take any valid source and destination
+ * stations as input
+ */
 int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
     Vertex* source = lines.findVertex(stationA); // set source vertex
     Vertex* sink = lines.findVertex(stationB); // set sink vertex
@@ -92,8 +97,12 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
 void CPheadquarters::test(){
     int flow = lines.edmondsKarp(lines.getVertexSet()[324]->getId(), lines.getVertexSet()[507]->getId());
 }
-//entrecampos
-//
+
+
+/*
+ * Determine, from all pairs of stations, which ones (if more than one) require the
+ * most amount of trains when taking full advantage of the existing network capacity;
+ */
 int CPheadquarters::T2_2maxflowAllStations() {
     vector<string> stations;
     int maxFlow=0;
