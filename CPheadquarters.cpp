@@ -128,3 +128,28 @@ int CPheadquarters::T2_2maxflowAllStations() {
     }
     return 0;
 }
+
+/*
+ * Report the maximum number of trains that can simultaneously arrive at a given station,
+ * taking into consideration the entire railway grid
+ */
+int CPheadquarters::T2_4maxArrive(string destination) {
+    Vertex * dest = lines.findVertex(destination);
+    int maxFlow = 0;
+
+    // iterate over all vertices to find incoming and outgoing vertices
+    for (auto & v : lines.getVertexSet()) {
+        if(v != dest){
+
+            int flow = lines.edmondsKarp(v->getId(), destination);
+
+            // Update the maximum flow if this vertex contributes to a higher maximum
+            if (flow > maxFlow) {
+                maxFlow = flow;
+            }
+        }
+    }
+
+    cout << "Max number of trains that can simultaneously arrive at " << destination << ": " << maxFlow << endl;
+    return maxFlow;
+}

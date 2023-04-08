@@ -21,8 +21,10 @@ public:
 
     int T2_1maxflow(string station_A, string station_B);
     int T2_2maxflowAllStations();
+    int T2_4maxArrive(string destination);
 
     void test();
+
 };
 
 
