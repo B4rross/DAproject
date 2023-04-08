@@ -70,6 +70,11 @@ Graph CPheadquarters::getLines() const {
     return this->lines;
 }
 
+/*
+ * Calculate the maximum number of trains that can simultaneously travel between
+ * two specific stations. Note that your implementation should take any valid source and destination
+ * stations as input
+ */
 int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
     Vertex* source = lines.findVertex(stationA); // set source vertex
     Vertex* sink = lines.findVertex(stationB); // set sink vertex
@@ -92,8 +97,12 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
 void CPheadquarters::test(){
     int flow = lines.edmondsKarp(lines.getVertexSet()[324]->getId(), lines.getVertexSet()[507]->getId());
 }
-//entrecampos
-//
+
+
+/*
+ * Determine, from all pairs of stations, which ones (if more than one) require the
+ * most amount of trains when taking full advantage of the existing network capacity;
+ */
 int CPheadquarters::T2_2maxflowAllStations() {
     vector<string> stations;
     int maxFlow=0;
@@ -127,4 +136,29 @@ int CPheadquarters::T2_2maxflowAllStations() {
         cout<<"------------------------\n";
     }
     return 0;
+}
+
+/*
+ * Report the maximum number of trains that can simultaneously arrive at a given station,
+ * taking into consideration the entire railway grid
+ */
+int CPheadquarters::T2_4maxArrive(string destination) {
+    Vertex * dest = lines.findVertex(destination);
+    int maxFlow = 0;
+
+    // iterate over all vertices to find incoming and outgoing vertices
+    for (auto & v : lines.getVertexSet()) {
+        if(v != dest){
+
+            int flow = lines.edmondsKarp(v->getId(), destination);
+
+            // Update the maximum flow if this vertex contributes to a higher maximum
+            if (flow > maxFlow) {
+                maxFlow = flow;
+            }
+        }
+    }
+
+    cout << "Max number of trains that can simultaneously arrive at " << destination << ": " << maxFlow << endl;
+    return maxFlow;
 }
