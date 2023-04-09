@@ -19,29 +19,44 @@ class Edge;
 class Vertex {
 public:
     Vertex(std::string id);
-    bool operator<(Vertex & vertex) const; // // required by MutablePriorityQueue
 
-    std::string  getId() const;
+    bool operator<(Vertex &vertex) const; // // required by MutablePriorityQueue
+
+    std::string getId() const;
+
     std::vector<Edge *> getAdj() const;
+
     bool isVisited() const;
+
     bool isProcessing() const;
+
     unsigned int getIndegree() const;
+
     double getDist() const;
+
     Edge *getPath() const;
+
     std::vector<Edge *> getIncoming() const;
 
     void setId(int info);
+
     void setVisited(bool visited);
+
     void setProcesssing(bool processing);
+
     void setIndegree(unsigned int indegree);
+
     void setDist(double dist);
+
     void setPath(Edge *path);
-    Edge * addEdge(Vertex *dest, int w, std::string service);
-    bool removeEdge(std::string  destID);
+
+    Edge *addEdge(Vertex *dest, int w, std::string service);
+
+    bool removeEdge(std::string destID);
 
 
 protected:
-    std::string  id;                // identifier
+    std::string id;                // identifier
     std::vector<Edge *> adj;  // outgoing edges
 
     // auxiliary fields
@@ -53,7 +68,7 @@ protected:
 
     std::vector<Edge *> incoming; // incoming edges
 
-    int queueIndex = 0; 		// required by MutablePriorityQueue and UFDS
+    int queueIndex = 0;        // required by MutablePriorityQueue and UFDS
     void print() const;
 };
 
@@ -64,21 +79,28 @@ class Edge {
 public:
     Edge(Vertex *orig, Vertex *dest, int w, std::string service);
 
-    Vertex * getDest() const;
+    Vertex *getDest() const;
+
     int getWeight() const;
+
     bool isSelected() const;
-    Vertex * getOrig() const;
+
+    Vertex *getOrig() const;
+
     Edge *getReverse() const;
+
     double getFlow() const;
 
     void setSelected(bool selected);
+
     void setReverse(Edge *reverse);
+
     void setFlow(double flow);
 
     std::string getService() const;
 
 protected:
-    Vertex * dest; // destination vertex
+    Vertex *dest; // destination vertex
     int weight; // edge weight, can also be used for capacity
     int capacity;
     std::string service;
