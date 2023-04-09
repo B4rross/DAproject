@@ -13,21 +13,26 @@ using namespace std;
 
 class CPheadquarters {
     Graph lines;
-    unordered_map<string,Station> stations;
+    unordered_map<string, Station> stations;
 public:
     void read_files();
 
     Graph getLines() const;
 
     int T2_1maxflow(string station_A, string station_B);
+
     int T2_2maxflowAllStations();
+
     int T2_3municipality(string municipality);
+
     int T2_3district(string district);
+
     int T2_4maxArrive(string destination);
 
 
     void test();
 
+    int T3_1MinCost(string source, string destination);
 };
 
 
