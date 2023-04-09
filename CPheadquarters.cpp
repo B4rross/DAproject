@@ -227,14 +227,18 @@ int CPheadquarters::T3_1MinCost(string source, string destination) {
 
     // find the path with the minimum cost
     int maxTrains = 0;
+    int resCost;
     double max_value = DBL_MAX;
     for (int i = 0; i < maxFlows.size(); ++i) {
         double costPerTrain = (double) totalCosts[i] / maxFlows[i];
         if(costPerTrain < max_value){
+            max_value = costPerTrain;
             maxTrains = maxFlows[i];
+            resCost = totalCosts[i];
         }
     }
 
-    cout << "Max number of trains that can travel between " << source << " and " << destination << " with minimum cost: " << maxTrains << endl;
+    cout << "Max number of trains that can travel between " << source << " and " << destination << " with minimum cost"
+    <<"(" << resCost << " euros): "<< maxTrains << " trains\n" << endl;
     return maxTrains;
 }

@@ -146,7 +146,7 @@ bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
         auto v = q.front();
         q.pop();
 
-        std::cout << " -> " << v->getId();
+        //std::cout << " -> " << v->getId();
 
         for (auto e : v->getAdj()) {
             auto w = e->getDest();
