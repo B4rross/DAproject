@@ -12,7 +12,7 @@ int main() {
         cout << "2 - T2.2 Stations that require the Max num of trains among all pairs of stations\n";
         cout << "3 - T2.3\n";
         cout << "4 - T2.4 Max number of trains that can simultaneously arrive at a given station\n";
-        cout << "5 - T3.1\n";
+        cout << "5 - T3.1 Max number of trains that can simultaneously travel with minimum cost\n";
         cout << "6 - T4.1\n";
         cout << "7 - T4.2\n";
         cout << "8 - Exit\n";
@@ -73,7 +73,7 @@ int main() {
             }
 
             case 5: {
-                cin.ignore(); // ignore newline character left in the input stream
+                cin.ignore();
                 string a, b;
                 cout << "Enter station A: ";
                 getline(cin, a);
