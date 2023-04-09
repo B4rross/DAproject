@@ -38,8 +38,9 @@ public:
 
     void print() const;
     int edmondsKarp(const std::string &s, const std::string &t);
-    int maxFlow();
-
+    int mul_edmondsKarp(std::vector<std::string> souces, std::vector<std::string> targets);
+    std::vector<std::string> find_sources(std::vector<std::string> desired_stations);
+    std::vector<std::string> find_targets(std::vector<std::string> desired_stations);
 protected:
     std::vector<Vertex *> vertexSet;    // vertex set
 
@@ -60,7 +61,7 @@ protected:
 
     void testAndVisit(std::queue<Vertex *> &q, Edge *e, Vertex *w, double residual);
 
-
+    bool isIn(std::string n, std::vector<std::string> vec);
 
 };
 

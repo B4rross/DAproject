@@ -128,3 +128,25 @@ int CPheadquarters::T2_2maxflowAllStations() {
     }
     return 0;
 }
+
+int CPheadquarters::T2_3municipality(string municipality) {
+    vector<string> desired_stations;
+    for (auto p: stations) {
+        if(p.second.get_municipality()==municipality) {
+            desired_stations.push_back(p.second.get_name());
+        }
+    }
+    vector<string> souces=lines.find_sources(desired_stations);
+    vector<string> targets=lines.find_targets(desired_stations);
+    return lines.mul_edmondsKarp(souces,targets);
+}
+
+int CPheadquarters::T2_3district(string district) {
+    vector<string> desired_stations;
+    for (auto p: stations) {
+        if(p.second.get_district()==district) {
+            desired_stations.push_back(p.second.get_name());
+        }
+    }
+    return lines.mul_edmondsKarp(lines.find_sources(desired_stations),lines.find_targets(desired_stations));
+}

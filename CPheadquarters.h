@@ -21,6 +21,8 @@ public:
 
     int T2_1maxflow(string station_A, string station_B);
     int T2_2maxflowAllStations();
+    int T2_3municipality(string municipality);
+    int T2_3district(string district);
 
     void test();
 };
