@@ -73,7 +73,7 @@ int main() {
             }
 
             case 5: {
-                CP.T3_1MinCost("Entroncamento","Lisboa Oriente");
+                CP.T3_1MinCost("Morgado","Cuba");
                 break;
             }
 
