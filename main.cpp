@@ -59,7 +59,10 @@ int main() {
             }
 
             case 3: {
-                CP.test();
+                cin.ignore();
+                string c;
+                getline(cin, c);
+                cout<<CP.T2_3municipality(c);
                 break;
             }
 
