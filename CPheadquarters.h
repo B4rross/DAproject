@@ -22,7 +22,7 @@ public:
     int T2_1maxflow(string station_A, string station_B);
     int T2_2maxflowAllStations();
     int T2_4maxArrive(string destination);
-
+    int T3_1MinCost(string source, string destination);
     void test();
 
 };

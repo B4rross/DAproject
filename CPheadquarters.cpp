@@ -162,3 +162,48 @@ int CPheadquarters::T2_4maxArrive(string destination) {
     cout << "Max number of trains that can simultaneously arrive at " << destination << ": " << maxFlow << endl;
     return maxFlow;
 }
+
+
+
+/*
+ * Calculate the maximum amount of trains that can simultaneously travel between
+ * two specific stations with minimum cost for the company
+ * constraints:
+ * 1. Minimize cost
+ * 2. 'Maintain the same level of service'
+ *
+ * steps:
+ * 1 - find all possible paths between source and destination
+ */
+int CPheadquarters::T3_1MinCost(string source, string destination) {
+    Vertex* sourceVertex = lines.findVertex(source); // set source vertex
+    Vertex* destVertex = lines.findVertex(destination); // set sink vertex
+    if(sourceVertex == nullptr || destVertex == nullptr){
+        cerr << "Source or destination vertex not found. Try again" << endl;
+        return 1;
+    }
+
+    Graph graph = lines;
+
+    std::vector<Vertex*> path;
+    std::vector<std::vector<Vertex*>> allPaths;
+
+
+    graph.findAllPaths(sourceVertex, destVertex, path, allPaths);
+
+
+// output all the paths
+    for (auto path : allPaths) {
+        for (int i = 0; i+1 < path.size(); i++) {
+            std::cout << path[i]->getId() << " -> " ;
+            Edge *e = graph.findEdge(path[i], path[i+1]);
+            cout << " (" << e->getWeight() << " trains, " << e->getService() << " service) ";
+        }
+        cout << " -> " << path[path.size()-1]->getId();
+        std::cout << std::endl;
+    }
+
+
+
+    return 0;
+}

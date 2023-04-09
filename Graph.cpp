@@ -126,6 +126,9 @@ void Graph::testAndVisit(std::queue<Vertex*> &q, Edge *e, Vertex *w, double resi
     }
 }
 
+/*
+ * An augmenting path is a simple path - a path that does not contain cycles
+ */
 bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
     Vertex *source = findVertex(s);
     Vertex *target = findVertex(t);
@@ -142,6 +145,9 @@ bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
     while (!q.empty()) {
         auto v = q.front();
         q.pop();
+
+        std::cout << " -> " << v->getId();
+
         for (auto e : v->getAdj()) {
             auto w = e->getDest();
             double residual = e->getWeight() - e->getFlow();
@@ -204,3 +210,40 @@ int Graph::edmondsKarp(const std::string &s, const std::string &t) {
     return maxFlow;
 }
 
+
+
+// --------------------------------- Find ALL existing augmenting paths ---------------------------------
+
+void Graph::findAllPaths(Vertex *source, Vertex *destination, std::vector<Vertex*> &path, std::vector<std::vector<Vertex*>> &allPaths) {
+    path.push_back(source);
+    source->setVisited(true);
+
+    if (source == destination) {
+        allPaths.push_back(path);
+    }
+    else {
+        for (auto edge : source->getAdj()) {
+            Vertex *adjacent = edge->getDest();
+            if (!adjacent->isVisited()) {
+                findAllPaths(adjacent, destination, path, allPaths);
+            }
+        }
+    }
+
+    path.pop_back();
+    source->setVisited(false);
+}
+
+
+/*
+ * find edge based on source and destination
+ */
+Edge *Graph::findEdge(Vertex *source, Vertex *destination) {
+
+    for (auto edge: source->getAdj()) {
+        if (edge->getDest() == destination) {
+            return edge;
+        }
+    }
+    return nullptr;
+}
