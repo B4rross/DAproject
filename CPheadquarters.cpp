@@ -98,7 +98,13 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
 }
 
 void CPheadquarters::test() {
-    int flow = lines.edmondsKarp(lines.getVertexSet()[324]->getId(), lines.getVertexSet()[507]->getId());
+    Graph graph = lines;
+    auto vertecies = graph.getVertexSet();
+    for (int i = 1; i < vertecies.size(); ++i) {
+        for (int j = i + 1; j < vertecies.size(); ++j) {
+        T3_1MinCost(vertecies[i]->getId(), vertecies[j]->getId());
+        }
+    }
 }
 
 
@@ -179,6 +185,7 @@ int CPheadquarters::T2_4maxArrive(string destination) {
  *
  * steps:
  * 1 - find all possible paths between source and destination
+ * 2 - define the optimal path
  */
 int CPheadquarters::T3_1MinCost(string source, string destination) {
     Vertex *sourceVertex = lines.findVertex(source); // set source vertex
@@ -195,50 +202,54 @@ int CPheadquarters::T3_1MinCost(string source, string destination) {
 
 
     graph.findAllPaths(sourceVertex, destVertex, path, allPaths);
-
-    vector<int> maxFlows;
-    vector<int> totalCosts;
+    if(allPaths.size() > 2) {
+        vector<int> maxFlows;
+        vector<int> totalCosts;
 // output all the paths
-    for (auto path: allPaths) {
-        int minWeight = 10;
-        int totalCost = 0; // total cost of this path
-        for (int i = 0; i + 1 < path.size(); i++) {
-            std::cout << path[i]->getId() << " -> ";
-            Edge *e = graph.findEdge(path[i], path[i + 1]);
-            cout << " (" << e->getWeight() << " trains, " << e->getService() << " service) ";
-            if (e->getWeight() < minWeight) {
-                minWeight = e->getWeight();
-            }
+        for (auto path: allPaths) {
+            int minWeight = 10;
+            int totalCost = 0; // total cost of this path
+            for (int i = 0; i + 1 < path.size(); i++) {
+                std::cout << path[i]->getId() << " -> ";
+                Edge *e = graph.findEdge(path[i], path[i + 1]);
+                cout << " (" << e->getWeight() << " trains, " << e->getService() << " service) ";
+                if (e->getWeight() < minWeight) {
+                    minWeight = e->getWeight();
+                }
 
-            // according to the problem's specification, the cost of STANDARD service is 2 euros and ALFA PENDULAR is 4
-            if (e->getService() == "STANDARD") {
-                totalCost += 2;
-            } else if (e->getService() == "ALFA PENDULAR") {
-                totalCost += 4;
+                // according to the problem's specification, the cost of STANDARD service is 2 euros and ALFA PENDULAR is 4
+                if (e->getService() == "STANDARD") {
+                    totalCost += 2;
+                } else if (e->getService() == "ALFA PENDULAR") {
+                    totalCost += 4;
+                }
+            }
+            maxFlows.push_back(minWeight);
+            totalCosts.push_back(totalCost);
+            cout << " -> " << path[path.size() - 1]->getId() << endl;
+            cout << "Max flow for this path: " << minWeight << " trains. ";
+            cout << "Total cost: " << totalCost << " euros." << endl;
+            std::cout << std::endl;
+        }
+
+        // find the path with the minimum cost
+        int maxTrains = 0;
+        int resCost;
+        double max_value = DBL_MAX;
+        for (int i = 0; i < maxFlows.size(); ++i) {
+            double costPerTrain = (double) totalCosts[i] / maxFlows[i];
+            if (costPerTrain < max_value) {
+                max_value = costPerTrain;
+                maxTrains = maxFlows[i];
+                resCost = totalCosts[i];
             }
         }
-        maxFlows.push_back(minWeight);
-        totalCosts.push_back(totalCost);
-        cout << " -> " << path[path.size() - 1]->getId() << endl;
-        cout << "Max flow for this path: " << minWeight << " trains. ";
-        cout << "Total cost: " << totalCost << " euros." << endl;
-        std::cout << std::endl;
-    }
 
-    // find the path with the minimum cost
-    int maxTrains = 0;
-    int resCost;
-    double max_value = DBL_MAX;
-    for (int i = 0; i < maxFlows.size(); ++i) {
-        double costPerTrain = (double) totalCosts[i] / maxFlows[i];
-        if(costPerTrain < max_value){
-            max_value = costPerTrain;
-            maxTrains = maxFlows[i];
-            resCost = totalCosts[i];
-        }
-    }
+        cout << "Max number of trains that can travel between " << source << " and " << destination
+             << " with minimum cost"
+             << "(" << resCost << " euros): " << maxTrains << " trains\n" << endl;
 
-    cout << "Max number of trains that can travel between " << source << " and " << destination << " with minimum cost"
-    <<"(" << resCost << " euros): "<< maxTrains << " trains\n" << endl;
-    return maxTrains;
+        cout << "\n\n------------------------ Next pair ------------------------\n\n";
+    }
+    return 0;
 }

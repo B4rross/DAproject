@@ -2,6 +2,7 @@
 
 #include <climits>
 #include <queue>
+#include <unordered_set>
 #include "Graph.h"
 
 int Graph::getNumVertex() const {
@@ -247,3 +248,7 @@ Edge *Graph::findEdge(Vertex *source, Vertex *destination) {
     }
     return nullptr;
 }
+
+
+
+// ----------------------------------------------- find all stations that have more than one path to the destination -----------------------------------------------

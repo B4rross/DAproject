@@ -73,7 +73,20 @@ int main() {
             }
 
             case 5: {
-                CP.T3_1MinCost("Entroncamento","Lisboa Oriente");
+                cin.ignore(); // ignore newline character left in the input stream
+                string a, b;
+                cout << "Enter station A: ";
+                getline(cin, a);
+                cout << endl;
+                cout << "Enter station B: ";
+                getline(cin, b);
+
+                if (a.empty() || b.empty()) {
+                    cerr << "Error: Station names cannot be empty." << endl;
+                    break;
+                }
+
+                CP.T3_1MinCost(a,b);
                 break;
             }
 

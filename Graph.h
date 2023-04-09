@@ -47,6 +47,7 @@ public:
     void findAllPaths(Vertex *source, Vertex *destination, std::vector<Vertex*> &path, std::vector<std::vector<Vertex*>> &allPaths);
     Edge *findEdge(Vertex *source, Vertex *destination);
 
+
 protected:
     std::vector<Vertex *> vertexSet;    // vertex set
 
