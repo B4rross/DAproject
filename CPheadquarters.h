@@ -23,8 +23,11 @@ public:
     int T2_2maxflowAllStations();
     int T2_3municipality(string municipality);
     int T2_3district(string district);
+    int T2_4maxArrive(string destination);
+
 
     void test();
+
 };
 
 
