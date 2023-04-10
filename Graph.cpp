@@ -12,8 +12,10 @@ std::vector<Vertex *> Graph::getVertexSet() const {
     return vertexSet;
 }
 
-/*
+/**
  * Auxiliary function to find a vertex with a given content.
+ * @param id
+ * @return vertex pointer to vertex with given content, or nullptr if not found
  */
 Vertex *Graph::findVertex(const std::string &id) const {
     for (auto v: vertexSet) {
@@ -23,8 +25,10 @@ Vertex *Graph::findVertex(const std::string &id) const {
     return nullptr;
 }
 
-/*
+/**
  * Finds the index of the vertex with a given content.
+ * @param id
+ * @return
  */
 int Graph::findVertexIdx(const std::string &id) const {
     for (unsigned i = 0; i < vertexSet.size(); i++)
