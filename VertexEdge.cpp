@@ -10,7 +10,7 @@ Vertex::Vertex(std::string id) : id(id) {}
  * Auxiliary function to add an outgoing edge to a vertex (this),
  * with a given destination vertex (d) and edge weight (w).
  */
-Edge *Vertex::addEdge(Vertex *d, int w, std::string service) {
+Edge *Vertex::addEdge(Vertex *d, int w, const std::string &service) {
     auto newEdge = new Edge(this, d, w, service);
     adj.push_back(newEdge);
     d->incoming.push_back(newEdge);
@@ -125,8 +125,8 @@ void Vertex::print() const {
 
 /********************** Edge  ****************************/
 
-Edge::Edge(Vertex *orig, Vertex *dest, int w, std::string service) : orig(orig), dest(dest), weight(w),
-                                                                     service(service), flow(0) {}
+Edge::Edge(Vertex *orig, Vertex *dest, int w, const std::string &service) : orig(orig), dest(dest), weight(w),
+                                                                            service(service), flow(0) {}
 
 Vertex *Edge::getDest() const {
     return this->dest;
@@ -162,6 +162,10 @@ void Edge::setReverse(Edge *reverse) {
 
 void Edge::setFlow(double flow) {
     this->flow = flow;
+}
+
+void Edge::setService(const std::string &service) {
+    this->service = service;
 }
 
 std::string Edge::getService() const {

@@ -32,7 +32,7 @@ public:
      * destination vertices and the edge weight (w).
      * Returns true if successful, and false if the source or destination vertex does not exist.
      */
-    bool addEdge(const std::string &sourc, const std::string &dest, int w, std::string service);
+    bool addEdge(const std::string &sourc, const std::string &dest, int w, const std::string &service);
 
     bool addBidirectionalEdge(const std::string &sourc, const std::string &dest, int w, std::string service);
 

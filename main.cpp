@@ -6,6 +6,7 @@ using namespace std;
 int main() {
     CPheadquarters CP;
     CP.read_files();
+    CP.getLines().print();
     int n;
     cout << "-------------- An Analysis Tool for Railway Network Management --------------\n" << endl;
     do {
@@ -62,9 +63,10 @@ int main() {
             case 3: {
                 cin.ignore();
                 string c;
-                cout << "Enter municipality: ";
+                cout << "Enter municipality: " << endl;
+                cout << "For example, PENAFIEL: ";
                 getline(cin, c);
-                cout << CP.T2_3municipality(c);
+                cout << "The maximum flow im Municipality " << c << " is " << CP.T2_3municipality(c) << endl;
                 break;
             }
 
