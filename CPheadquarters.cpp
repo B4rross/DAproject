@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include "CPheadquarters.h"
+#include <chrono>
 
 using namespace std;
 
@@ -74,15 +75,12 @@ void CPheadquarters::read_files() {
     }
 }
 
+
 Graph CPheadquarters::getLines() const {
     return this->lines;
 }
 
-/*
- * Calculate the maximum number of trains that can simultaneously travel between
- * two specific stations. Note that your implementation should take any valid source and destination
- * stations as input
- */
+
 int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
     Vertex *source = lines.findVertex(stationA); // set source vertex
     Vertex *sink = lines.findVertex(stationB); // set sink vertex
@@ -109,14 +107,15 @@ void CPheadquarters::test() {
 }
 
 
-/*
- * Determine, from all pairs of stations, which ones (if more than one) require the
- * most amount of trains when taking full advantage of the existing network capacity;
- */
+
 int CPheadquarters::T2_2maxflowAllStations() {
     vector<string> stations;
     int maxFlow = 0;
     auto length = lines.getVertexSet().size();
+    // Start the timer
+    auto start_time = std::chrono::high_resolution_clock::now();
+    cout << "Calculating max flow for all pairs of stations..." << endl;
+    cout << "Please stand by..." << endl;
     for (int i = 0; i < length; ++i) {
         for (int j = i + 1; j < length; ++j) {
             string stationA = lines.getVertexSet()[i]->getId();
@@ -133,11 +132,20 @@ int CPheadquarters::T2_2maxflowAllStations() {
             }
         }
     }
+    // End the timer
+    auto end_time = std::chrono::high_resolution_clock::now();
+
+    // Compute the duration
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+
+    // Print the duration
+    std::cout << "Time taken: " << duration.count() << " ms" << std::endl;
+
     cout << "Pairs of stations with the most flow [" << maxFlow << "]:\n";
     for (int i = 0; i < stations.size(); i = i + 2) {
         cout << "------------------------\n";
-        cout << "Source:" << stations[i + 1] << '\n';
-        cout << "Target:" << stations[i] << '\n';
+        cout << "Source: " << stations[i + 1] << '\n';
+        cout << "Target: " << stations[i] << '\n';
         cout << "------------------------\n";
     }
     return 0;
@@ -166,10 +174,7 @@ int CPheadquarters::T2_3district(string district) {
     return lines.mul_edmondsKarp(lines.find_sources(desired_stations), lines.find_targets(desired_stations));
 }
 
-/*
- * Report the maximum number of trains that can simultaneously arrive at a given station,
- * taking into consideration the entire railway grid
- */
+
 int CPheadquarters::T2_4maxArrive(string destination) {
     Vertex *dest = lines.findVertex(destination);
     int maxFlow = 0;
@@ -200,17 +205,7 @@ int CPheadquarters::T2_4maxArrive(string destination) {
 }
 
 
-/*
- * Calculate the maximum amount of trains that can simultaneously travel between
- * two specific stations with minimum cost for the company
- * constraints:
- * 1. Minimize cost
- * 2. 'Maintain the same level of service'
- *
- * steps:
- * 1 - find all possible paths between source and destination
- * 2 - define the optimal path
- */
+
 int CPheadquarters::T3_1MinCost(string source, string destination) {
     Vertex *sourceVertex = lines.findVertex(source); // set source vertex
     Vertex *destVertex = lines.findVertex(destination); // set sink vertex
@@ -276,6 +271,7 @@ int CPheadquarters::T3_1MinCost(string source, string destination) {
     return maxTrains;
 }
 
+
 int CPheadquarters::T4_1ReducedConectivity(std::vector<std::string> unwantedEdges, std::string s, std::string t) {
     Graph graph;
     ifstream inputFile1;
@@ -304,12 +300,12 @@ int CPheadquarters::T4_1ReducedConectivity(std::vector<std::string> unwantedEdge
         graph.addVertex(station_A);
         graph.addVertex(station_B);
         for (int i = 0; i < unwantedEdges.size(); i = i + 2) {
-            if(station_A==unwantedEdges[i] && station_B==unwantedEdges[i+1]){
-                flag=false;
+            if (station_A == unwantedEdges[i] && station_B == unwantedEdges[i + 1]) {
+                flag = false;
 
             }
         }
-        if(flag) {
+        if (flag) {
             graph.addEdge(station_A, station_B, capacity, service);
         }
         line1 = "";
@@ -334,6 +330,7 @@ int CPheadquarters::T4_1ReducedConectivity(std::vector<std::string> unwantedEdge
 
     return 1;
 }
+
 
 int CPheadquarters::T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges) {
     Graph graph;
@@ -363,12 +360,12 @@ int CPheadquarters::T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges) {
         graph.addVertex(station_A);
         graph.addVertex(station_B);
         for (int i = 0; i < unwantedEdges.size(); i = i + 2) {
-            if(station_A==unwantedEdges[i] && station_B==unwantedEdges[i+1]){
-                flag=false;
+            if (station_A == unwantedEdges[i] && station_B == unwantedEdges[i + 1]) {
+                flag = false;
                 break;
             }
         }
-        if(flag) {
+        if (flag) {
             graph.addEdge(station_A, station_B, capacity, service);
         }
         line1 = "";
@@ -398,15 +395,15 @@ int CPheadquarters::T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges) {
             continue;
         }
         int diff = maxFlow1 - maxFlow2;
-        auto p = pair(i,diff);
+        auto p = pair(i, diff);
         top_k.push_back(p);
         cout << "a";
     }
     std::sort(top_k.begin(), top_k.end(), [](auto &left, auto &right) {
         return left.second > right.second;
     });
-    for(int i = 0; i < 10; i++){
-        cout << i+1 << "-" << lines.getVertexSet()[top_k[i].first]->getId() << " -> " << top_k[i].second << '\n';
+    for (int i = 0; i < 10; i++) {
+        cout << i + 1 << "-" << lines.getVertexSet()[top_k[i].first]->getId() << " -> " << top_k[i].second << '\n';
     }
     return 1;
 }
