@@ -270,32 +270,16 @@ void CPheadquarters::T2_3district() {
 
 
 int CPheadquarters::T2_4maxArrive(string destination) {
-    Vertex *dest = lines.findVertex(destination);
     int maxFlow = 0;
-
-    // iterate over all vertices to find incoming and outgoing vertices
-    for (auto &v: lines.getVertexSet()) {
-        if (v != dest) {
-
-            int flow = lines.edmondsKarp(v->getId(), destination);
-
-            // Update the maximum flow if this vertex contributes to a higher maximum
-            if (flow > maxFlow) {
-                maxFlow = flow;
-            }
-        }
-
+    vector<string> org = lines.getSources();
+    vector<string> targ = lines.getTargets();
+    auto v = lines.findVertex(destination);
+    lines.mul_edmondsKarp(org,targ);
+    for(auto e : v->getIncoming()){
+        maxFlow+=e->getFlow();
     }
-
-    cout << endl;
-    for (auto &e: dest->getIncoming()) {
-        cout << e->getOrig()->getId() << " -> " << e->getDest()->getId() << " : " << e->getWeight() << endl;
-
-    }
-
-    cout << "Max number of trains that can simultaneously arrive at " << destination << ": " << maxFlow << endl;
+    cout << "Max Flow: " << maxFlow << '\n';
     return maxFlow;
-
 }
 
 
