@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print_0',['print',['../classGraph.html#aeeede3cb48be5d8cac08ea05ce54bd52',1,'Graph']]]
+  ['mul_5fedmondskarp_0',['mul_edmondsKarp',['../classGraph.html#ad531840e53343caa6ea0d60473df756f',1,'Graph']]]
 ];

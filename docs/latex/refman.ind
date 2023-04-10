@@ -5,46 +5,43 @@
 
   \indexspace
 
-  \item {addBidirectionalEdge}
-    \subitem {Graph}, \hyperpage{21}
   \item {addEdge}
     \subitem {Graph}, \hyperpage{21}
-    \subitem {Vertex}, \hyperpage{30}
+    \subitem {Vertex}, \hyperpage{34}
   \item {addVertex}
     \subitem {Graph}, \hyperpage{21}
   \item {adj}
-    \subitem {Vertex}, \hyperpage{34}
+    \subitem {Vertex}, \hyperpage{37}
 
   \indexspace
 
-  \item {capacity}
-    \subitem {Edge}, \hyperpage{19}
   \item {CPheadquarters}, \hyperpage{7}
-    \subitem {getLines}, \hyperpage{7}
-    \subitem {read\_files}, \hyperpage{7}
-    \subitem {T2\_1maxflow}, \hyperpage{8}
+    \subitem {getLines}, \hyperpage{8}
+    \subitem {read\_files}, \hyperpage{8}
+    \subitem {T2\_1maxflow}, \hyperpage{9}
     \subitem {T2\_2maxflowAllStations}, \hyperpage{9}
-    \subitem {T2\_3district}, \hyperpage{9}
+    \subitem {T2\_3district}, \hyperpage{10}
     \subitem {T2\_3municipality}, \hyperpage{10}
-    \subitem {T2\_4maxArrive}, \hyperpage{10}
-    \subitem {T3\_1MinCost}, \hyperpage{11}
-    \subitem {T4\_1ReducedConectivity}, \hyperpage{12}
-    \subitem {T4\_2Top\_K\_ReducedConectivity}, \hyperpage{13}
-    \subitem {test}, \hyperpage{16}
+    \subitem {T2\_4maxArrive}, \hyperpage{11}
+    \subitem {T3\_1MinCost}, \hyperpage{12}
+    \subitem {T4\_1ReducedConectivity}, \hyperpage{13}
+    \subitem {T4\_2Top\_K\_ReducedConectivity}, \hyperpage{14}
+    \subitem {test}, \hyperpage{15}
 
   \indexspace
 
+  \item {deleteVertex}
+    \subitem {Graph}, \hyperpage{22}
   \item {dest}
     \subitem {Edge}, \hyperpage{19}
   \item {dist}
-    \subitem {Vertex}, \hyperpage{34}
+    \subitem {Vertex}, \hyperpage{37}
   \item {distMatrix}
-    \subitem {Graph}, \hyperpage{27}
+    \subitem {Graph}, \hyperpage{30}
 
   \indexspace
 
   \item {Edge}, \hyperpage{16}
-    \subitem {capacity}, \hyperpage{19}
     \subitem {dest}, \hyperpage{19}
     \subitem {Edge}, \hyperpage{17}
     \subitem {flow}, \hyperpage{19}
@@ -63,150 +60,153 @@
     \subitem {setReverse}, \hyperpage{18}
     \subitem {setSelected}, \hyperpage{18}
     \subitem {setService}, \hyperpage{18}
-    \subitem {weight}, \hyperpage{20}
+    \subitem {weight}, \hyperpage{19}
   \item {edmondsKarp}
     \subitem {Graph}, \hyperpage{22}
 
   \indexspace
 
   \item {find\_sources}
-    \subitem {Graph}, \hyperpage{22}
+    \subitem {Graph}, \hyperpage{23}
   \item {find\_targets}
-    \subitem {Graph}, \hyperpage{22}
+    \subitem {Graph}, \hyperpage{23}
   \item {findAllPaths}
-    \subitem {Graph}, \hyperpage{23}
+    \subitem {Graph}, \hyperpage{24}
   \item {findAugmentingPath}
-    \subitem {Graph}, \hyperpage{23}
+    \subitem {Graph}, \hyperpage{24}
   \item {findEdge}
-    \subitem {Graph}, \hyperpage{24}
+    \subitem {Graph}, \hyperpage{25}
   \item {findMinResidual}
-    \subitem {Graph}, \hyperpage{24}
+    \subitem {Graph}, \hyperpage{26}
   \item {findVertex}
-    \subitem {Graph}, \hyperpage{24}
-  \item {findVertexIdx}
-    \subitem {Graph}, \hyperpage{24}
+    \subitem {Graph}, \hyperpage{26}
   \item {flow}
     \subitem {Edge}, \hyperpage{19}
 
   \indexspace
 
   \item {get\_district}
-    \subitem {Station}, \hyperpage{28}
+    \subitem {Station}, \hyperpage{32}
   \item {get\_line}
-    \subitem {Station}, \hyperpage{28}
+    \subitem {Station}, \hyperpage{32}
   \item {get\_municipality}
-    \subitem {Station}, \hyperpage{28}
+    \subitem {Station}, \hyperpage{32}
   \item {get\_name}
-    \subitem {Station}, \hyperpage{29}
+    \subitem {Station}, \hyperpage{32}
   \item {get\_township}
-    \subitem {Station}, \hyperpage{29}
+    \subitem {Station}, \hyperpage{32}
   \item {getAdj}
-    \subitem {Vertex}, \hyperpage{30}
+    \subitem {Vertex}, \hyperpage{34}
   \item {getDest}
     \subitem {Edge}, \hyperpage{17}
   \item {getDist}
-    \subitem {Vertex}, \hyperpage{31}
+    \subitem {Vertex}, \hyperpage{34}
   \item {getFlow}
     \subitem {Edge}, \hyperpage{17}
   \item {getId}
-    \subitem {Vertex}, \hyperpage{31}
+    \subitem {Vertex}, \hyperpage{34}
   \item {getIncoming}
-    \subitem {Vertex}, \hyperpage{31}
+    \subitem {Vertex}, \hyperpage{34}
   \item {getIndegree}
-    \subitem {Vertex}, \hyperpage{31}
+    \subitem {Vertex}, \hyperpage{34}
   \item {getLines}
-    \subitem {CPheadquarters}, \hyperpage{7}
+    \subitem {CPheadquarters}, \hyperpage{8}
   \item {getNumVertex}
-    \subitem {Graph}, \hyperpage{25}
+    \subitem {Graph}, \hyperpage{27}
   \item {getOrig}
     \subitem {Edge}, \hyperpage{17}
   \item {getPath}
-    \subitem {Vertex}, \hyperpage{31}
+    \subitem {Vertex}, \hyperpage{35}
   \item {getReverse}
     \subitem {Edge}, \hyperpage{17}
   \item {getService}
     \subitem {Edge}, \hyperpage{17}
+  \item {getSources}
+    \subitem {Graph}, \hyperpage{27}
+  \item {getTargets}
+    \subitem {Graph}, \hyperpage{27}
   \item {getVertexSet}
-    \subitem {Graph}, \hyperpage{25}
+    \subitem {Graph}, \hyperpage{27}
   \item {getWeight}
     \subitem {Edge}, \hyperpage{18}
   \item {Graph}, \hyperpage{20}
     \subitem {$\sim$Graph}, \hyperpage{21}
-    \subitem {addBidirectionalEdge}, \hyperpage{21}
     \subitem {addEdge}, \hyperpage{21}
     \subitem {addVertex}, \hyperpage{21}
-    \subitem {distMatrix}, \hyperpage{27}
+    \subitem {deleteVertex}, \hyperpage{22}
+    \subitem {distMatrix}, \hyperpage{30}
     \subitem {edmondsKarp}, \hyperpage{22}
-    \subitem {find\_sources}, \hyperpage{22}
-    \subitem {find\_targets}, \hyperpage{22}
-    \subitem {findAllPaths}, \hyperpage{23}
-    \subitem {findAugmentingPath}, \hyperpage{23}
-    \subitem {findEdge}, \hyperpage{24}
-    \subitem {findMinResidual}, \hyperpage{24}
-    \subitem {findVertex}, \hyperpage{24}
-    \subitem {findVertexIdx}, \hyperpage{24}
-    \subitem {getNumVertex}, \hyperpage{25}
-    \subitem {getVertexSet}, \hyperpage{25}
-    \subitem {isIn}, \hyperpage{25}
-    \subitem {mul\_edmondsKarp}, \hyperpage{25}
-    \subitem {pathMatrix}, \hyperpage{27}
-    \subitem {print}, \hyperpage{26}
-    \subitem {testAndVisit}, \hyperpage{26}
-    \subitem {updateFlow}, \hyperpage{26}
-    \subitem {vertexSet}, \hyperpage{27}
+    \subitem {find\_sources}, \hyperpage{23}
+    \subitem {find\_targets}, \hyperpage{23}
+    \subitem {findAllPaths}, \hyperpage{24}
+    \subitem {findAugmentingPath}, \hyperpage{24}
+    \subitem {findEdge}, \hyperpage{25}
+    \subitem {findMinResidual}, \hyperpage{26}
+    \subitem {findVertex}, \hyperpage{26}
+    \subitem {getNumVertex}, \hyperpage{27}
+    \subitem {getSources}, \hyperpage{27}
+    \subitem {getTargets}, \hyperpage{27}
+    \subitem {getVertexSet}, \hyperpage{27}
+    \subitem {isIn}, \hyperpage{28}
+    \subitem {mul\_edmondsKarp}, \hyperpage{28}
+    \subitem {pathMatrix}, \hyperpage{30}
+    \subitem {print}, \hyperpage{29}
+    \subitem {testAndVisit}, \hyperpage{29}
+    \subitem {updateFlow}, \hyperpage{30}
+    \subitem {vertexSet}, \hyperpage{30}
 
   \indexspace
 
   \item {id}
-    \subitem {Vertex}, \hyperpage{34}
+    \subitem {Vertex}, \hyperpage{37}
   \item {incoming}
-    \subitem {Vertex}, \hyperpage{34}
+    \subitem {Vertex}, \hyperpage{37}
   \item {indegree}
-    \subitem {Vertex}, \hyperpage{34}
+    \subitem {Vertex}, \hyperpage{38}
   \item {isIn}
-    \subitem {Graph}, \hyperpage{25}
+    \subitem {Graph}, \hyperpage{28}
   \item {isProcessing}
-    \subitem {Vertex}, \hyperpage{31}
+    \subitem {Vertex}, \hyperpage{35}
   \item {isSelected}
     \subitem {Edge}, \hyperpage{18}
   \item {isVisited}
-    \subitem {Vertex}, \hyperpage{32}
+    \subitem {Vertex}, \hyperpage{35}
 
   \indexspace
 
   \item {mul\_edmondsKarp}
-    \subitem {Graph}, \hyperpage{25}
+    \subitem {Graph}, \hyperpage{28}
 
   \indexspace
 
   \item {operator$<$}
-    \subitem {Vertex}, \hyperpage{32}
+    \subitem {Vertex}, \hyperpage{35}
   \item {orig}
     \subitem {Edge}, \hyperpage{19}
 
   \indexspace
 
   \item {path}
-    \subitem {Vertex}, \hyperpage{35}
+    \subitem {Vertex}, \hyperpage{38}
   \item {pathMatrix}
-    \subitem {Graph}, \hyperpage{27}
+    \subitem {Graph}, \hyperpage{30}
   \item {print}
-    \subitem {Graph}, \hyperpage{26}
-    \subitem {Vertex}, \hyperpage{32}
-  \item {processing}
+    \subitem {Graph}, \hyperpage{29}
     \subitem {Vertex}, \hyperpage{35}
+  \item {processing}
+    \subitem {Vertex}, \hyperpage{38}
 
   \indexspace
 
   \item {queueIndex}
-    \subitem {Vertex}, \hyperpage{35}
+    \subitem {Vertex}, \hyperpage{38}
 
   \indexspace
 
   \item {read\_files}
-    \subitem {CPheadquarters}, \hyperpage{7}
+    \subitem {CPheadquarters}, \hyperpage{8}
   \item {removeEdge}
-    \subitem {Vertex}, \hyperpage{32}
+    \subitem {Vertex}, \hyperpage{35}
   \item {reverse}
     \subitem {Edge}, \hyperpage{19}
 
@@ -217,17 +217,17 @@
   \item {service}
     \subitem {Edge}, \hyperpage{19}
   \item {setDist}
-    \subitem {Vertex}, \hyperpage{33}
+    \subitem {Vertex}, \hyperpage{36}
   \item {setFlow}
     \subitem {Edge}, \hyperpage{18}
   \item {setId}
-    \subitem {Vertex}, \hyperpage{33}
+    \subitem {Vertex}, \hyperpage{36}
   \item {setIndegree}
-    \subitem {Vertex}, \hyperpage{33}
+    \subitem {Vertex}, \hyperpage{36}
   \item {setPath}
-    \subitem {Vertex}, \hyperpage{33}
+    \subitem {Vertex}, \hyperpage{36}
   \item {setProcesssing}
-    \subitem {Vertex}, \hyperpage{33}
+    \subitem {Vertex}, \hyperpage{37}
   \item {setReverse}
     \subitem {Edge}, \hyperpage{18}
   \item {setSelected}
@@ -235,82 +235,82 @@
   \item {setService}
     \subitem {Edge}, \hyperpage{18}
   \item {setVisited}
-    \subitem {Vertex}, \hyperpage{34}
-  \item {Station}, \hyperpage{27}
-    \subitem {get\_district}, \hyperpage{28}
-    \subitem {get\_line}, \hyperpage{28}
-    \subitem {get\_municipality}, \hyperpage{28}
-    \subitem {get\_name}, \hyperpage{29}
-    \subitem {get\_township}, \hyperpage{29}
-    \subitem {Station}, \hyperpage{28}
+    \subitem {Vertex}, \hyperpage{37}
+  \item {Station}, \hyperpage{31}
+    \subitem {get\_district}, \hyperpage{32}
+    \subitem {get\_line}, \hyperpage{32}
+    \subitem {get\_municipality}, \hyperpage{32}
+    \subitem {get\_name}, \hyperpage{32}
+    \subitem {get\_township}, \hyperpage{32}
+    \subitem {Station}, \hyperpage{31}
 
   \indexspace
 
   \item {T2\_1maxflow}
-    \subitem {CPheadquarters}, \hyperpage{8}
+    \subitem {CPheadquarters}, \hyperpage{9}
   \item {T2\_2maxflowAllStations}
     \subitem {CPheadquarters}, \hyperpage{9}
   \item {T2\_3district}
-    \subitem {CPheadquarters}, \hyperpage{9}
+    \subitem {CPheadquarters}, \hyperpage{10}
   \item {T2\_3municipality}
     \subitem {CPheadquarters}, \hyperpage{10}
   \item {T2\_4maxArrive}
-    \subitem {CPheadquarters}, \hyperpage{10}
-  \item {T3\_1MinCost}
     \subitem {CPheadquarters}, \hyperpage{11}
-  \item {T4\_1ReducedConectivity}
+  \item {T3\_1MinCost}
     \subitem {CPheadquarters}, \hyperpage{12}
-  \item {T4\_2Top\_K\_ReducedConectivity}
+  \item {T4\_1ReducedConectivity}
     \subitem {CPheadquarters}, \hyperpage{13}
+  \item {T4\_2Top\_K\_ReducedConectivity}
+    \subitem {CPheadquarters}, \hyperpage{14}
   \item {test}
-    \subitem {CPheadquarters}, \hyperpage{16}
+    \subitem {CPheadquarters}, \hyperpage{15}
   \item {testAndVisit}
-    \subitem {Graph}, \hyperpage{26}
+    \subitem {Graph}, \hyperpage{29}
 
   \indexspace
 
   \item {updateFlow}
-    \subitem {Graph}, \hyperpage{26}
+    \subitem {Graph}, \hyperpage{30}
 
   \indexspace
 
-  \item {Vertex}, \hyperpage{29}
-    \subitem {addEdge}, \hyperpage{30}
-    \subitem {adj}, \hyperpage{34}
-    \subitem {dist}, \hyperpage{34}
-    \subitem {getAdj}, \hyperpage{30}
-    \subitem {getDist}, \hyperpage{31}
-    \subitem {getId}, \hyperpage{31}
-    \subitem {getIncoming}, \hyperpage{31}
-    \subitem {getIndegree}, \hyperpage{31}
-    \subitem {getPath}, \hyperpage{31}
-    \subitem {id}, \hyperpage{34}
-    \subitem {incoming}, \hyperpage{34}
-    \subitem {indegree}, \hyperpage{34}
-    \subitem {isProcessing}, \hyperpage{31}
-    \subitem {isVisited}, \hyperpage{32}
-    \subitem {operator$<$}, \hyperpage{32}
-    \subitem {path}, \hyperpage{35}
-    \subitem {print}, \hyperpage{32}
-    \subitem {processing}, \hyperpage{35}
-    \subitem {queueIndex}, \hyperpage{35}
-    \subitem {removeEdge}, \hyperpage{32}
-    \subitem {setDist}, \hyperpage{33}
-    \subitem {setId}, \hyperpage{33}
-    \subitem {setIndegree}, \hyperpage{33}
-    \subitem {setPath}, \hyperpage{33}
-    \subitem {setProcesssing}, \hyperpage{33}
-    \subitem {setVisited}, \hyperpage{34}
-    \subitem {Vertex}, \hyperpage{30}
-    \subitem {visited}, \hyperpage{35}
+  \item {Vertex}, \hyperpage{33}
+    \subitem {addEdge}, \hyperpage{34}
+    \subitem {adj}, \hyperpage{37}
+    \subitem {dist}, \hyperpage{37}
+    \subitem {getAdj}, \hyperpage{34}
+    \subitem {getDist}, \hyperpage{34}
+    \subitem {getId}, \hyperpage{34}
+    \subitem {getIncoming}, \hyperpage{34}
+    \subitem {getIndegree}, \hyperpage{34}
+    \subitem {getPath}, \hyperpage{35}
+    \subitem {id}, \hyperpage{37}
+    \subitem {incoming}, \hyperpage{37}
+    \subitem {indegree}, \hyperpage{38}
+    \subitem {isProcessing}, \hyperpage{35}
+    \subitem {isVisited}, \hyperpage{35}
+    \subitem {operator$<$}, \hyperpage{35}
+    \subitem {path}, \hyperpage{38}
+    \subitem {print}, \hyperpage{35}
+    \subitem {processing}, \hyperpage{38}
+    \subitem {queueIndex}, \hyperpage{38}
+    \subitem {removeEdge}, \hyperpage{35}
+    \subitem {setDist}, \hyperpage{36}
+    \subitem {setId}, \hyperpage{36}
+    \subitem {setIndegree}, \hyperpage{36}
+    \subitem {setPath}, \hyperpage{36}
+    \subitem {setProcesssing}, \hyperpage{37}
+    \subitem {setVisited}, \hyperpage{37}
+    \subitem {Vertex}, \hyperpage{33}
+    \subitem {visited}, \hyperpage{38}
   \item {vertexSet}
-    \subitem {Graph}, \hyperpage{27}
+    \subitem {Graph}, \hyperpage{30}
   \item {visited}
-    \subitem {Vertex}, \hyperpage{35}
+    \subitem {Vertex}, \hyperpage{38}
 
   \indexspace
 
   \item {weight}
-    \subitem {Edge}, \hyperpage{20}
+    \subitem {Edge}, \hyperpage{19}
 
 \end{theindex}

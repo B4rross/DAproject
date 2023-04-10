@@ -9,17 +9,17 @@
 \contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
 \contentsline {section}{\numberline {4.1}CPheadquarters Class Reference}{7}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Detailed Description}{7}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Member Function Documentation}{7}{subsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.2.1}getLines()}{7}{subsubsection.4.1.2.1}%
+\contentsline {subsection}{\numberline {4.1.2}Member Function Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}getLines()}{8}{subsubsection.4.1.2.1}%
 \contentsline {subsubsection}{\numberline {4.1.2.2}read\_files()}{8}{subsubsection.4.1.2.2}%
-\contentsline {subsubsection}{\numberline {4.1.2.3}T2\_1maxflow()}{8}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}T2\_1maxflow()}{9}{subsubsection.4.1.2.3}%
 \contentsline {subsubsection}{\numberline {4.1.2.4}T2\_2maxflowAllStations()}{9}{subsubsection.4.1.2.4}%
 \contentsline {subsubsection}{\numberline {4.1.2.5}T2\_3district()}{10}{subsubsection.4.1.2.5}%
-\contentsline {subsubsection}{\numberline {4.1.2.6}T2\_3municipality()}{10}{subsubsection.4.1.2.6}%
-\contentsline {subsubsection}{\numberline {4.1.2.7}T2\_4maxArrive()}{10}{subsubsection.4.1.2.7}%
-\contentsline {subsubsection}{\numberline {4.1.2.8}T3\_1MinCost()}{11}{subsubsection.4.1.2.8}%
-\contentsline {subsubsection}{\numberline {4.1.2.9}T4\_1ReducedConectivity()}{12}{subsubsection.4.1.2.9}%
-\contentsline {subsubsection}{\numberline {4.1.2.10}T4\_2Top\_K\_ReducedConectivity()}{13}{subsubsection.4.1.2.10}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}T2\_3municipality()}{11}{subsubsection.4.1.2.6}%
+\contentsline {subsubsection}{\numberline {4.1.2.7}T2\_4maxArrive()}{11}{subsubsection.4.1.2.7}%
+\contentsline {subsubsection}{\numberline {4.1.2.8}T3\_1MinCost()}{12}{subsubsection.4.1.2.8}%
+\contentsline {subsubsection}{\numberline {4.1.2.9}T4\_1ReducedConectivity()}{13}{subsubsection.4.1.2.9}%
+\contentsline {subsubsection}{\numberline {4.1.2.10}T4\_2Top\_K\_ReducedConectivity()}{14}{subsubsection.4.1.2.10}%
 \contentsline {subsubsection}{\numberline {4.1.2.11}test()}{16}{subsubsection.4.1.2.11}%
 \contentsline {section}{\numberline {4.2}Edge Class Reference}{16}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Detailed Description}{16}{subsection.4.2.1}%
@@ -38,94 +38,94 @@
 \contentsline {subsubsection}{\numberline {4.2.3.10}setSelected()}{18}{subsubsection.4.2.3.10}%
 \contentsline {subsubsection}{\numberline {4.2.3.11}setService()}{19}{subsubsection.4.2.3.11}%
 \contentsline {subsection}{\numberline {4.2.4}Member Data Documentation}{19}{subsection.4.2.4}%
-\contentsline {subsubsection}{\numberline {4.2.4.1}capacity}{19}{subsubsection.4.2.4.1}%
-\contentsline {subsubsection}{\numberline {4.2.4.2}dest}{19}{subsubsection.4.2.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.4.3}flow}{19}{subsubsection.4.2.4.3}%
-\contentsline {subsubsection}{\numberline {4.2.4.4}orig}{19}{subsubsection.4.2.4.4}%
-\contentsline {subsubsection}{\numberline {4.2.4.5}reverse}{19}{subsubsection.4.2.4.5}%
-\contentsline {subsubsection}{\numberline {4.2.4.6}selected}{19}{subsubsection.4.2.4.6}%
-\contentsline {subsubsection}{\numberline {4.2.4.7}service}{20}{subsubsection.4.2.4.7}%
-\contentsline {subsubsection}{\numberline {4.2.4.8}weight}{20}{subsubsection.4.2.4.8}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}dest}{19}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}flow}{19}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}orig}{19}{subsubsection.4.2.4.3}%
+\contentsline {subsubsection}{\numberline {4.2.4.4}reverse}{19}{subsubsection.4.2.4.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.5}selected}{19}{subsubsection.4.2.4.5}%
+\contentsline {subsubsection}{\numberline {4.2.4.6}service}{19}{subsubsection.4.2.4.6}%
+\contentsline {subsubsection}{\numberline {4.2.4.7}weight}{20}{subsubsection.4.2.4.7}%
 \contentsline {section}{\numberline {4.3}Graph Class Reference}{20}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Detailed Description}{21}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Constructor \& Destructor Documentation}{21}{subsection.4.3.2}%
 \contentsline {subsubsection}{\numberline {4.3.2.1}$\sim $Graph()}{21}{subsubsection.4.3.2.1}%
 \contentsline {subsection}{\numberline {4.3.3}Member Function Documentation}{21}{subsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.3.1}addBidirectionalEdge()}{21}{subsubsection.4.3.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.3.2}addEdge()}{21}{subsubsection.4.3.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3.3}addVertex()}{22}{subsubsection.4.3.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}addEdge()}{21}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}addVertex()}{22}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}deleteVertex()}{22}{subsubsection.4.3.3.3}%
 \contentsline {subsubsection}{\numberline {4.3.3.4}edmondsKarp()}{22}{subsubsection.4.3.3.4}%
-\contentsline {subsubsection}{\numberline {4.3.3.5}find\_sources()}{22}{subsubsection.4.3.3.5}%
-\contentsline {subsubsection}{\numberline {4.3.3.6}find\_targets()}{23}{subsubsection.4.3.3.6}%
-\contentsline {subsubsection}{\numberline {4.3.3.7}findAllPaths()}{23}{subsubsection.4.3.3.7}%
-\contentsline {subsubsection}{\numberline {4.3.3.8}findAugmentingPath()}{23}{subsubsection.4.3.3.8}%
-\contentsline {subsubsection}{\numberline {4.3.3.9}findEdge()}{24}{subsubsection.4.3.3.9}%
-\contentsline {subsubsection}{\numberline {4.3.3.10}findMinResidual()}{24}{subsubsection.4.3.3.10}%
-\contentsline {subsubsection}{\numberline {4.3.3.11}findVertex()}{24}{subsubsection.4.3.3.11}%
-\contentsline {subsubsection}{\numberline {4.3.3.12}findVertexIdx()}{25}{subsubsection.4.3.3.12}%
-\contentsline {subsubsection}{\numberline {4.3.3.13}getNumVertex()}{25}{subsubsection.4.3.3.13}%
-\contentsline {subsubsection}{\numberline {4.3.3.14}getVertexSet()}{25}{subsubsection.4.3.3.14}%
-\contentsline {subsubsection}{\numberline {4.3.3.15}isIn()}{25}{subsubsection.4.3.3.15}%
-\contentsline {subsubsection}{\numberline {4.3.3.16}mul\_edmondsKarp()}{25}{subsubsection.4.3.3.16}%
-\contentsline {subsubsection}{\numberline {4.3.3.17}print()}{26}{subsubsection.4.3.3.17}%
-\contentsline {subsubsection}{\numberline {4.3.3.18}testAndVisit()}{26}{subsubsection.4.3.3.18}%
-\contentsline {subsubsection}{\numberline {4.3.3.19}updateFlow()}{27}{subsubsection.4.3.3.19}%
-\contentsline {subsection}{\numberline {4.3.4}Member Data Documentation}{27}{subsection.4.3.4}%
-\contentsline {subsubsection}{\numberline {4.3.4.1}distMatrix}{27}{subsubsection.4.3.4.1}%
-\contentsline {subsubsection}{\numberline {4.3.4.2}pathMatrix}{27}{subsubsection.4.3.4.2}%
-\contentsline {subsubsection}{\numberline {4.3.4.3}vertexSet}{27}{subsubsection.4.3.4.3}%
-\contentsline {section}{\numberline {4.4}Station Class Reference}{27}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{28}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Constructor \& Destructor Documentation}{28}{subsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.2.1}Station()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{28}{subsubsection.4.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.4.2.2}Station()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{28}{subsubsection.4.4.2.2}%
-\contentsline {subsection}{\numberline {4.4.3}Member Function Documentation}{28}{subsection.4.4.3}%
-\contentsline {subsubsection}{\numberline {4.4.3.1}get\_district()}{28}{subsubsection.4.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.4.3.2}get\_line()}{28}{subsubsection.4.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.4.3.3}get\_municipality()}{29}{subsubsection.4.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.4.3.4}get\_name()}{29}{subsubsection.4.4.3.4}%
-\contentsline {subsubsection}{\numberline {4.4.3.5}get\_township()}{29}{subsubsection.4.4.3.5}%
-\contentsline {section}{\numberline {4.5}Vertex Class Reference}{29}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{30}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Constructor \& Destructor Documentation}{30}{subsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.2.1}Vertex()}{30}{subsubsection.4.5.2.1}%
-\contentsline {subsection}{\numberline {4.5.3}Member Function Documentation}{30}{subsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.3.1}addEdge()}{30}{subsubsection.4.5.3.1}%
-\contentsline {subsubsection}{\numberline {4.5.3.2}getAdj()}{31}{subsubsection.4.5.3.2}%
-\contentsline {subsubsection}{\numberline {4.5.3.3}getDist()}{31}{subsubsection.4.5.3.3}%
-\contentsline {subsubsection}{\numberline {4.5.3.4}getId()}{31}{subsubsection.4.5.3.4}%
-\contentsline {subsubsection}{\numberline {4.5.3.5}getIncoming()}{31}{subsubsection.4.5.3.5}%
-\contentsline {subsubsection}{\numberline {4.5.3.6}getIndegree()}{31}{subsubsection.4.5.3.6}%
-\contentsline {subsubsection}{\numberline {4.5.3.7}getPath()}{31}{subsubsection.4.5.3.7}%
-\contentsline {subsubsection}{\numberline {4.5.3.8}isProcessing()}{32}{subsubsection.4.5.3.8}%
-\contentsline {subsubsection}{\numberline {4.5.3.9}isVisited()}{32}{subsubsection.4.5.3.9}%
-\contentsline {subsubsection}{\numberline {4.5.3.10}operator$<$()}{32}{subsubsection.4.5.3.10}%
-\contentsline {subsubsection}{\numberline {4.5.3.11}print()}{32}{subsubsection.4.5.3.11}%
-\contentsline {subsubsection}{\numberline {4.5.3.12}removeEdge()}{32}{subsubsection.4.5.3.12}%
-\contentsline {subsubsection}{\numberline {4.5.3.13}setDist()}{33}{subsubsection.4.5.3.13}%
-\contentsline {subsubsection}{\numberline {4.5.3.14}setId()}{33}{subsubsection.4.5.3.14}%
-\contentsline {subsubsection}{\numberline {4.5.3.15}setIndegree()}{33}{subsubsection.4.5.3.15}%
-\contentsline {subsubsection}{\numberline {4.5.3.16}setPath()}{33}{subsubsection.4.5.3.16}%
-\contentsline {subsubsection}{\numberline {4.5.3.17}setProcesssing()}{34}{subsubsection.4.5.3.17}%
-\contentsline {subsubsection}{\numberline {4.5.3.18}setVisited()}{34}{subsubsection.4.5.3.18}%
-\contentsline {subsection}{\numberline {4.5.4}Member Data Documentation}{34}{subsection.4.5.4}%
-\contentsline {subsubsection}{\numberline {4.5.4.1}adj}{34}{subsubsection.4.5.4.1}%
-\contentsline {subsubsection}{\numberline {4.5.4.2}dist}{34}{subsubsection.4.5.4.2}%
-\contentsline {subsubsection}{\numberline {4.5.4.3}id}{34}{subsubsection.4.5.4.3}%
-\contentsline {subsubsection}{\numberline {4.5.4.4}incoming}{34}{subsubsection.4.5.4.4}%
-\contentsline {subsubsection}{\numberline {4.5.4.5}indegree}{35}{subsubsection.4.5.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.4.6}path}{35}{subsubsection.4.5.4.6}%
-\contentsline {subsubsection}{\numberline {4.5.4.7}processing}{35}{subsubsection.4.5.4.7}%
-\contentsline {subsubsection}{\numberline {4.5.4.8}queueIndex}{35}{subsubsection.4.5.4.8}%
-\contentsline {subsubsection}{\numberline {4.5.4.9}visited}{35}{subsubsection.4.5.4.9}%
-\contentsline {chapter}{\numberline {5}File Documentation}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}CPheadquarters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}CPheadquarters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{41}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Graph.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{42}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Graph.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{46}{section.5.4}%
-\contentsline {section}{\numberline {5.5}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{47}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Station.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{49}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Station.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{50}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edge.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{50}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edge.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{52}{section.5.9}%
-\contentsline {chapter}{Index}{55}{section*.11}%
+\contentsline {subsubsection}{\numberline {4.3.3.5}find\_sources()}{23}{subsubsection.4.3.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.3.6}find\_targets()}{24}{subsubsection.4.3.3.6}%
+\contentsline {subsubsection}{\numberline {4.3.3.7}findAllPaths()}{24}{subsubsection.4.3.3.7}%
+\contentsline {subsubsection}{\numberline {4.3.3.8}findAugmentingPath()}{24}{subsubsection.4.3.3.8}%
+\contentsline {subsubsection}{\numberline {4.3.3.9}findEdge()}{25}{subsubsection.4.3.3.9}%
+\contentsline {subsubsection}{\numberline {4.3.3.10}findMinResidual()}{26}{subsubsection.4.3.3.10}%
+\contentsline {subsubsection}{\numberline {4.3.3.11}findVertex()}{26}{subsubsection.4.3.3.11}%
+\contentsline {subsubsection}{\numberline {4.3.3.12}getNumVertex()}{27}{subsubsection.4.3.3.12}%
+\contentsline {subsubsection}{\numberline {4.3.3.13}getSources()}{27}{subsubsection.4.3.3.13}%
+\contentsline {subsubsection}{\numberline {4.3.3.14}getTargets()}{27}{subsubsection.4.3.3.14}%
+\contentsline {subsubsection}{\numberline {4.3.3.15}getVertexSet()}{28}{subsubsection.4.3.3.15}%
+\contentsline {subsubsection}{\numberline {4.3.3.16}isIn()}{28}{subsubsection.4.3.3.16}%
+\contentsline {subsubsection}{\numberline {4.3.3.17}mul\_edmondsKarp()}{28}{subsubsection.4.3.3.17}%
+\contentsline {subsubsection}{\numberline {4.3.3.18}print()}{29}{subsubsection.4.3.3.18}%
+\contentsline {subsubsection}{\numberline {4.3.3.19}testAndVisit()}{29}{subsubsection.4.3.3.19}%
+\contentsline {subsubsection}{\numberline {4.3.3.20}updateFlow()}{30}{subsubsection.4.3.3.20}%
+\contentsline {subsection}{\numberline {4.3.4}Member Data Documentation}{30}{subsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.4.1}distMatrix}{30}{subsubsection.4.3.4.1}%
+\contentsline {subsubsection}{\numberline {4.3.4.2}pathMatrix}{30}{subsubsection.4.3.4.2}%
+\contentsline {subsubsection}{\numberline {4.3.4.3}vertexSet}{31}{subsubsection.4.3.4.3}%
+\contentsline {section}{\numberline {4.4}Station Class Reference}{31}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{31}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Constructor \& Destructor Documentation}{31}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}Station()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{31}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}Station()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{31}{subsubsection.4.4.2.2}%
+\contentsline {subsection}{\numberline {4.4.3}Member Function Documentation}{32}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}get\_district()}{32}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}get\_line()}{32}{subsubsection.4.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}get\_municipality()}{32}{subsubsection.4.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.4}get\_name()}{32}{subsubsection.4.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.4.3.5}get\_township()}{32}{subsubsection.4.4.3.5}%
+\contentsline {section}{\numberline {4.5}Vertex Class Reference}{33}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{33}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Constructor \& Destructor Documentation}{33}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}Vertex()}{33}{subsubsection.4.5.2.1}%
+\contentsline {subsection}{\numberline {4.5.3}Member Function Documentation}{34}{subsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}addEdge()}{34}{subsubsection.4.5.3.1}%
+\contentsline {subsubsection}{\numberline {4.5.3.2}getAdj()}{34}{subsubsection.4.5.3.2}%
+\contentsline {subsubsection}{\numberline {4.5.3.3}getDist()}{34}{subsubsection.4.5.3.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.4}getId()}{34}{subsubsection.4.5.3.4}%
+\contentsline {subsubsection}{\numberline {4.5.3.5}getIncoming()}{34}{subsubsection.4.5.3.5}%
+\contentsline {subsubsection}{\numberline {4.5.3.6}getIndegree()}{35}{subsubsection.4.5.3.6}%
+\contentsline {subsubsection}{\numberline {4.5.3.7}getPath()}{35}{subsubsection.4.5.3.7}%
+\contentsline {subsubsection}{\numberline {4.5.3.8}isProcessing()}{35}{subsubsection.4.5.3.8}%
+\contentsline {subsubsection}{\numberline {4.5.3.9}isVisited()}{35}{subsubsection.4.5.3.9}%
+\contentsline {subsubsection}{\numberline {4.5.3.10}operator$<$()}{35}{subsubsection.4.5.3.10}%
+\contentsline {subsubsection}{\numberline {4.5.3.11}print()}{35}{subsubsection.4.5.3.11}%
+\contentsline {subsubsection}{\numberline {4.5.3.12}removeEdge()}{36}{subsubsection.4.5.3.12}%
+\contentsline {subsubsection}{\numberline {4.5.3.13}setDist()}{36}{subsubsection.4.5.3.13}%
+\contentsline {subsubsection}{\numberline {4.5.3.14}setId()}{36}{subsubsection.4.5.3.14}%
+\contentsline {subsubsection}{\numberline {4.5.3.15}setIndegree()}{36}{subsubsection.4.5.3.15}%
+\contentsline {subsubsection}{\numberline {4.5.3.16}setPath()}{37}{subsubsection.4.5.3.16}%
+\contentsline {subsubsection}{\numberline {4.5.3.17}setProcesssing()}{37}{subsubsection.4.5.3.17}%
+\contentsline {subsubsection}{\numberline {4.5.3.18}setVisited()}{37}{subsubsection.4.5.3.18}%
+\contentsline {subsection}{\numberline {4.5.4}Member Data Documentation}{37}{subsection.4.5.4}%
+\contentsline {subsubsection}{\numberline {4.5.4.1}adj}{37}{subsubsection.4.5.4.1}%
+\contentsline {subsubsection}{\numberline {4.5.4.2}dist}{37}{subsubsection.4.5.4.2}%
+\contentsline {subsubsection}{\numberline {4.5.4.3}id}{37}{subsubsection.4.5.4.3}%
+\contentsline {subsubsection}{\numberline {4.5.4.4}incoming}{38}{subsubsection.4.5.4.4}%
+\contentsline {subsubsection}{\numberline {4.5.4.5}indegree}{38}{subsubsection.4.5.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.4.6}path}{38}{subsubsection.4.5.4.6}%
+\contentsline {subsubsection}{\numberline {4.5.4.7}processing}{38}{subsubsection.4.5.4.7}%
+\contentsline {subsubsection}{\numberline {4.5.4.8}queueIndex}{38}{subsubsection.4.5.4.8}%
+\contentsline {subsubsection}{\numberline {4.5.4.9}visited}{38}{subsubsection.4.5.4.9}%
+\contentsline {chapter}{\numberline {5}File Documentation}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}CPheadquarters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}CPheadquarters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{44}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Graph.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{44}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Graph.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{48}{section.5.4}%
+\contentsline {section}{\numberline {5.5}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{49}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Station.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{51}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Station.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{52}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edge.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{52}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edge.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{54}{section.5.9}%
+\contentsline {chapter}{Index}{57}{section*.11}%

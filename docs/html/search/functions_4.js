@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print_0',['print',['../classGraph.html#aeeede3cb48be5d8cac08ea05ce54bd52',1,'Graph']]]
+  ['getlines_0',['getLines',['../classCPheadquarters.html#a782036a2216e3ad38ce4779be1c5154a',1,'CPheadquarters']]]
 ];

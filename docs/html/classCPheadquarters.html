@@ -242,8 +242,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   74</span>        <span class="comment">//cout &lt;&lt; &quot;station: &quot; &lt;&lt; nome &lt;&lt; &quot; distrito: &quot; &lt;&lt; distrito &lt;&lt; &quot; municipality: &quot; &lt;&lt; municipality &lt;&lt; &quot; township: &quot; &lt;&lt; township &lt;&lt; &quot; line: &quot; &lt;&lt; line &lt;&lt; endl;</span></div>
 <div class="line"><span class="lineno">   75</span>    }</div>
 <div class="line"><span class="lineno">   76</span>}</div>
-<div class="ttc" id="aclassGraph_html_aa265fe199ebbac978b8a954ea754b0c2"><div class="ttname"><a href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">Graph::addVertex</a></div><div class="ttdeci">bool addVertex(const std::string &amp;id)</div><div class="ttdoc">Adds a vertex with a given content or info (in) to a graph (this).</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00043">Graph.cpp:43</a></div></div>
-<div class="ttc" id="aclassGraph_html_aa43465e582bec0296ba81cc16b3bf8ab"><div class="ttname"><a href="classGraph.html#aa43465e582bec0296ba81cc16b3bf8ab">Graph::addEdge</a></div><div class="ttdeci">bool addEdge(const std::string &amp;sourc, const std::string &amp;dest, int w, const std::string &amp;service)</div><div class="ttdoc">Adds an edge to a graph (this), given the contents of the source and destination vertices and the edg...</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00059">Graph.cpp:59</a></div></div>
+<div class="ttc" id="aclassGraph_html_aa265fe199ebbac978b8a954ea754b0c2"><div class="ttname"><a href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">Graph::addVertex</a></div><div class="ttdeci">bool addVertex(const std::string &amp;id)</div><div class="ttdoc">Adds a vertex with a given content or info (in) to a graph (this).</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00026">Graph.cpp:26</a></div></div>
+<div class="ttc" id="aclassGraph_html_aa43465e582bec0296ba81cc16b3bf8ab"><div class="ttname"><a href="classGraph.html#aa43465e582bec0296ba81cc16b3bf8ab">Graph::addEdge</a></div><div class="ttdeci">bool addEdge(const std::string &amp;sourc, const std::string &amp;dest, int w, const std::string &amp;service)</div><div class="ttdoc">Adds an edge to a graph (this), given the contents of the source and destination vertices and the edg...</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00034">Graph.cpp:34</a></div></div>
 <div class="ttc" id="aclassStation_html"><div class="ttname"><a href="classStation.html">Station</a></div><div class="ttdef"><b>Definition:</b> <a href="classStation.html#l00012">Station.h:12</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -305,8 +305,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  101</span> </div>
 <div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><span class="lineno">  103</span>}</div>
-<div class="ttc" id="aclassGraph_html_a12666658321af4855f1ad691b9840987"><div class="ttname"><a href="classGraph.html#a12666658321af4855f1ad691b9840987">Graph::findVertex</a></div><div class="ttdeci">Vertex * findVertex(const std::string &amp;id) const</div><div class="ttdoc">Auxiliary function to find a vertex with a given content.</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00020">Graph.cpp:20</a></div></div>
-<div class="ttc" id="aclassGraph_html_a913921c4491b06f64de526e50d1d0434"><div class="ttname"><a href="classGraph.html#a913921c4491b06f64de526e50d1d0434">Graph::edmondsKarp</a></div><div class="ttdeci">int edmondsKarp(const std::string &amp;s, const std::string &amp;t)</div><div class="ttdoc">finds the maximum flow in the graph, given a source and a target</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00223">Graph.cpp:223</a></div></div>
+<div class="ttc" id="aclassGraph_html_a12666658321af4855f1ad691b9840987"><div class="ttname"><a href="classGraph.html#a12666658321af4855f1ad691b9840987">Graph::findVertex</a></div><div class="ttdeci">Vertex * findVertex(const std::string &amp;id) const</div><div class="ttdoc">Auxiliary function to find a vertex with a given ID.</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00016">Graph.cpp:16</a></div></div>
+<div class="ttc" id="aclassGraph_html_a913921c4491b06f64de526e50d1d0434"><div class="ttname"><a href="classGraph.html#a913921c4491b06f64de526e50d1d0434">Graph::edmondsKarp</a></div><div class="ttdeci">int edmondsKarp(const std::string &amp;s, const std::string &amp;t)</div><div class="ttdoc">finds the maximum flow in the graph, given a source and a target</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00163">Graph.cpp:163</a></div></div>
 <div class="ttc" id="aclassVertex_html"><div class="ttname"><a href="classVertex.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> <a href="classVertex.html#l00019">VertexEdge.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -400,8 +400,9 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  171</span>            desired_stations.push_back(p.second.get_name());</div>
 <div class="line"><span class="lineno">  172</span>        }</div>
 <div class="line"><span class="lineno">  173</span>    }</div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> lines.mul_edmondsKarp(lines.find_sources(desired_stations), lines.find_targets(desired_stations));</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> lines.<a class="code hl_function" href="classGraph.html#ad531840e53343caa6ea0d60473df756f">mul_edmondsKarp</a>(lines.find_sources(desired_stations), lines.find_targets(desired_stations));</div>
 <div class="line"><span class="lineno">  175</span>}</div>
+<div class="ttc" id="aclassGraph_html_ad531840e53343caa6ea0d60473df756f"><div class="ttname"><a href="classGraph.html#ad531840e53343caa6ea0d60473df756f">Graph::mul_edmondsKarp</a></div><div class="ttdeci">int mul_edmondsKarp(std::vector&lt; std::string &gt; souces, std::vector&lt; std::string &gt; targets)</div><div class="ttdoc">finds the maximum flow in the graph, given a set of sources and a set of targets</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00221">Graph.cpp:221</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -440,7 +441,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  161</span>    }</div>
 <div class="line"><span class="lineno">  162</span>    vector&lt;string&gt; souces = lines.find_sources(desired_stations);</div>
 <div class="line"><span class="lineno">  163</span>    vector&lt;string&gt; targets = lines.find_targets(desired_stations);</div>
-<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> lines.mul_edmondsKarp(souces, targets);</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> lines.<a class="code hl_function" href="classGraph.html#ad531840e53343caa6ea0d60473df756f">mul_edmondsKarp</a>(souces, targets);</div>
 <div class="line"><span class="lineno">  165</span>}</div>
 </div><!-- fragment -->
 </div>
@@ -554,7 +555,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  220</span>    std::vector&lt;std::vector&lt;Vertex *&gt;&gt; allPaths;</div>
 <div class="line"><span class="lineno">  221</span> </div>
 <div class="line"><span class="lineno">  222</span> </div>
-<div class="line"><span class="lineno">  223</span>    graph.findAllPaths(sourceVertex, destVertex, path, allPaths);</div>
+<div class="line"><span class="lineno">  223</span>    graph.<a class="code hl_function" href="classGraph.html#a5d93c472186ffb14563a9fc5f9a9e38e">findAllPaths</a>(sourceVertex, destVertex, path, allPaths);</div>
 <div class="line"><span class="lineno">  224</span> </div>
 <div class="line"><span class="lineno">  225</span>    vector&lt;int&gt; maxFlows;</div>
 <div class="line"><span class="lineno">  226</span>    vector&lt;int&gt; totalCosts;</div>
@@ -565,7 +566,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  231</span>        <span class="keywordtype">int</span> totalCost = 0; <span class="comment">// total cost of this path</span></div>
 <div class="line"><span class="lineno">  232</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i + 1 &lt; path.size(); i++) {</div>
 <div class="line"><span class="lineno">  233</span>            std::cout &lt;&lt; path[i]-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span>;</div>
-<div class="line"><span class="lineno">  234</span>            <a class="code hl_class" href="classEdge.html">Edge</a> *e = graph.findEdge(path[i], path[i + 1]);</div>
+<div class="line"><span class="lineno">  234</span>            <a class="code hl_class" href="classEdge.html">Edge</a> *e = graph.<a class="code hl_function" href="classGraph.html#a97e1c39e924f28125a6984bcab510193">findEdge</a>(path[i], path[i + 1]);</div>
 <div class="line"><span class="lineno">  235</span>            cout &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; e-&gt;getWeight() &lt;&lt; <span class="stringliteral">&quot; trains, &quot;</span> &lt;&lt; e-&gt;getService() &lt;&lt; <span class="stringliteral">&quot; service) &quot;</span>;</div>
 <div class="line"><span class="lineno">  236</span>            <span class="keywordflow">if</span> (e-&gt;getWeight() &lt; minWeight) {</div>
 <div class="line"><span class="lineno">  237</span>                minWeight = e-&gt;getWeight();</div>
@@ -606,6 +607,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  272</span>}</div>
 <div class="ttc" id="aclassEdge_html"><div class="ttname"><a href="classEdge.html">Edge</a></div><div class="ttdef"><b>Definition:</b> <a href="classEdge.html#l00078">VertexEdge.h:78</a></div></div>
 <div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00015">Graph.h:15</a></div></div>
+<div class="ttc" id="aclassGraph_html_a5d93c472186ffb14563a9fc5f9a9e38e"><div class="ttname"><a href="classGraph.html#a5d93c472186ffb14563a9fc5f9a9e38e">Graph::findAllPaths</a></div><div class="ttdeci">void findAllPaths(Vertex *source, Vertex *destination, std::vector&lt; Vertex * &gt; &amp;path, std::vector&lt; std::vector&lt; Vertex * &gt; &gt; &amp;allPaths)</div><div class="ttdoc">finds all existing paths for a given source and destination return a vector of paths as an out parame...</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00264">Graph.cpp:264</a></div></div>
+<div class="ttc" id="aclassGraph_html_a97e1c39e924f28125a6984bcab510193"><div class="ttname"><a href="classGraph.html#a97e1c39e924f28125a6984bcab510193">Graph::findEdge</a></div><div class="ttdeci">Edge * findEdge(Vertex *source, Vertex *destination)</div><div class="ttdoc">find an edge in the graph, based on a a source and a destination vertices</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00286">Graph.cpp:286</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -782,8 +785,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  373</span>    vector&lt;string&gt; org = lines.getSources();</div>
 <div class="line"><span class="lineno">  374</span>    vector&lt;string&gt; targ = lines.getTargets();</div>
 <div class="line"><span class="lineno">  375</span> </div>
-<div class="line"><span class="lineno">  376</span>    lines.mul_edmondsKarp(org,targ);</div>
-<div class="line"><span class="lineno">  377</span>    graph.mul_edmondsKarp(org,targ);</div>
+<div class="line"><span class="lineno">  376</span>    lines.<a class="code hl_function" href="classGraph.html#ad531840e53343caa6ea0d60473df756f">mul_edmondsKarp</a>(org,targ);</div>
+<div class="line"><span class="lineno">  377</span>    graph.<a class="code hl_function" href="classGraph.html#ad531840e53343caa6ea0d60473df756f">mul_edmondsKarp</a>(org,targ);</div>
 <div class="line"><span class="lineno">  378</span>    vector&lt;pair&lt;int, int&gt;&gt; top_k;</div>
 <div class="line"><span class="lineno">  379</span> </div>
 <div class="line"><span class="lineno">  380</span>    <span class="keyword">auto</span> length = lines.getVertexSet().size();</div>

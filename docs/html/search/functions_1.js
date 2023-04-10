@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['edmondskarp_0',['edmondsKarp',['../classGraph.html#a913921c4491b06f64de526e50d1d0434',1,'Graph']]]
+  ['deletevertex_0',['deleteVertex',['../classGraph.html#ade95ce0f9cf736c26bec53c84322c127',1,'Graph']]]
 ];

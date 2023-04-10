@@ -275,7 +275,7 @@ Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00167}{167}} of 
 \DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ desired\_stations.push\_back(p.second.get\_name());}
 \DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00173\ \ \ \ \ \}}
-\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.mul\_edmondsKarp(lines.find\_sources(desired\_stations),\ lines.find\_targets(desired\_stations));}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.\mbox{\hyperlink{classGraph_ad531840e53343caa6ea0d60473df756f}{mul\_edmondsKarp}}(lines.find\_sources(desired\_stations),\ lines.find\_targets(desired\_stations));}
 \DoxyCodeLine{00175\ \}}
 
 \end{DoxyCode}
@@ -312,7 +312,7 @@ Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00155}{155}} of 
 \DoxyCodeLine{00161\ \ \ \ \ \}}
 \DoxyCodeLine{00162\ \ \ \ \ vector<string>\ souces\ =\ lines.find\_sources(desired\_stations);}
 \DoxyCodeLine{00163\ \ \ \ \ vector<string>\ targets\ =\ lines.find\_targets(desired\_stations);}
-\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.mul\_edmondsKarp(souces,\ targets);}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.\mbox{\hyperlink{classGraph_ad531840e53343caa6ea0d60473df756f}{mul\_edmondsKarp}}(souces,\ targets);}
 \DoxyCodeLine{00165\ \}}
 
 \end{DoxyCode}
@@ -413,7 +413,7 @@ Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00209}{209}} of 
 \DoxyCodeLine{00220\ \ \ \ \ std::vector<std::vector<Vertex\ *>>\ allPaths;}
 \DoxyCodeLine{00221\ }
 \DoxyCodeLine{00222\ }
-\DoxyCodeLine{00223\ \ \ \ \ graph.findAllPaths(sourceVertex,\ destVertex,\ path,\ allPaths);}
+\DoxyCodeLine{00223\ \ \ \ \ graph.\mbox{\hyperlink{classGraph_a5d93c472186ffb14563a9fc5f9a9e38e}{findAllPaths}}(sourceVertex,\ destVertex,\ path,\ allPaths);}
 \DoxyCodeLine{00224\ }
 \DoxyCodeLine{00225\ \ \ \ \ vector<int>\ maxFlows;}
 \DoxyCodeLine{00226\ \ \ \ \ vector<int>\ totalCosts;}
@@ -424,7 +424,7 @@ Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00209}{209}} of 
 \DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalCost\ =\ 0;\ \textcolor{comment}{//\ total\ cost\ of\ this\ path}}
 \DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ +\ 1\ <\ path.size();\ i++)\ \{}
 \DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ path[i]-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}};}
-\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{Edge}}\ *e\ =\ graph.findEdge(path[i],\ path[i\ +\ 1]);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{Edge}}\ *e\ =\ graph.\mbox{\hyperlink{classGraph_a97e1c39e924f28125a6984bcab510193}{findEdge}}(path[i],\ path[i\ +\ 1]);}
 \DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ e-\/>getWeight()\ <<\ \textcolor{stringliteral}{"{}\ trains,\ "{}}\ <<\ e-\/>getService()\ <<\ \textcolor{stringliteral}{"{}\ service)\ "{}};}
 \DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e-\/>getWeight()\ <\ minWeight)\ \{}
 \DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minWeight\ =\ e-\/>getWeight();}
@@ -621,8 +621,8 @@ Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00335}{335}} of 
 \DoxyCodeLine{00373\ \ \ \ \ vector<string>\ org\ =\ lines.getSources();}
 \DoxyCodeLine{00374\ \ \ \ \ vector<string>\ targ\ =\ lines.getTargets();}
 \DoxyCodeLine{00375\ }
-\DoxyCodeLine{00376\ \ \ \ \ lines.mul\_edmondsKarp(org,targ);}
-\DoxyCodeLine{00377\ \ \ \ \ graph.mul\_edmondsKarp(org,targ);}
+\DoxyCodeLine{00376\ \ \ \ \ lines.\mbox{\hyperlink{classGraph_ad531840e53343caa6ea0d60473df756f}{mul\_edmondsKarp}}(org,targ);}
+\DoxyCodeLine{00377\ \ \ \ \ graph.\mbox{\hyperlink{classGraph_ad531840e53343caa6ea0d60473df756f}{mul\_edmondsKarp}}(org,targ);}
 \DoxyCodeLine{00378\ \ \ \ \ vector<pair<int,\ int>>\ top\_k;}
 \DoxyCodeLine{00379\ }
 \DoxyCodeLine{00380\ \ \ \ \ \textcolor{keyword}{auto}\ length\ =\ lines.getVertexSet().size();}
