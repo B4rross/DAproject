@@ -97,8 +97,28 @@ int main() {
             }
 
             case 6: {
-
-                break;
+                cin.ignore();
+                vector<string> unwantedEdges;
+                string edgesource;
+                string edgetarget;
+                string b;
+                string a;
+                cout << "Enter station A: ";
+                getline(cin, a);
+                cout << "Enter station B: ";
+                getline(cin, b);
+                cout << '\n';
+                cout << "List unwanted edges. Start by typing the edge source an then the edge destine. Type '.' to end listing: \n";
+                while (1){
+                    cout << "Enter edge source or '.' to finish: ";
+                    getline(cin, edgesource);
+                    if(edgesource==".") break;
+                    unwantedEdges.push_back(edgesource);
+                    cout << "Enter edge target: ";
+                    getline(cin, edgetarget);
+                    unwantedEdges.push_back(edgetarget);
+                }
+                CP.T4_1ReducedConectivity(unwantedEdges,a,b);
             }
 
             case 7: {
