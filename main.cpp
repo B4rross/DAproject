@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     CPheadquarters CP;
     CP.read_files();
-    CP.getLines().print();
+    //CP.getLines().print();
     int n;
     cout << "\n-------------- An Analysis Tool for Railway Network Management --------------\n" << endl;
     do {
@@ -39,6 +39,7 @@ int main() {
             case 1: {
                 cin.ignore(); // ignore newline character left in the input stream
                 string a, b;
+                cout << R"(Example: "Entroncamento" "Lisboa Oriente")" << endl;
                 cout << "Enter station A: ";
                 getline(cin, a);
 
@@ -63,6 +64,7 @@ int main() {
             case 3: {
                 cin.ignore();
                 string c;
+                cout << R"(Example: "PENAFIEL")" << endl;
                 cout << "Enter municipality: " << endl;
                 cout << "For example, PENAFIEL: ";
                 getline(cin, c);

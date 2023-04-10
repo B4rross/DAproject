@@ -56,7 +56,7 @@ public:
 
 
 protected:
-    std::string id;                // identifier
+    std::string id;           // identifier
     std::vector<Edge *> adj;  // outgoing edges
 
     // auxiliary fields
@@ -104,7 +104,7 @@ public:
 protected:
     Vertex *dest; // destination vertex
     int weight; // edge weight, can also be used for capacity
-    int capacity;
+
     std::string service;
     // auxiliary fields
     bool selected = false;

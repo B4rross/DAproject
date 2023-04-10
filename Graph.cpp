@@ -12,11 +12,7 @@ std::vector<Vertex *> Graph::getVertexSet() const {
     return vertexSet;
 }
 
-/**
- * Auxiliary function to find a vertex with a given content.
- * @param id
- * @return vertex pointer to vertex with given content, or nullptr if not found
- */
+
 Vertex *Graph::findVertex(const std::string &id) const {
     for (auto v: vertexSet) {
         if (v->getId() == id)
@@ -25,22 +21,8 @@ Vertex *Graph::findVertex(const std::string &id) const {
     return nullptr;
 }
 
-/**
- * Finds the index of the vertex with a given content.
- * @param id
- * @return
- */
-int Graph::findVertexIdx(const std::string &id) const {
-    for (unsigned i = 0; i < vertexSet.size(); i++)
-        if (vertexSet[i]->getId() == id)
-            return i;
-    return -1;
-}
 
-/*
- *  Adds a vertex with a given content or info (in) to a graph (this).
- *  Returns true if successful, and false if a vertex with that content already exists.
- */
+
 bool Graph::addVertex(const std::string &id) {
     if (findVertex(id) != nullptr)
         return false;
@@ -48,11 +30,7 @@ bool Graph::addVertex(const std::string &id) {
     return true;
 }
 
-/*
- * Adds an edge to a graph (this), given the contents of the source and
- * destination vertices and the edge weight (w).
- * Returns true if successful, and false if the source or destination vertex does not exist.
- */
+
 bool Graph::addEdge(const std::string &sourc, const std::string &dest, int w, const std::string &service) {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
@@ -60,18 +38,6 @@ bool Graph::addEdge(const std::string &sourc, const std::string &dest, int w, co
         return false;
     v1->addEdge(v2, w, service);
 
-    return true;
-}
-
-bool Graph::addBidirectionalEdge(const std::string &sourc, const std::string &dest, int w, std::string service) {
-    auto v1 = findVertex(sourc);
-    auto v2 = findVertex(dest);
-    if (v1 == nullptr || v2 == nullptr)
-        return false;
-    auto e1 = v1->addEdge(v2, w, service);
-    auto e2 = v2->addEdge(v1, w, service);
-    e1->setReverse(e2);
-    e2->setReverse(e1);
     return true;
 }
 
@@ -100,9 +66,7 @@ Graph::~Graph() {
 }
 
 
-/*
- *  print graph content
- */
+
 void Graph::print() const {
     std::cout << "---------------- Graph----------------\n";
     std::cout << "Number of vertices: " << vertexSet.size() << std::endl;
@@ -120,6 +84,7 @@ void Graph::print() const {
 
 // --------------------------------- Edmonds-Karp ---------------------------------
 
+
 void Graph::testAndVisit(std::queue<Vertex *> &q, Edge *e, Vertex *w, double residual) {
     if (!w->isVisited() && residual > 0) {
         w->setVisited(true);
@@ -128,9 +93,8 @@ void Graph::testAndVisit(std::queue<Vertex *> &q, Edge *e, Vertex *w, double res
     }
 }
 
-/*
- * An augmenting path is a simple path - a path that does not contain cycles
- */
+
+
 bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
     Vertex *source = findVertex(s);
     Vertex *target = findVertex(t);
@@ -164,6 +128,7 @@ bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
     return false;
 }
 
+
 int Graph::findMinResidual(Vertex *s, Vertex *t) {
     double minResidual = INT_MAX;
     for (auto v = t; v != s;) {
@@ -179,6 +144,7 @@ int Graph::findMinResidual(Vertex *s, Vertex *t) {
     return minResidual;
 }
 
+
 void Graph::updateFlow(Vertex *s, Vertex *t, int bottleneck) {
     for (auto v = t; v != s;) {
         auto e = v->getPath();
@@ -192,6 +158,7 @@ void Graph::updateFlow(Vertex *s, Vertex *t, int bottleneck) {
         }
     }
 }
+
 
 int Graph::edmondsKarp(const std::string &s, const std::string &t) {
     for (auto e: vertexSet) {
@@ -293,6 +260,7 @@ int Graph::mul_edmondsKarp(std::vector<std::string> souces, std::vector<std::str
 
 // --------------------------------- Find ALL existing augmenting paths ---------------------------------
 
+
 void Graph::findAllPaths(Vertex *source, Vertex *destination, std::vector<Vertex *> &path,
                          std::vector<std::vector<Vertex *>> &allPaths) {
     path.push_back(source);
@@ -314,9 +282,7 @@ void Graph::findAllPaths(Vertex *source, Vertex *destination, std::vector<Vertex
 }
 
 
-/*
- * find edge based on source and destination
- */
+
 Edge *Graph::findEdge(Vertex *source, Vertex *destination) {
 
     for (auto edge: source->getAdj()) {
@@ -326,6 +292,7 @@ Edge *Graph::findEdge(Vertex *source, Vertex *destination) {
     }
     return nullptr;
 }
+
 
 std::vector<std::string> Graph::getSources() {
     std::vector<std::string> res;
@@ -346,6 +313,7 @@ std::vector<std::string> Graph::getTargets() {
     }
     return res;
 }
+
 
 void Graph::deleteVertex(std::string name) {
     auto v = findVertex(name);
@@ -368,6 +336,3 @@ void Graph::deleteVertex(std::string name) {
     }
 }
 
-
-
-// ----------------------------------------------- find all stations that have more than one path to the destination -----------------------------------------------
