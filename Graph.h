@@ -63,8 +63,16 @@ public:
      */
     int edmondsKarp(const std::string &s, const std::string &t);
 
+    /**
+     * finds all the source vertexes of the entire graph
+     * @return vector with the id's of the source vertexes
+     */
     std::vector<std::string> getSources();
 
+    /**
+     * finds all the target vertexes of the entire graph
+     * @return vector with the id's of the target vertexes
+     */
     std::vector<std::string> getTargets();
 
     /**
@@ -75,8 +83,18 @@ public:
      */
     int mul_edmondsKarp(std::vector<std::string> souces, std::vector<std::string> targets);
 
+    /**
+     * finds all the source vertexes of a sub_graph
+     * @param desired_stations
+     * @return vector with the id's of the target vertexes
+     */
     std::vector<std::string> find_sources(std::vector<std::string> desired_stations);
 
+    /**
+     * finds all the target vertexes of a sub_graph
+     * @param desired_stations
+     * @return vector with the id's of the target vertexes
+     */
     std::vector<std::string> find_targets(std::vector<std::string> desired_stations);
 
     /**

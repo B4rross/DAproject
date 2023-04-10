@@ -16,8 +16,16 @@ class CPheadquarters {
     unordered_map<string, Station> stations;
 public:
 
+    /**
+     * Reads the file network.csv when given the path to the file and stores the information in a Graph
+     * @param path
+     */
     void read_network(string path);
 
+    /**
+     * Reads the files stations.csv when given the path to the file and stores the information in an unordered_map
+     * @param path
+     */
     void read_stations(string path);
 
     /**
@@ -54,13 +62,16 @@ public:
     /**
      * Indicates where management should assign larger budgets for the purchasing and
      * maintenance of trains.
-     * Reports the top-k municipalities and districts, regarding their transportation needs
-     * @param municipality
-     * @return maximum flow in the given municipality
+     * Reports the top-k municipalities, regarding their transportation needs
      */
-    int T2_3municipality();
+    void T2_3municipality();
 
-    int T2_3district();
+    /**
+     * Indicates where management should assign larger budgets for the purchasing and
+     * maintenance of trains.
+     * Reports the top-k districts, regarding their transportation needs
+     */
+    void T2_3district();
 
     /**
      * Reports the maximum number of trains that can simultaneously arrive at a given station,
@@ -103,10 +114,6 @@ public:
      * @return top-k most affected stations for each segment to be considered
      */
     int T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges);
-
-    void test();
-
-
 
 };
 
