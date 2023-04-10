@@ -210,17 +210,20 @@ int Graph::edmondsKarp(const std::string &s, const std::string &t) {
 
 std::vector<std::string> Graph::find_sources(std::vector<std::string> desired_stations) {
     std::vector<std::string> res;
+
     for (std::string s: desired_stations) {
+        bool flag = true;
         auto v = findVertex(s);
         if (v == nullptr) {
             std::cout << "Trouble finding source " << s << '\n';
-            return res;
+            continue;
         }
         for (auto e: v->getIncoming()) {
-            if (!isIn(e->getOrig()->getId(), desired_stations)) {
-                res.push_back(s);
+            if (isIn(e->getOrig()->getId(), desired_stations)) {
+                flag=false;
             }
         }
+        if (flag) res.push_back(s);
     }
     return res;
 }
@@ -228,16 +231,18 @@ std::vector<std::string> Graph::find_sources(std::vector<std::string> desired_st
 std::vector<std::string> Graph::find_targets(std::vector<std::string> desired_stations) {
     std::vector<std::string> res;
     for (std::string s: desired_stations) {
+        bool flag = true;
         auto v = findVertex(s);
         if (v == nullptr) {
             std::cout << "Trouble finding target " << s << '\n';
-            return res;
+            continue;
         }
         for (auto e: v->getAdj()) {
-            if (!isIn(e->getDest()->getId(), desired_stations)) {
-                res.push_back(s);
+            if (isIn(e->getDest()->getId(), desired_stations)) {
+                flag=false;
             }
         }
+        if (flag) res.push_back(s);
     }
     return res;
 }

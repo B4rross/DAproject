@@ -15,6 +15,11 @@ class CPheadquarters {
     Graph lines;
     unordered_map<string, Station> stations;
 public:
+
+    void read_network(string path);
+
+    void read_stations(string path);
+
     /**
     * Reads the files network.csv and stations.csv and stores the information in the Graph and unordered_map
     */
@@ -53,9 +58,9 @@ public:
      * @param municipality
      * @return maximum flow in the given municipality
      */
-    int T2_3municipality(string municipality);
+    int T2_3municipality();
 
-    int T2_3district(string district);
+    int T2_3district();
 
     /**
      * Reports the maximum number of trains that can simultaneously arrive at a given station,
