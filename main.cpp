@@ -122,6 +122,21 @@ int main() {
             }
 
             case 7: {
+                cin.ignore();
+                vector<string> unwantedEdges;
+                string edgesource;
+                string edgetarget;
+                cout << "List unwanted edges. Start by typing the edge source an then the edge destine. Type '.' to end listing: \n";
+                while (1){
+                    cout << "Enter edge source or '.' to finish: ";
+                    getline(cin, edgesource);
+                    if(edgesource==".") break;
+                    unwantedEdges.push_back(edgesource);
+                    cout << "Enter edge target: ";
+                    getline(cin, edgetarget);
+                    unwantedEdges.push_back(edgetarget);
+                }
+                CP.T4_2Top_K_ReducedConectivity(unwantedEdges);
 
                 break;
             }

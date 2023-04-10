@@ -33,6 +33,8 @@ public:
 
     int T4_1ReducedConectivity(vector<string> unwantedEdges, string s, string t);
 
+    int T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges);
+
     void test();
 
 
