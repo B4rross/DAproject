@@ -8,7 +8,6 @@ int main() {
     string path;
     cout<<"Insert path to file to consrtuct graph: ";
     getline(cin, path);
-    cout<<endl;
     CP.read_network(path);
     cout<<"Insert path to file regarding stations: ";
     getline(cin, path);
@@ -126,12 +125,14 @@ int main() {
                 string edgetarget;
                 string b;
                 string a;
+                cout << R"(Example: "Entroncamento" "Lisboa Oriente")" << endl;
                 cout << "Enter station A: ";
                 getline(cin, a);
                 cout << "Enter station B: ";
                 getline(cin, b);
                 cout << '\n';
                 cout << "List unwanted edges. Start by typing the edge source an then the edge destine. Type '.' to end listing: \n";
+                cout << R"(Example: "Bustelo" "Meinedo" would delete the edge "Bustelo->Meinedo")" << endl;
                 while (1){
                     cout << "Enter edge source or '.' to finish: ";
                     getline(cin, edgesource);
@@ -151,6 +152,7 @@ int main() {
                 string edgesource;
                 string edgetarget;
                 cout << "List unwanted edges. Start by typing the edge source an then the edge destine. Type '.' to end listing: \n";
+                cout << R"(Example: "Bustelo" "Meinedo" would delete the edge "Bustelo->Meinedo")" << endl;
                 while (1){
                     cout << "Enter edge source or '.' to finish: ";
                     getline(cin, edgesource);
