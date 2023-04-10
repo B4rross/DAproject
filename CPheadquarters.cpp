@@ -373,30 +373,30 @@ int CPheadquarters::T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges) {
         }
         line1 = "";
     }
+    vector<string> org = lines.getSources();
+    vector<string> targ = lines.getTargets();
 
-
+    lines.mul_edmondsKarp(org,targ);
+    graph.mul_edmondsKarp(org,targ);
     vector<pair<int, int>> top_k;
+
     auto length = lines.getVertexSet().size();
     for (int i = 0; i < length; ++i) {
         string destination = lines.getVertexSet()[i]->getId();
-        Vertex *dest = lines.findVertex(destination);
-
+        auto v1 = lines.findVertex(destination);
+        auto v2 = graph.findVertex(destination);
         int maxFlow1 = 0;
         int maxFlow2 = 0;
-
-        for (auto &v: lines.getVertexSet()) {
-            if (v != dest) {
-                int flow = lines.edmondsKarp(v->getId(), destination);
-                if (flow > maxFlow1) {
-                    maxFlow1 = flow;
-                }
-                flow = graph.edmondsKarp(v->getId(), destination);
-                if (flow > maxFlow2) {
-                    maxFlow2 = flow;
-                }
-            }
+        for(auto e : v1->getIncoming()){
+            maxFlow1+=e->getFlow();
+        }
+        for(auto e : v2->getIncoming()){
+            maxFlow2+=e->getFlow();
         }
 
+        if(destination=="Contumil"){
+            continue;
+        }
         int diff = maxFlow1 - maxFlow2;
         auto p = pair(i,diff);
         top_k.push_back(p);
