@@ -8,15 +8,15 @@ int main() {
     CP.read_files();
     CP.getLines().print();
     int n;
-    cout << "-------------- An Analysis Tool for Railway Network Management --------------\n" << endl;
+    cout << "\n-------------- An Analysis Tool for Railway Network Management --------------\n" << endl;
     do {
         cout << "1 - T2.1 Max number of trains between stations\n";
         cout << "2 - T2.2 Stations that require the Max num of trains among all pairs of stations\n";
         cout << "3 - T2.3 Indicate where management should assign larger budgets for the purchasing and maintenance of trains\n";
         cout << "4 - T2.4 Max number of trains that can simultaneously arrive at a given station\n";
         cout << "5 - T3.1 Max number of trains that can simultaneously travel with minimum cost\n";
-        cout << "6 - T4.1\n";
-        cout << "7 - T4.2\n";
+        cout << "6 - T4.1 Max number of trains between stations in a network of reduced connectivity\n";
+        cout << "7 - T4.2 Top-10 most affectd stations in a network of reduced connectivity\n";
         cout << "8 - Exit\n";
 
 
