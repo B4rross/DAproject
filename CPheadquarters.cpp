@@ -278,36 +278,37 @@ int CPheadquarters::T3_1MinCost(string source, string destination) {
 
 int CPheadquarters::T4_1ReducedConectivity(std::vector<std::string> unwantedEdges, std::string s, std::string t) {
     Graph graph;
-    ifstream inputFile1;
-    inputFile1.open(R"(../network.csv)");
+    std::ifstream inputFile1(R"(../network.csv)");
     string line1;
+    std::getline(inputFile1, line1); // ignore first line
+    while (getline(inputFile1, line1, '\n')) {
 
-    getline(inputFile1, line1);
-    line1 = "";
+        if (!line1.empty() && line1.back() == '\r') { // Check if the last character is '\r'
+            line1.pop_back(); // Remove the '\r' character
+        }
 
-    while (getline(inputFile1, line1)) {
         string station_A;
         string station_B;
         string temp;
         int capacity;
         string service;
-        bool flag = true;
+        bool flag=true;
 
         stringstream inputString(line1);
 
-        getline(inputString, station_A, ';');
-        getline(inputString, station_B, ';');
-        getline(inputString, temp, ';');
-        capacity = stoi(temp);
-        getline(inputString, service, ';');
+        getline(inputString, station_A, ',');
+        getline(inputString, station_B, ',');
+        getline(inputString, temp, ',');
+        getline(inputString, service, ',');
 
+        capacity = stoi(temp);
         graph.addVertex(station_A);
         graph.addVertex(station_B);
-        for (int i = 0; i < unwantedEdges.size(); i = i + 2) {
-            if(station_A==unwantedEdges[i] && station_B==unwantedEdges[i+1]){
-                flag=false;
 
-            }
+        for (int i = 0; i < unwantedEdges.size(); i = i + 2) {
+                if(station_A==unwantedEdges[i] && station_B==unwantedEdges[i+1]){
+                    flag=false;
+                }
         }
         if(flag) {
             graph.addEdge(station_A, station_B, capacity, service);
@@ -337,35 +338,36 @@ int CPheadquarters::T4_1ReducedConectivity(std::vector<std::string> unwantedEdge
 
 int CPheadquarters::T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges) {
     Graph graph;
-    ifstream inputFile1;
-    inputFile1.open(R"(../network.csv)");
+    std::ifstream inputFile1(R"(../network.csv)");
     string line1;
+    std::getline(inputFile1, line1); // ignore first line
+    while (getline(inputFile1, line1, '\n')) {
 
-    getline(inputFile1, line1);
-    line1 = "";
+        if (!line1.empty() && line1.back() == '\r') { // Check if the last character is '\r'
+            line1.pop_back(); // Remove the '\r' character
+        }
 
-    while (getline(inputFile1, line1)) {
         string station_A;
         string station_B;
         string temp;
         int capacity;
         string service;
-        bool flag = true;
+        bool flag=true;
 
         stringstream inputString(line1);
 
-        getline(inputString, station_A, ';');
-        getline(inputString, station_B, ';');
-        getline(inputString, temp, ';');
-        capacity = stoi(temp);
-        getline(inputString, service, ';');
+        getline(inputString, station_A, ',');
+        getline(inputString, station_B, ',');
+        getline(inputString, temp, ',');
+        getline(inputString, service, ',');
 
+        capacity = stoi(temp);
         graph.addVertex(station_A);
         graph.addVertex(station_B);
+
         for (int i = 0; i < unwantedEdges.size(); i = i + 2) {
             if(station_A==unwantedEdges[i] && station_B==unwantedEdges[i+1]){
                 flag=false;
-                break;
             }
         }
         if(flag) {
@@ -393,14 +395,9 @@ int CPheadquarters::T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges) {
         for(auto e : v2->getIncoming()){
             maxFlow2+=e->getFlow();
         }
-
-        if(destination=="Contumil"){
-            continue;
-        }
         int diff = maxFlow1 - maxFlow2;
         auto p = pair(i,diff);
         top_k.push_back(p);
-        cout << "a";
     }
     std::sort(top_k.begin(), top_k.end(), [](auto &left, auto &right) {
         return left.second > right.second;
