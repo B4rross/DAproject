@@ -5,8 +5,16 @@ using namespace std;
 
 int main() {
     CPheadquarters CP;
-    CP.read_files();
-    //CP.getLines().print();
+    string path;
+    cout<<"Insert path to file to consrtuct graph: ";
+    getline(cin, path);
+    cout<<endl;
+    CP.read_network(path);
+    cout<<"Insert path to file regarding stations: ";
+    getline(cin, path);
+    cout<<endl;
+    CP.read_stations(path);
+    CP.getLines().print();
     int n;
     cout << "\n-------------- An Analysis Tool for Railway Network Management --------------\n" << endl;
     do {
@@ -63,12 +71,22 @@ int main() {
 
             case 3: {
                 cin.ignore();
-                string c;
-                cout << R"(Example: "PENAFIEL")" << endl;
-                cout << "Enter municipality: " << endl;
-                cout << "For example, PENAFIEL: ";
-                getline(cin, c);
-                cout << "The maximum flow in Municipality " << c << " is " << CP.T2_3municipality(c) << endl;
+
+                int c;
+                cout << "Type 1 for Top-10 districts regarding flow" << '\n';
+                cout << "Type 2 for Top-10 municipalities regarding flow" << '\n';
+                cin >> c;
+                switch (c) {
+                    case 1:
+                        CP.T2_3district();
+                        break;
+                    case 2:
+                        CP.T2_3municipality();
+                        break;
+                    default:
+                        cout << "Invalid input";
+                        break;
+                }
                 cout << endl;
                 break;
             }

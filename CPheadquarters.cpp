@@ -6,8 +6,73 @@
 #include <sstream>
 #include "CPheadquarters.h"
 #include <chrono>
+#include <set>
 
 using namespace std;
+
+void CPheadquarters::read_network(string path){
+    std::ifstream inputFile1(path);
+    string line1;
+    std::getline(inputFile1, line1); // ignore first line
+    while (getline(inputFile1, line1, '\n')) {
+
+        if (!line1.empty() && line1.back() == '\r') { // Check if the last character is '\r'
+            line1.pop_back(); // Remove the '\r' character
+        }
+
+        string station_A;
+        string station_B;
+        string temp;
+        int capacity;
+        string service;
+
+        stringstream inputString(line1);
+
+        getline(inputString, station_A, ',');
+        getline(inputString, station_B, ',');
+        getline(inputString, temp, ',');
+        getline(inputString, service, ',');
+
+        capacity = stoi(temp);
+        lines.addVertex(station_A);
+        lines.addVertex(station_B);
+
+        lines.addEdge(station_A, station_B, capacity, service);
+    }
+}
+
+void CPheadquarters::read_stations(string path){
+    std::ifstream inputFile2(R"(../stations.csv)");
+    string line2;
+    std::getline(inputFile2, line2); // ignore first line
+
+    while (getline(inputFile2, line2, '\n')) {
+
+        if (!line2.empty() && line2.back() == '\r') { // Check if the last character is '\r'
+            line2.pop_back(); // Remove the '\r' character
+        }
+
+        string nome;
+        string distrito;
+        string municipality;
+        string township;
+        string line;
+
+        stringstream inputString(line2);
+
+        getline(inputString, nome, ',');
+        getline(inputString, distrito, ',');
+        getline(inputString, municipality, ',');
+        getline(inputString, township, ',');
+        getline(inputString, line, ',');
+
+        Station station(nome, distrito, municipality, township, line);
+        stations[nome] = station;
+
+        // print information about the station, to make sure it was imported correctly
+        //cout << "station: " << nome << " distrito: " << distrito << " municipality: " << municipality << " township: " << township << " line: " << line << endl;
+    }
+}
 
 void CPheadquarters::read_files() {
 
@@ -152,26 +217,60 @@ int CPheadquarters::T2_2maxflowAllStations() {
 }
 
 
-int CPheadquarters::T2_3municipality(string municipality) {
-    vector<string> desired_stations;
-    for (auto p: stations) {
-        if (p.second.get_municipality() == municipality) {
-            desired_stations.push_back(p.second.get_name());
-        }
+int CPheadquarters::T2_3municipality() {
+    vector<pair<string , int>> top_k;
+    set<string> sett;
+    for (auto m : stations) {
+        sett.insert(m.second.get_district());
     }
-    vector<string> souces = lines.find_sources(desired_stations);
-    vector<string> targets = lines.find_targets(desired_stations);
-    return lines.mul_edmondsKarp(souces, targets);
+    for (auto m : sett) {
+        vector<string> desired_stations;
+        for (auto p: stations) {
+            if (p.second.get_municipality() == m) {
+                desired_stations.push_back(p.second.get_name());
+            }
+        }
+
+
+        vector<string> souces = lines.find_sources(desired_stations);
+        vector<string> targets = lines.find_targets(desired_stations);
+        int diff=lines.mul_edmondsKarp(souces, targets);
+        auto p = pair(m, diff);
+        top_k.push_back(p);
+    }
+    std::sort(top_k.begin(), top_k.end(), [](auto &left, auto &right) {
+        return left.second > right.second;
+    });
+    for (int i = 0; i < 10; i++) {
+        cout << i + 1 << "-" << top_k[i].first << " -> " << top_k[i].second << '\n';
+    }
 }
 
-int CPheadquarters::T2_3district(string district) {
-    vector<string> desired_stations;
-    for (auto p: stations) {
-        if (p.second.get_district() == district) {
-            desired_stations.push_back(p.second.get_name());
-        }
+int CPheadquarters::T2_3district() {
+    vector<pair<string , int>> top_k;
+    set<string> sett;
+    for (auto m : stations) {
+        sett.insert(m.second.get_district());
     }
-    return lines.mul_edmondsKarp(lines.find_sources(desired_stations), lines.find_targets(desired_stations));
+    for (auto m : sett) {
+        vector<string> desired_stations;
+        for (auto p: stations) {
+            if (p.second.get_district() == m) {
+                desired_stations.push_back(p.second.get_name());
+            }
+        }
+        vector<string> souces = lines.find_sources(desired_stations);
+        vector<string> targets = lines.find_targets(desired_stations);
+        int diff=lines.mul_edmondsKarp(souces, targets);
+        auto p = pair(m, diff);
+        top_k.push_back(p);
+    }
+    std::sort(top_k.begin(), top_k.end(), [](auto &left, auto &right) {
+        return left.second > right.second;
+    });
+    for (int i = 0; i < 10; i++) {
+        cout << i + 1 << "-" << top_k[i].first << " -> " << top_k[i].second << '\n';
+    }
 }
 
 
