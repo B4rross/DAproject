@@ -11,8 +11,9 @@ The project was developed by bachelor students of the
 _Faculty of Engineering of the University of Porto_ as a Theoretical-Practical component of _Algorithm Design_ course.
 
 
-David Burchakov (up202203777@edu.fe.up.pt)
-Pedro……………(upXXXXXX@edu.fe.up.pt)
+* David Burchakov (up202203777@edu.fe.up.pt)
+
+* Pedro José Nunes Moutinho de Antas de Barros (up202108706@edu.fe.up.pt)
 
 
 ### Checklist
