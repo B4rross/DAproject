@@ -10,6 +10,7 @@ using namespace std;
 
 void CPheadquarters::read_files() {
 
+    //--------------------------------------------Read network.csv--------------------------------------------
     std::ifstream inputFile1(R"(../network.csv)");
     string line1;
     std::getline(inputFile1, line1); // ignore first line
@@ -40,7 +41,7 @@ void CPheadquarters::read_files() {
     }
 
 
-
+    //--------------------------------------------Read stations.csv--------------------------------------------
     std::ifstream inputFile2(R"(../stations.csv)");
     string line2;
     std::getline(inputFile2, line2); // ignore first line
@@ -70,9 +71,7 @@ void CPheadquarters::read_files() {
 
         // print information about the station, to make sure it was imported correctly
         //cout << "station: " << nome << " distrito: " << distrito << " municipality: " << municipality << " township: " << township << " line: " << line << endl;
-
     }
-
 }
 
 Graph CPheadquarters::getLines() const {
