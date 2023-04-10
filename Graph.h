@@ -41,7 +41,6 @@ public:
      */
     bool addEdge(const std::string &sourc, const std::string &dest, int w, const std::string &service);
 
-    bool addBidirectionalEdge(const std::string &sourc, const std::string &dest, int w, std::string service);
 
     [[nodiscard]] int getNumVertex() const;
 
@@ -122,10 +121,6 @@ protected:
     double **distMatrix = nullptr;   // dist matrix for Floyd-Warshall
     int **pathMatrix = nullptr;   // path matrix for Floyd-Warshall
 
-    /*
-     * Finds the index of the vertex with a given content.
-     */
-    int findVertexIdx(const std::string &id) const;
 
     /**
      * auxiliary function to update the flow of an augmenting path
