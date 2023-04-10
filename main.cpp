@@ -119,6 +119,7 @@ int main() {
                     unwantedEdges.push_back(edgetarget);
                 }
                 CP.T4_1ReducedConectivity(unwantedEdges,a,b);
+                break;
             }
 
             case 7: {

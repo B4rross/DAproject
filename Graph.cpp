@@ -283,6 +283,8 @@ int Graph::mul_edmondsKarp(std::vector<std::string> souces, std::vector<std::str
         updateFlow(findVertex("temp_source"), findVertex("temp_targets"), bottleneck);
         maxFlow += bottleneck;
     }
+    deleteVertex("temp_targets");
+    deleteVertex("temp_source");
     return maxFlow;
 }
 
@@ -320,6 +322,47 @@ Edge *Graph::findEdge(Vertex *source, Vertex *destination) {
         }
     }
     return nullptr;
+}
+
+std::vector<std::string> Graph::getSources() {
+    std::vector<std::string> res;
+    for (auto v : vertexSet) {
+        if(v->getIncoming().empty()){
+            res.push_back(v->getId());
+        }
+    }
+    return res;
+}
+
+std::vector<std::string> Graph::getTargets() {
+    std::vector<std::string> res;
+    for (auto v : vertexSet) {
+        if(v->getAdj().empty()){
+            res.push_back(v->getId());
+        }
+    }
+    return res;
+}
+
+void Graph::deleteVertex(std::string name) {
+    auto v = findVertex(name);
+    for(auto e : v->getAdj()){
+        auto s = e->getDest()->getId();
+        v->removeEdge(s);
+    }
+    for(auto e : v->getIncoming()){
+        e->getOrig()->removeEdge(name);
+    }
+    auto it = vertexSet.begin();
+    while (it!=vertexSet.end()){
+        Vertex* currentVertex = *it;
+        if(currentVertex->getId()==name){
+            it=vertexSet.erase(it);
+        }
+        else{
+            it++;
+        }
+    }
 }
 
 

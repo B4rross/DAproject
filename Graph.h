@@ -44,6 +44,10 @@ public:
 
     int edmondsKarp(const std::string &s, const std::string &t);
 
+    std::vector<std::string> getSources();
+
+    std::vector<std::string> getTargets();
+
     int mul_edmondsKarp(std::vector<std::string> souces, std::vector<std::string> targets);
 
     std::vector<std::string> find_sources(std::vector<std::string> desired_stations);
@@ -77,7 +81,7 @@ protected:
 
     bool isIn(std::string n, std::vector<std::string> vec);
 
-
+    void deleteVertex(std::string name);
 };
 
 void deleteMatrix(int **m, int n);
