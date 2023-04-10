@@ -47,6 +47,7 @@ int main() {
             case 1: {
                 cin.ignore(); // ignore newline character left in the input stream
                 string a, b;
+                cout << R"(Example: "Entroncamento" "Lisboa Oriente")" << endl;
                 cout << "Enter station A: ";
                 getline(cin, a);
 
@@ -70,6 +71,7 @@ int main() {
 
             case 3: {
                 cin.ignore();
+
                 int c;
                 cout << "Type 1 for Top-10 districts regarding flow" << '\n';
                 cout << "Type 2 for Top-10 municipalities regarding flow" << '\n';

@@ -38,10 +38,10 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ getline(inputString,\ service,\ \textcolor{charliteral}{','});}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00036}00036\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ capacity\ =\ stoi(temp);}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ lines.addVertex(station\_A);}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ lines.addVertex(station\_B);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ lines.\mbox{\hyperlink{classGraph_aa265fe199ebbac978b8a954ea754b0c2}{addVertex}}(station\_A);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ lines.\mbox{\hyperlink{classGraph_aa265fe199ebbac978b8a954ea754b0c2}{addVertex}}(station\_B);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ lines.addEdge(station\_A,\ station\_B,\ capacity,\ service);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ lines.\mbox{\hyperlink{classGraph_aa43465e582bec0296ba81cc16b3bf8ab}{addEdge}}(station\_A,\ station\_B,\ capacity,\ service);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00042}00042\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00043}00043\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00044}00044\ }
@@ -85,15 +85,15 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00082}00082\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00083}00083\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00084}\mbox{\hyperlink{classCPheadquarters_a6213807edb09bc22683a415f7a9a0f9d}{00084}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCPheadquarters_a6213807edb09bc22683a415f7a9a0f9d}{CPheadquarters::T2\_1maxflow}}(\textcolor{keywordtype}{string}\ stationA,\ \textcolor{keywordtype}{string}\ stationB)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *source\ =\ lines.findVertex(stationA);\ \textcolor{comment}{//\ set\ source\ vertex}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sink\ =\ lines.findVertex(stationB);\ \textcolor{comment}{//\ set\ sink\ vertex}}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *source\ =\ lines.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(stationA);\ \textcolor{comment}{//\ set\ source\ vertex}}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sink\ =\ lines.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(stationB);\ \textcolor{comment}{//\ set\ sink\ vertex}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00087}00087\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ these\ stations\ even\ exist}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{if}\ (source\ ==\ \textcolor{keyword}{nullptr}\ ||\ sink\ ==\ \textcolor{keyword}{nullptr})\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Source\ or\ sink\ vertex\ not\ found."{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00092}00092\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ lines.edmondsKarp(stationA,\ stationB);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ lines.\mbox{\hyperlink{classGraph_a913921c4491b06f64de526e50d1d0434}{edmondsKarp}}(stationA,\ stationB);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00094}00094\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (maxFlow\ ==\ 0)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Stations\ are\ not\ connected.\ Try\ stationB\ to\ stationA\ instead.\ "{}}\ <<\ stationB\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ stationA}
@@ -106,7 +106,7 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00103}00103\ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00104}00104\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00105}00105\ \textcolor{keywordtype}{void}\ CPheadquarters::test()\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.edmondsKarp(lines.getVertexSet()[324]-\/>getId(),\ lines.getVertexSet()[507]-\/>getId());}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.\mbox{\hyperlink{classGraph_a913921c4491b06f64de526e50d1d0434}{edmondsKarp}}(lines.getVertexSet()[324]-\/>getId(),\ lines.getVertexSet()[507]-\/>getId());}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00107}00107\ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00108}00108\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00109}00109\ }
@@ -123,7 +123,7 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ i\ +\ 1;\ j\ <\ length;\ ++j)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ stationA\ =\ lines.getVertexSet()[i]-\/>getId();}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ stationB\ =\ lines.getVertexSet()[j]-\/>getId();}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.edmondsKarp(stationA,\ stationB);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.\mbox{\hyperlink{classGraph_a913921c4491b06f64de526e50d1d0434}{edmondsKarp}}(stationA,\ stationB);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flow\ ==\ maxFlow)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stations.push\_back(stationB);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stations.push\_back(stationA);}
@@ -164,7 +164,7 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00161}00161\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00162}00162\ \ \ \ \ vector<string>\ souces\ =\ lines.find\_sources(desired\_stations);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00163}00163\ \ \ \ \ vector<string>\ targets\ =\ lines.find\_targets(desired\_stations);}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.mul\_edmondsKarp(souces,\ targets);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.\mbox{\hyperlink{classGraph_ad531840e53343caa6ea0d60473df756f}{mul\_edmondsKarp}}(souces,\ targets);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00165}00165\ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00166}00166\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00167}00167\ \textcolor{keywordtype}{int}\ CPheadquarters::T2\_3district(\textcolor{keywordtype}{string}\ district)\ \{}
@@ -174,19 +174,19 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ desired\_stations.push\_back(p.second.get\_name());}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00173}00173\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.mul\_edmondsKarp(lines.find\_sources(desired\_stations),\ lines.find\_targets(desired\_stations));}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.\mbox{\hyperlink{classGraph_ad531840e53343caa6ea0d60473df756f}{mul\_edmondsKarp}}(lines.find\_sources(desired\_stations),\ lines.find\_targets(desired\_stations));}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00175}00175\ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00176}00176\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00177}00177\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00178}\mbox{\hyperlink{classCPheadquarters_a5cb0b662117e73cb53720f46b6fc3bf6}{00178}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCPheadquarters_a5cb0b662117e73cb53720f46b6fc3bf6}{CPheadquarters::T2\_4maxArrive}}(\textcolor{keywordtype}{string}\ destination)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00179}00179\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *dest\ =\ lines.findVertex(destination);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00179}00179\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *dest\ =\ lines.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(destination);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ 0;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00181}00181\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00182}00182\ \ \ \ \ \textcolor{comment}{//\ iterate\ over\ all\ vertices\ to\ find\ incoming\ and\ outgoing\ vertices}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00183}00183\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&v:\ lines.getVertexSet())\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ !=\ dest)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00185}00185\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.edmondsKarp(v-\/>getId(),\ destination);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.\mbox{\hyperlink{classGraph_a913921c4491b06f64de526e50d1d0434}{edmondsKarp}}(v-\/>getId(),\ destination);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00187}00187\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ maximum\ flow\ if\ this\ vertex\ contributes\ to\ a\ higher\ maximum}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flow\ >\ maxFlow)\ \{}
@@ -210,8 +210,8 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00207}00207\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00208}00208\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00209}\mbox{\hyperlink{classCPheadquarters_a6d1b9e408842662e3c28697e4d9cc226}{00209}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCPheadquarters_a6d1b9e408842662e3c28697e4d9cc226}{CPheadquarters::T3\_1MinCost}}(\textcolor{keywordtype}{string}\ source,\ \textcolor{keywordtype}{string}\ destination)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00210}00210\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sourceVertex\ =\ lines.findVertex(source);\ \textcolor{comment}{//\ set\ source\ vertex}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00211}00211\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *destVertex\ =\ lines.findVertex(destination);\ \textcolor{comment}{//\ set\ sink\ vertex}}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00210}00210\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sourceVertex\ =\ lines.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(source);\ \textcolor{comment}{//\ set\ source\ vertex}}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00211}00211\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *destVertex\ =\ lines.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(destination);\ \textcolor{comment}{//\ set\ sink\ vertex}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{if}\ (sourceVertex\ ==\ \textcolor{keyword}{nullptr}\ ||\ destVertex\ ==\ \textcolor{keyword}{nullptr})\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Source\ or\ destination\ vertex\ not\ found.\ Try\ again"{}}\ <<\ endl;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
@@ -223,7 +223,7 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00220}00220\ \ \ \ \ std::vector<std::vector<Vertex\ *>>\ allPaths;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00221}00221\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00222}00222\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00223}00223\ \ \ \ \ graph.findAllPaths(sourceVertex,\ destVertex,\ path,\ allPaths);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00223}00223\ \ \ \ \ graph.\mbox{\hyperlink{classGraph_a5d93c472186ffb14563a9fc5f9a9e38e}{findAllPaths}}(sourceVertex,\ destVertex,\ path,\ allPaths);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00224}00224\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00225}00225\ \ \ \ \ vector<int>\ maxFlows;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00226}00226\ \ \ \ \ vector<int>\ totalCosts;}
@@ -234,7 +234,7 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalCost\ =\ 0;\ \textcolor{comment}{//\ total\ cost\ of\ this\ path}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ +\ 1\ <\ path.size();\ i++)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ path[i]-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}};}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{Edge}}\ *e\ =\ graph.findEdge(path[i],\ path[i\ +\ 1]);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{Edge}}\ *e\ =\ graph.\mbox{\hyperlink{classGraph_a97e1c39e924f28125a6984bcab510193}{findEdge}}(path[i],\ path[i\ +\ 1]);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ e-\/>getWeight()\ <<\ \textcolor{stringliteral}{"{}\ trains,\ "{}}\ <<\ e-\/>getService()\ <<\ \textcolor{stringliteral}{"{}\ service)\ "{}};}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e-\/>getWeight()\ <\ minWeight)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minWeight\ =\ e-\/>getWeight();}
@@ -300,8 +300,8 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ capacity\ =\ stoi(temp);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ getline(inputString,\ service,\ \textcolor{charliteral}{';'});}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00299}00299\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ graph.addVertex(station\_A);}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ graph.addVertex(station\_B);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ graph.\mbox{\hyperlink{classGraph_aa265fe199ebbac978b8a954ea754b0c2}{addVertex}}(station\_A);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ graph.\mbox{\hyperlink{classGraph_aa265fe199ebbac978b8a954ea754b0c2}{addVertex}}(station\_B);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ unwantedEdges.size();\ i\ =\ i\ +\ 2)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (station\_A\ ==\ unwantedEdges[i]\ \&\&\ station\_B\ ==\ unwantedEdges[i\ +\ 1])\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ \textcolor{keyword}{false};}
@@ -309,20 +309,20 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flag)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ graph.addEdge(station\_A,\ station\_B,\ capacity,\ service);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ graph.\mbox{\hyperlink{classGraph_aa43465e582bec0296ba81cc16b3bf8ab}{addEdge}}(station\_A,\ station\_B,\ capacity,\ service);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ line1\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00312}00312\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00313}00313\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00314}00314\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *source\ =\ graph.findVertex(s);\ \textcolor{comment}{//\ set\ source\ vertex}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00315}00315\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sink\ =\ graph.findVertex(t);\ \textcolor{comment}{//\ set\ sink\ vertex}}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00314}00314\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *source\ =\ graph.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(s);\ \textcolor{comment}{//\ set\ source\ vertex}}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00315}00315\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sink\ =\ graph.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(t);\ \textcolor{comment}{//\ set\ sink\ vertex}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00316}00316\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00317}00317\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ these\ stations\ even\ exist}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00318}00318\ \ \ \ \ \textcolor{keywordflow}{if}\ (source\ ==\ \textcolor{keyword}{nullptr}\ ||\ sink\ ==\ \textcolor{keyword}{nullptr})\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Source\ or\ sink\ vertex\ not\ found."{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00321}00321\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ graph.edmondsKarp(s,\ t);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ graph.\mbox{\hyperlink{classGraph_a913921c4491b06f64de526e50d1d0434}{edmondsKarp}}(s,\ t);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00323}00323\ }
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordflow}{if}\ (maxFlow\ ==\ 0)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Stations\ are\ not\ connected.\ Try\ stationB\ to\ stationA\ instead.\ "{}}\ <<\ t\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ s}
@@ -360,8 +360,8 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ capacity\ =\ stoi(temp);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ getline(inputString,\ service,\ \textcolor{charliteral}{';'});}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00359}00359\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ graph.addVertex(station\_A);}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ graph.addVertex(station\_B);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ graph.\mbox{\hyperlink{classGraph_aa265fe199ebbac978b8a954ea754b0c2}{addVertex}}(station\_A);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ graph.\mbox{\hyperlink{classGraph_aa265fe199ebbac978b8a954ea754b0c2}{addVertex}}(station\_B);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ unwantedEdges.size();\ i\ =\ i\ +\ 2)\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (station\_A\ ==\ unwantedEdges[i]\ \&\&\ station\_B\ ==\ unwantedEdges[i\ +\ 1])\ \{}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flag\ =\ \textcolor{keyword}{false};}
@@ -369,34 +369,34 @@
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flag)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ graph.addEdge(station\_A,\ station\_B,\ capacity,\ service);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ graph.\mbox{\hyperlink{classGraph_aa43465e582bec0296ba81cc16b3bf8ab}{addEdge}}(station\_A,\ station\_B,\ capacity,\ service);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ line1\ =\ \textcolor{stringliteral}{"{}"{}};}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00372}00372\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00373}00373\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00374}00374\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00375}00375\ \ \ \ \ vector<pair<int,\ int>>\ top\_k;}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00376}00376\ \ \ \ \ \textcolor{keyword}{auto}\ length\ =\ lines.getVertexSet().size();}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00377}00377\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ length;\ ++i)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ destination\ =\ lines.getVertexSet()[i]-\/>getId();}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *dest\ =\ lines.findVertex(destination);}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00380}00380\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow1\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow2\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00383}00383\ }
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&v:\ lines.getVertexSet())\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ !=\ dest)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.edmondsKarp(v-\/>getId(),\ destination);}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flow\ >\ maxFlow1)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxFlow1\ =\ flow;}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flow\ =\ graph.edmondsKarp(v-\/>getId(),\ destination);}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flow\ >\ maxFlow2)\ \{}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxFlow2\ =\ flow;}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00373}00373\ \ \ \ \ vector<string>\ org\ =\ lines.getSources();}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00374}00374\ \ \ \ \ vector<string>\ targ\ =\ lines.getTargets();}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00375}00375\ }
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00376}00376\ \ \ \ \ lines.\mbox{\hyperlink{classGraph_ad531840e53343caa6ea0d60473df756f}{mul\_edmondsKarp}}(org,targ);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00377}00377\ \ \ \ \ graph.\mbox{\hyperlink{classGraph_ad531840e53343caa6ea0d60473df756f}{mul\_edmondsKarp}}(org,targ);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00378}00378\ \ \ \ \ vector<pair<int,\ int>>\ top\_k;}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00379}00379\ }
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{keyword}{auto}\ length\ =\ lines.getVertexSet().size();}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00381}00381\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ length;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ destination\ =\ lines.getVertexSet()[i]-\/>getId();}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v1\ =\ lines.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(destination);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v2\ =\ graph.\mbox{\hyperlink{classGraph_a12666658321af4855f1ad691b9840987}{findVertex}}(destination);}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow1\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ e\ :\ v1-\/>getIncoming())\{}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ maxFlow1+=e-\/>getFlow();}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\ e\ :\ v2-\/>getIncoming())\{}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ maxFlow2+=e-\/>getFlow();}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(destination==\textcolor{stringliteral}{"{}Contumil"{}})\{}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ diff\ =\ maxFlow1\ -\/\ maxFlow2;}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ pair(i,\ diff);}
 \DoxyCodeLine{\Hypertarget{CPheadquarters_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ top\_k.push\_back(p);}

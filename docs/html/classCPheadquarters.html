@@ -203,10 +203,10 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   35</span>        getline(inputString, service, <span class="charliteral">&#39;,&#39;</span>);</div>
 <div class="line"><span class="lineno">   36</span> </div>
 <div class="line"><span class="lineno">   37</span>        capacity = stoi(temp);</div>
-<div class="line"><span class="lineno">   38</span>        lines.addVertex(station_A);</div>
-<div class="line"><span class="lineno">   39</span>        lines.addVertex(station_B);</div>
+<div class="line"><span class="lineno">   38</span>        lines.<a class="code hl_function" href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">addVertex</a>(station_A);</div>
+<div class="line"><span class="lineno">   39</span>        lines.<a class="code hl_function" href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">addVertex</a>(station_B);</div>
 <div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>        lines.addEdge(station_A, station_B, capacity, service);</div>
+<div class="line"><span class="lineno">   41</span>        lines.<a class="code hl_function" href="classGraph.html#aa43465e582bec0296ba81cc16b3bf8ab">addEdge</a>(station_A, station_B, capacity, service);</div>
 <div class="line"><span class="lineno">   42</span>    }</div>
 <div class="line"><span class="lineno">   43</span> </div>
 <div class="line"><span class="lineno">   44</span> </div>
@@ -242,6 +242,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">   74</span>        <span class="comment">//cout &lt;&lt; &quot;station: &quot; &lt;&lt; nome &lt;&lt; &quot; distrito: &quot; &lt;&lt; distrito &lt;&lt; &quot; municipality: &quot; &lt;&lt; municipality &lt;&lt; &quot; township: &quot; &lt;&lt; township &lt;&lt; &quot; line: &quot; &lt;&lt; line &lt;&lt; endl;</span></div>
 <div class="line"><span class="lineno">   75</span>    }</div>
 <div class="line"><span class="lineno">   76</span>}</div>
+<div class="ttc" id="aclassGraph_html_aa265fe199ebbac978b8a954ea754b0c2"><div class="ttname"><a href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">Graph::addVertex</a></div><div class="ttdeci">bool addVertex(const std::string &amp;id)</div><div class="ttdoc">Adds a vertex with a given content or info (in) to a graph (this).</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00026">Graph.cpp:26</a></div></div>
+<div class="ttc" id="aclassGraph_html_aa43465e582bec0296ba81cc16b3bf8ab"><div class="ttname"><a href="classGraph.html#aa43465e582bec0296ba81cc16b3bf8ab">Graph::addEdge</a></div><div class="ttdeci">bool addEdge(const std::string &amp;sourc, const std::string &amp;dest, int w, const std::string &amp;service)</div><div class="ttdoc">Adds an edge to a graph (this), given the contents of the source and destination vertices and the edg...</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00034">Graph.cpp:34</a></div></div>
 <div class="ttc" id="aclassStation_html"><div class="ttname"><a href="classStation.html">Station</a></div><div class="ttdef"><b>Definition:</b> <a href="classStation.html#l00012">Station.h:12</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -284,15 +286,15 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CPheadquarters_8cpp_source.html#l00084">84</a> of file <a class="el" href="CPheadquarters_8cpp_source.html">CPheadquarters.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   84</span>                                                                {</div>
-<div class="line"><span class="lineno">   85</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *source = lines.findVertex(stationA); <span class="comment">// set source vertex</span></div>
-<div class="line"><span class="lineno">   86</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *sink = lines.findVertex(stationB); <span class="comment">// set sink vertex</span></div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *source = lines.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(stationA); <span class="comment">// set source vertex</span></div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *sink = lines.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(stationB); <span class="comment">// set sink vertex</span></div>
 <div class="line"><span class="lineno">   87</span> </div>
 <div class="line"><span class="lineno">   88</span>    <span class="comment">// Check if these stations even exist</span></div>
 <div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (source == <span class="keyword">nullptr</span> || sink == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><span class="lineno">   90</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Source or sink vertex not found.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><span class="lineno">   92</span>    }</div>
-<div class="line"><span class="lineno">   93</span>    <span class="keywordtype">int</span> maxFlow = lines.edmondsKarp(stationA, stationB);</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordtype">int</span> maxFlow = lines.<a class="code hl_function" href="classGraph.html#a913921c4491b06f64de526e50d1d0434">edmondsKarp</a>(stationA, stationB);</div>
 <div class="line"><span class="lineno">   94</span> </div>
 <div class="line"><span class="lineno">   95</span>    <span class="keywordflow">if</span> (maxFlow == 0) {</div>
 <div class="line"><span class="lineno">   96</span>        cerr &lt;&lt; <span class="stringliteral">&quot;Stations are not connected. Try stationB to stationA instead. &quot;</span> &lt;&lt; stationB &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span> &lt;&lt; stationA</div>
@@ -303,6 +305,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  101</span> </div>
 <div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> 1;</div>
 <div class="line"><span class="lineno">  103</span>}</div>
+<div class="ttc" id="aclassGraph_html_a12666658321af4855f1ad691b9840987"><div class="ttname"><a href="classGraph.html#a12666658321af4855f1ad691b9840987">Graph::findVertex</a></div><div class="ttdeci">Vertex * findVertex(const std::string &amp;id) const</div><div class="ttdoc">Auxiliary function to find a vertex with a given ID.</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00016">Graph.cpp:16</a></div></div>
+<div class="ttc" id="aclassGraph_html_a913921c4491b06f64de526e50d1d0434"><div class="ttname"><a href="classGraph.html#a913921c4491b06f64de526e50d1d0434">Graph::edmondsKarp</a></div><div class="ttdeci">int edmondsKarp(const std::string &amp;s, const std::string &amp;t)</div><div class="ttdoc">finds the maximum flow in the graph, given a source and a target</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00163">Graph.cpp:163</a></div></div>
 <div class="ttc" id="aclassVertex_html"><div class="ttname"><a href="classVertex.html">Vertex</a></div><div class="ttdef"><b>Definition:</b> <a href="classVertex.html#l00019">VertexEdge.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -323,7 +327,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines from all pairs of stations, which ones (if more than one) require the most amount of trains when taking full advantage of the existing network capacity. </p>
-<p>Print to the terminal all pairs of stations that require the most amount of trains (if more than one). Count the time it takes to run the algorithm and print it to the terminal. </p><dl class="section see"><dt>See also</dt><dd>this function uses Graph::edmondsKarp() function </dd></dl>
+<p>Print to the terminal all pairs of stations that require the most amount of trains (if more than one). Count the time it takes to run the algorithm and print it to the terminal. </p><dl class="section see"><dt>See also</dt><dd>this function uses <a class="el" href="classGraph.html#a913921c4491b06f64de526e50d1d0434" title="finds the maximum flow in the graph, given a source and a target">Graph::edmondsKarp()</a> function </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>maxFlow </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="CPheadquarters_8cpp_source.html#l00111">111</a> of file <a class="el" href="CPheadquarters_8cpp_source.html">CPheadquarters.cpp</a>.</p>
@@ -339,7 +343,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  120</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = i + 1; j &lt; length; ++j) {</div>
 <div class="line"><span class="lineno">  121</span>            <span class="keywordtype">string</span> stationA = lines.getVertexSet()[i]-&gt;getId();</div>
 <div class="line"><span class="lineno">  122</span>            <span class="keywordtype">string</span> stationB = lines.getVertexSet()[j]-&gt;getId();</div>
-<div class="line"><span class="lineno">  123</span>            <span class="keywordtype">int</span> flow = lines.edmondsKarp(stationA, stationB);</div>
+<div class="line"><span class="lineno">  123</span>            <span class="keywordtype">int</span> flow = lines.<a class="code hl_function" href="classGraph.html#a913921c4491b06f64de526e50d1d0434">edmondsKarp</a>(stationA, stationB);</div>
 <div class="line"><span class="lineno">  124</span>            <span class="keywordflow">if</span> (flow == maxFlow) {</div>
 <div class="line"><span class="lineno">  125</span>                stations.push_back(stationB);</div>
 <div class="line"><span class="lineno">  126</span>                stations.push_back(stationA);</div>
@@ -396,8 +400,9 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  171</span>            desired_stations.push_back(p.second.get_name());</div>
 <div class="line"><span class="lineno">  172</span>        }</div>
 <div class="line"><span class="lineno">  173</span>    }</div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> lines.mul_edmondsKarp(lines.find_sources(desired_stations), lines.find_targets(desired_stations));</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> lines.<a class="code hl_function" href="classGraph.html#ad531840e53343caa6ea0d60473df756f">mul_edmondsKarp</a>(lines.find_sources(desired_stations), lines.find_targets(desired_stations));</div>
 <div class="line"><span class="lineno">  175</span>}</div>
+<div class="ttc" id="aclassGraph_html_ad531840e53343caa6ea0d60473df756f"><div class="ttname"><a href="classGraph.html#ad531840e53343caa6ea0d60473df756f">Graph::mul_edmondsKarp</a></div><div class="ttdeci">int mul_edmondsKarp(std::vector&lt; std::string &gt; souces, std::vector&lt; std::string &gt; targets)</div><div class="ttdoc">finds the maximum flow in the graph, given a set of sources and a set of targets</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00221">Graph.cpp:221</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -436,7 +441,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  161</span>    }</div>
 <div class="line"><span class="lineno">  162</span>    vector&lt;string&gt; souces = lines.find_sources(desired_stations);</div>
 <div class="line"><span class="lineno">  163</span>    vector&lt;string&gt; targets = lines.find_targets(desired_stations);</div>
-<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> lines.mul_edmondsKarp(souces, targets);</div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> lines.<a class="code hl_function" href="classGraph.html#ad531840e53343caa6ea0d60473df756f">mul_edmondsKarp</a>(souces, targets);</div>
 <div class="line"><span class="lineno">  165</span>}</div>
 </div><!-- fragment -->
 </div>
@@ -469,14 +474,14 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CPheadquarters_8cpp_source.html#l00178">178</a> of file <a class="el" href="CPheadquarters_8cpp_source.html">CPheadquarters.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  178</span>                                                    {</div>
-<div class="line"><span class="lineno">  179</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *dest = lines.findVertex(destination);</div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *dest = lines.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(destination);</div>
 <div class="line"><span class="lineno">  180</span>    <span class="keywordtype">int</span> maxFlow = 0;</div>
 <div class="line"><span class="lineno">  181</span> </div>
 <div class="line"><span class="lineno">  182</span>    <span class="comment">// iterate over all vertices to find incoming and outgoing vertices</span></div>
 <div class="line"><span class="lineno">  183</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;v: lines.getVertexSet()) {</div>
 <div class="line"><span class="lineno">  184</span>        <span class="keywordflow">if</span> (v != dest) {</div>
 <div class="line"><span class="lineno">  185</span> </div>
-<div class="line"><span class="lineno">  186</span>            <span class="keywordtype">int</span> flow = lines.edmondsKarp(v-&gt;getId(), destination);</div>
+<div class="line"><span class="lineno">  186</span>            <span class="keywordtype">int</span> flow = lines.<a class="code hl_function" href="classGraph.html#a913921c4491b06f64de526e50d1d0434">edmondsKarp</a>(v-&gt;getId(), destination);</div>
 <div class="line"><span class="lineno">  187</span> </div>
 <div class="line"><span class="lineno">  188</span>            <span class="comment">// Update the maximum flow if this vertex contributes to a higher maximum</span></div>
 <div class="line"><span class="lineno">  189</span>            <span class="keywordflow">if</span> (flow &gt; maxFlow) {</div>
@@ -537,8 +542,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CPheadquarters_8cpp_source.html#l00209">209</a> of file <a class="el" href="CPheadquarters_8cpp_source.html">CPheadquarters.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  209</span>                                                                 {</div>
-<div class="line"><span class="lineno">  210</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *sourceVertex = lines.findVertex(source); <span class="comment">// set source vertex</span></div>
-<div class="line"><span class="lineno">  211</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *destVertex = lines.findVertex(destination); <span class="comment">// set sink vertex</span></div>
+<div class="line"><span class="lineno">  210</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *sourceVertex = lines.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(source); <span class="comment">// set source vertex</span></div>
+<div class="line"><span class="lineno">  211</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *destVertex = lines.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(destination); <span class="comment">// set sink vertex</span></div>
 <div class="line"><span class="lineno">  212</span>    <span class="keywordflow">if</span> (sourceVertex == <span class="keyword">nullptr</span> || destVertex == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><span class="lineno">  213</span>        cerr &lt;&lt; <span class="stringliteral">&quot;Source or destination vertex not found. Try again&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><span class="lineno">  214</span>        <span class="keywordflow">return</span> 1;</div>
@@ -550,7 +555,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  220</span>    std::vector&lt;std::vector&lt;Vertex *&gt;&gt; allPaths;</div>
 <div class="line"><span class="lineno">  221</span> </div>
 <div class="line"><span class="lineno">  222</span> </div>
-<div class="line"><span class="lineno">  223</span>    graph.findAllPaths(sourceVertex, destVertex, path, allPaths);</div>
+<div class="line"><span class="lineno">  223</span>    graph.<a class="code hl_function" href="classGraph.html#a5d93c472186ffb14563a9fc5f9a9e38e">findAllPaths</a>(sourceVertex, destVertex, path, allPaths);</div>
 <div class="line"><span class="lineno">  224</span> </div>
 <div class="line"><span class="lineno">  225</span>    vector&lt;int&gt; maxFlows;</div>
 <div class="line"><span class="lineno">  226</span>    vector&lt;int&gt; totalCosts;</div>
@@ -561,7 +566,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  231</span>        <span class="keywordtype">int</span> totalCost = 0; <span class="comment">// total cost of this path</span></div>
 <div class="line"><span class="lineno">  232</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i + 1 &lt; path.size(); i++) {</div>
 <div class="line"><span class="lineno">  233</span>            std::cout &lt;&lt; path[i]-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span>;</div>
-<div class="line"><span class="lineno">  234</span>            <a class="code hl_class" href="classEdge.html">Edge</a> *e = graph.findEdge(path[i], path[i + 1]);</div>
+<div class="line"><span class="lineno">  234</span>            <a class="code hl_class" href="classEdge.html">Edge</a> *e = graph.<a class="code hl_function" href="classGraph.html#a97e1c39e924f28125a6984bcab510193">findEdge</a>(path[i], path[i + 1]);</div>
 <div class="line"><span class="lineno">  235</span>            cout &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; e-&gt;getWeight() &lt;&lt; <span class="stringliteral">&quot; trains, &quot;</span> &lt;&lt; e-&gt;getService() &lt;&lt; <span class="stringliteral">&quot; service) &quot;</span>;</div>
 <div class="line"><span class="lineno">  236</span>            <span class="keywordflow">if</span> (e-&gt;getWeight() &lt; minWeight) {</div>
 <div class="line"><span class="lineno">  237</span>                minWeight = e-&gt;getWeight();</div>
@@ -602,6 +607,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  272</span>}</div>
 <div class="ttc" id="aclassEdge_html"><div class="ttname"><a href="classEdge.html">Edge</a></div><div class="ttdef"><b>Definition:</b> <a href="classEdge.html#l00078">VertexEdge.h:78</a></div></div>
 <div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00015">Graph.h:15</a></div></div>
+<div class="ttc" id="aclassGraph_html_a5d93c472186ffb14563a9fc5f9a9e38e"><div class="ttname"><a href="classGraph.html#a5d93c472186ffb14563a9fc5f9a9e38e">Graph::findAllPaths</a></div><div class="ttdeci">void findAllPaths(Vertex *source, Vertex *destination, std::vector&lt; Vertex * &gt; &amp;path, std::vector&lt; std::vector&lt; Vertex * &gt; &gt; &amp;allPaths)</div><div class="ttdoc">finds all existing paths for a given source and destination return a vector of paths as an out parame...</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00264">Graph.cpp:264</a></div></div>
+<div class="ttc" id="aclassGraph_html_a97e1c39e924f28125a6984bcab510193"><div class="ttname"><a href="classGraph.html#a97e1c39e924f28125a6984bcab510193">Graph::findEdge</a></div><div class="ttdeci">Edge * findEdge(Vertex *source, Vertex *destination)</div><div class="ttdoc">find an edge in the graph, based on a a source and a destination vertices</div><div class="ttdef"><b>Definition:</b> <a href="classGraph.html#l00286">Graph.cpp:286</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -675,8 +682,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  297</span>        capacity = stoi(temp);</div>
 <div class="line"><span class="lineno">  298</span>        getline(inputString, service, <span class="charliteral">&#39;;&#39;</span>);</div>
 <div class="line"><span class="lineno">  299</span> </div>
-<div class="line"><span class="lineno">  300</span>        graph.addVertex(station_A);</div>
-<div class="line"><span class="lineno">  301</span>        graph.addVertex(station_B);</div>
+<div class="line"><span class="lineno">  300</span>        graph.<a class="code hl_function" href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">addVertex</a>(station_A);</div>
+<div class="line"><span class="lineno">  301</span>        graph.<a class="code hl_function" href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">addVertex</a>(station_B);</div>
 <div class="line"><span class="lineno">  302</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; unwantedEdges.size(); i = i + 2) {</div>
 <div class="line"><span class="lineno">  303</span>            <span class="keywordflow">if</span> (station_A == unwantedEdges[i] &amp;&amp; station_B == unwantedEdges[i + 1]) {</div>
 <div class="line"><span class="lineno">  304</span>                flag = <span class="keyword">false</span>;</div>
@@ -684,20 +691,20 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  306</span>            }</div>
 <div class="line"><span class="lineno">  307</span>        }</div>
 <div class="line"><span class="lineno">  308</span>        <span class="keywordflow">if</span> (flag) {</div>
-<div class="line"><span class="lineno">  309</span>            graph.addEdge(station_A, station_B, capacity, service);</div>
+<div class="line"><span class="lineno">  309</span>            graph.<a class="code hl_function" href="classGraph.html#aa43465e582bec0296ba81cc16b3bf8ab">addEdge</a>(station_A, station_B, capacity, service);</div>
 <div class="line"><span class="lineno">  310</span>        }</div>
 <div class="line"><span class="lineno">  311</span>        line1 = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">  312</span>    }</div>
 <div class="line"><span class="lineno">  313</span> </div>
-<div class="line"><span class="lineno">  314</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *source = graph.findVertex(s); <span class="comment">// set source vertex</span></div>
-<div class="line"><span class="lineno">  315</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *sink = graph.findVertex(t); <span class="comment">// set sink vertex</span></div>
+<div class="line"><span class="lineno">  314</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *source = graph.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(s); <span class="comment">// set source vertex</span></div>
+<div class="line"><span class="lineno">  315</span>    <a class="code hl_class" href="classVertex.html">Vertex</a> *sink = graph.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(t); <span class="comment">// set sink vertex</span></div>
 <div class="line"><span class="lineno">  316</span> </div>
 <div class="line"><span class="lineno">  317</span>    <span class="comment">// Check if these stations even exist</span></div>
 <div class="line"><span class="lineno">  318</span>    <span class="keywordflow">if</span> (source == <span class="keyword">nullptr</span> || sink == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><span class="lineno">  319</span>        std::cerr &lt;&lt; <span class="stringliteral">&quot;Source or sink vertex not found.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><span class="lineno">  320</span>        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><span class="lineno">  321</span>    }</div>
-<div class="line"><span class="lineno">  322</span>    <span class="keywordtype">int</span> maxFlow = graph.edmondsKarp(s, t);</div>
+<div class="line"><span class="lineno">  322</span>    <span class="keywordtype">int</span> maxFlow = graph.<a class="code hl_function" href="classGraph.html#a913921c4491b06f64de526e50d1d0434">edmondsKarp</a>(s, t);</div>
 <div class="line"><span class="lineno">  323</span> </div>
 <div class="line"><span class="lineno">  324</span>    <span class="keywordflow">if</span> (maxFlow == 0) {</div>
 <div class="line"><span class="lineno">  325</span>        cerr &lt;&lt; <span class="stringliteral">&quot;Stations are not connected. Try stationB to stationA instead. &quot;</span> &lt;&lt; t &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span> &lt;&lt; s</div>
@@ -762,8 +769,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  357</span>        capacity = stoi(temp);</div>
 <div class="line"><span class="lineno">  358</span>        getline(inputString, service, <span class="charliteral">&#39;;&#39;</span>);</div>
 <div class="line"><span class="lineno">  359</span> </div>
-<div class="line"><span class="lineno">  360</span>        graph.addVertex(station_A);</div>
-<div class="line"><span class="lineno">  361</span>        graph.addVertex(station_B);</div>
+<div class="line"><span class="lineno">  360</span>        graph.<a class="code hl_function" href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">addVertex</a>(station_A);</div>
+<div class="line"><span class="lineno">  361</span>        graph.<a class="code hl_function" href="classGraph.html#aa265fe199ebbac978b8a954ea754b0c2">addVertex</a>(station_B);</div>
 <div class="line"><span class="lineno">  362</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; unwantedEdges.size(); i = i + 2) {</div>
 <div class="line"><span class="lineno">  363</span>            <span class="keywordflow">if</span> (station_A == unwantedEdges[i] &amp;&amp; station_B == unwantedEdges[i + 1]) {</div>
 <div class="line"><span class="lineno">  364</span>                flag = <span class="keyword">false</span>;</div>
@@ -771,34 +778,34 @@ Public Member Functions</h2></td></tr>
 <div class="line"><span class="lineno">  366</span>            }</div>
 <div class="line"><span class="lineno">  367</span>        }</div>
 <div class="line"><span class="lineno">  368</span>        <span class="keywordflow">if</span> (flag) {</div>
-<div class="line"><span class="lineno">  369</span>            graph.addEdge(station_A, station_B, capacity, service);</div>
+<div class="line"><span class="lineno">  369</span>            graph.<a class="code hl_function" href="classGraph.html#aa43465e582bec0296ba81cc16b3bf8ab">addEdge</a>(station_A, station_B, capacity, service);</div>
 <div class="line"><span class="lineno">  370</span>        }</div>
 <div class="line"><span class="lineno">  371</span>        line1 = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">  372</span>    }</div>
-<div class="line"><span class="lineno">  373</span> </div>
-<div class="line"><span class="lineno">  374</span> </div>
-<div class="line"><span class="lineno">  375</span>    vector&lt;pair&lt;int, int&gt;&gt; top_k;</div>
-<div class="line"><span class="lineno">  376</span>    <span class="keyword">auto</span> length = lines.getVertexSet().size();</div>
-<div class="line"><span class="lineno">  377</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; length; ++i) {</div>
-<div class="line"><span class="lineno">  378</span>        <span class="keywordtype">string</span> destination = lines.getVertexSet()[i]-&gt;getId();</div>
-<div class="line"><span class="lineno">  379</span>        <a class="code hl_class" href="classVertex.html">Vertex</a> *dest = lines.findVertex(destination);</div>
-<div class="line"><span class="lineno">  380</span> </div>
-<div class="line"><span class="lineno">  381</span>        <span class="keywordtype">int</span> maxFlow1 = 0;</div>
-<div class="line"><span class="lineno">  382</span>        <span class="keywordtype">int</span> maxFlow2 = 0;</div>
-<div class="line"><span class="lineno">  383</span> </div>
-<div class="line"><span class="lineno">  384</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;v: lines.getVertexSet()) {</div>
-<div class="line"><span class="lineno">  385</span>            <span class="keywordflow">if</span> (v != dest) {</div>
-<div class="line"><span class="lineno">  386</span>                <span class="keywordtype">int</span> flow = lines.edmondsKarp(v-&gt;getId(), destination);</div>
-<div class="line"><span class="lineno">  387</span>                <span class="keywordflow">if</span> (flow &gt; maxFlow1) {</div>
-<div class="line"><span class="lineno">  388</span>                    maxFlow1 = flow;</div>
-<div class="line"><span class="lineno">  389</span>                }</div>
-<div class="line"><span class="lineno">  390</span>                flow = graph.edmondsKarp(v-&gt;getId(), destination);</div>
-<div class="line"><span class="lineno">  391</span>                <span class="keywordflow">if</span> (flow &gt; maxFlow2) {</div>
-<div class="line"><span class="lineno">  392</span>                    maxFlow2 = flow;</div>
-<div class="line"><span class="lineno">  393</span>                }</div>
-<div class="line"><span class="lineno">  394</span>            }</div>
-<div class="line"><span class="lineno">  395</span>        }</div>
-<div class="line"><span class="lineno">  396</span> </div>
+<div class="line"><span class="lineno">  373</span>    vector&lt;string&gt; org = lines.getSources();</div>
+<div class="line"><span class="lineno">  374</span>    vector&lt;string&gt; targ = lines.getTargets();</div>
+<div class="line"><span class="lineno">  375</span> </div>
+<div class="line"><span class="lineno">  376</span>    lines.<a class="code hl_function" href="classGraph.html#ad531840e53343caa6ea0d60473df756f">mul_edmondsKarp</a>(org,targ);</div>
+<div class="line"><span class="lineno">  377</span>    graph.<a class="code hl_function" href="classGraph.html#ad531840e53343caa6ea0d60473df756f">mul_edmondsKarp</a>(org,targ);</div>
+<div class="line"><span class="lineno">  378</span>    vector&lt;pair&lt;int, int&gt;&gt; top_k;</div>
+<div class="line"><span class="lineno">  379</span> </div>
+<div class="line"><span class="lineno">  380</span>    <span class="keyword">auto</span> length = lines.getVertexSet().size();</div>
+<div class="line"><span class="lineno">  381</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; length; ++i) {</div>
+<div class="line"><span class="lineno">  382</span>        <span class="keywordtype">string</span> destination = lines.getVertexSet()[i]-&gt;getId();</div>
+<div class="line"><span class="lineno">  383</span>        <span class="keyword">auto</span> v1 = lines.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(destination);</div>
+<div class="line"><span class="lineno">  384</span>        <span class="keyword">auto</span> v2 = graph.<a class="code hl_function" href="classGraph.html#a12666658321af4855f1ad691b9840987">findVertex</a>(destination);</div>
+<div class="line"><span class="lineno">  385</span>        <span class="keywordtype">int</span> maxFlow1 = 0;</div>
+<div class="line"><span class="lineno">  386</span>        <span class="keywordtype">int</span> maxFlow2 = 0;</div>
+<div class="line"><span class="lineno">  387</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> e : v1-&gt;getIncoming()){</div>
+<div class="line"><span class="lineno">  388</span>            maxFlow1+=e-&gt;getFlow();</div>
+<div class="line"><span class="lineno">  389</span>        }</div>
+<div class="line"><span class="lineno">  390</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> e : v2-&gt;getIncoming()){</div>
+<div class="line"><span class="lineno">  391</span>            maxFlow2+=e-&gt;getFlow();</div>
+<div class="line"><span class="lineno">  392</span>        }</div>
+<div class="line"><span class="lineno">  393</span> </div>
+<div class="line"><span class="lineno">  394</span>        <span class="keywordflow">if</span>(destination==<span class="stringliteral">&quot;Contumil&quot;</span>){</div>
+<div class="line"><span class="lineno">  395</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  396</span>        }</div>
 <div class="line"><span class="lineno">  397</span>        <span class="keywordtype">int</span> diff = maxFlow1 - maxFlow2;</div>
 <div class="line"><span class="lineno">  398</span>        <span class="keyword">auto</span> p = pair(i, diff);</div>
 <div class="line"><span class="lineno">  399</span>        top_k.push_back(p);</div>
@@ -832,7 +839,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="CPheadquarters_8cpp_source.html#l00105">105</a> of file <a class="el" href="CPheadquarters_8cpp_source.html">CPheadquarters.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  105</span>                          {</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordtype">int</span> flow = lines.edmondsKarp(lines.getVertexSet()[324]-&gt;getId(), lines.getVertexSet()[507]-&gt;getId());</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordtype">int</span> flow = lines.<a class="code hl_function" href="classGraph.html#a913921c4491b06f64de526e50d1d0434">edmondsKarp</a>(lines.getVertexSet()[324]-&gt;getId(), lines.getVertexSet()[507]-&gt;getId());</div>
 <div class="line"><span class="lineno">  107</span>}</div>
 </div><!-- fragment -->
 </div>
