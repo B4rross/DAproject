@@ -29,10 +29,16 @@ public:
 
     int T2_4maxArrive(string destination);
 
+    int T3_1MinCost(string source, string destination);
+
+    int T4_1ReducedConectivity(vector<string> unwantedEdges, string s, string t);
+
+    int T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges);
 
     void test();
 
-    int T3_1MinCost(string source, string destination);
+
+
 };
 
 

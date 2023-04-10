@@ -122,11 +122,7 @@ int CPheadquarters::T2_2maxflowAllStations() {
         for (int j = i + 1; j < length; ++j) {
             string stationA = lines.getVertexSet()[i]->getId();
             string stationB = lines.getVertexSet()[j]->getId();
-            if (stationA == "Trofa" && stationB == "Espinho") {
-                cout << "stop";
-            }
             int flow = lines.edmondsKarp(stationA, stationB);
-            cout << "edmunddone" << '\n';
             if (flow == maxFlow) {
                 stations.push_back(stationB);
                 stations.push_back(stationA);
@@ -279,4 +275,139 @@ int CPheadquarters::T3_1MinCost(string source, string destination) {
          << " with minimum cost"
          << "(" << resCost << " euros): " << maxTrains << " trains\n" << endl;
     return maxTrains;
+}
+
+int CPheadquarters::T4_1ReducedConectivity(std::vector<std::string> unwantedEdges, std::string s, std::string t) {
+    Graph graph;
+    ifstream inputFile1;
+    inputFile1.open(R"(../network.csv)");
+    string line1;
+
+    getline(inputFile1, line1);
+    line1 = "";
+
+    while (getline(inputFile1, line1)) {
+        string station_A;
+        string station_B;
+        string temp;
+        int capacity;
+        string service;
+        bool flag = true;
+
+        stringstream inputString(line1);
+
+        getline(inputString, station_A, ';');
+        getline(inputString, station_B, ';');
+        getline(inputString, temp, ';');
+        capacity = stoi(temp);
+        getline(inputString, service, ';');
+
+        graph.addVertex(station_A);
+        graph.addVertex(station_B);
+        for (int i = 0; i < unwantedEdges.size(); i = i + 2) {
+            if(station_A==unwantedEdges[i] && station_B==unwantedEdges[i+1]){
+                flag=false;
+
+            }
+        }
+        if(flag) {
+            graph.addEdge(station_A, station_B, capacity, service);
+        }
+        line1 = "";
+    }
+
+    Vertex *source = graph.findVertex(s); // set source vertex
+    Vertex *sink = graph.findVertex(t); // set sink vertex
+
+    // Check if these stations even exist
+    if (source == nullptr || sink == nullptr) {
+        std::cerr << "Source or sink vertex not found." << std::endl;
+        return 1;
+    }
+    int maxFlow = graph.edmondsKarp(s, t);
+
+    if (maxFlow == 0) {
+        cerr << "Stations are not connected. Try stationB to stationA instead. " << t << " -> " << s
+             << endl;
+    }
+    cout << "maxFlow:\t" << maxFlow << endl;
+
+
+    return 1;
+}
+
+int CPheadquarters::T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges) {
+    Graph graph;
+    ifstream inputFile1;
+    inputFile1.open(R"(../network.csv)");
+    string line1;
+
+    getline(inputFile1, line1);
+    line1 = "";
+
+    while (getline(inputFile1, line1)) {
+        string station_A;
+        string station_B;
+        string temp;
+        int capacity;
+        string service;
+        bool flag = true;
+
+        stringstream inputString(line1);
+
+        getline(inputString, station_A, ';');
+        getline(inputString, station_B, ';');
+        getline(inputString, temp, ';');
+        capacity = stoi(temp);
+        getline(inputString, service, ';');
+
+        graph.addVertex(station_A);
+        graph.addVertex(station_B);
+        for (int i = 0; i < unwantedEdges.size(); i = i + 2) {
+            if(station_A==unwantedEdges[i] && station_B==unwantedEdges[i+1]){
+                flag=false;
+                break;
+            }
+        }
+        if(flag) {
+            graph.addEdge(station_A, station_B, capacity, service);
+        }
+        line1 = "";
+    }
+
+
+    vector<pair<int, int>> top_k;
+    auto length = lines.getVertexSet().size();
+    for (int i = 0; i < length; ++i) {
+        string destination = lines.getVertexSet()[i]->getId();
+        Vertex *dest = lines.findVertex(destination);
+
+        int maxFlow1 = 0;
+        int maxFlow2 = 0;
+
+        for (auto &v: lines.getVertexSet()) {
+            if (v != dest) {
+                int flow = lines.edmondsKarp(v->getId(), destination);
+                if (flow > maxFlow1) {
+                    maxFlow1 = flow;
+                }
+                flow = graph.edmondsKarp(v->getId(), destination);
+                if (flow > maxFlow2) {
+                    maxFlow2 = flow;
+                }
+            }
+        }
+
+        int diff = maxFlow1 - maxFlow2;
+        auto p = pair(i,diff);
+        top_k.push_back(p);
+        cout << "a";
+    }
+    std::sort(top_k.begin(), top_k.end(), [](auto &left, auto &right) {
+        return left.second > right.second;
+    });
+    for(int i = 0; i < 10; i++){
+        cout << i+1 << "-" << lines.getVertexSet()[top_k[i].first]->getId() << " -> " << top_k[i].second << '\n';
+    }
+    return 1;
 }
