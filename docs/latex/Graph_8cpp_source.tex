@@ -1,0 +1,331 @@
+\hypertarget{Graph_8cpp_source}{}\doxysection{Graph.\+cpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00001}00001\ \textcolor{comment}{//\ By:\ Gonçalo\ Leão}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <climits>}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}Graph.h"{}}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00007}00007\ \textcolor{keywordtype}{int}\ Graph::getNumVertex()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{return}\ vertexSet.size();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00011}00011\ std::vector<Vertex\ *>\ Graph::getVertexSet()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{return}\ vertexSet;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00015}00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00016}00016\ \textcolor{comment}{\ *\ Auxiliary\ function\ to\ find\ a\ vertex\ with\ a\ given\ content.}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00017}00017\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00018}00018\ \mbox{\hyperlink{classVertex}{Vertex}}\ *Graph::findVertex(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ v:\ vertexSet)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v-\/>getId()\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00026}00026\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00027}00027\ \textcolor{comment}{\ *\ Finds\ the\ index\ of\ the\ vertex\ with\ a\ given\ content.}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00028}00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00029}00029\ \textcolor{keywordtype}{int}\ Graph::findVertexIdx(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ i\ =\ 0;\ i\ <\ vertexSet.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vertexSet[i]-\/>getId()\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00036}00036\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00037}00037\ \textcolor{comment}{\ *\ \ Adds\ a\ vertex\ with\ a\ given\ content\ or\ info\ (in)\ to\ a\ graph\ (this).}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00038}00038\ \textcolor{comment}{\ *\ \ Returns\ true\ if\ successful,\ and\ false\ if\ a\ vertex\ with\ that\ content\ already\ exists.}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00039}00039\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00040}00040\ \textcolor{keywordtype}{bool}\ Graph::addVertex(\textcolor{keyword}{const}\ std::string\ \&\textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (findVertex(\textcolor{keywordtype}{id})\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00043}00043\ \ \ \ \ vertexSet.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{classVertex}{Vertex}}(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00047}00047\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00048}00048\ \textcolor{comment}{\ *\ Adds\ an\ edge\ to\ a\ graph\ (this),\ given\ the\ contents\ of\ the\ source\ and}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00049}00049\ \textcolor{comment}{\ *\ destination\ vertices\ and\ the\ edge\ weight\ (w).}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00050}00050\ \textcolor{comment}{\ *\ Returns\ true\ if\ successful,\ and\ false\ if\ the\ source\ or\ destination\ vertex\ does\ not\ exist.}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00051}00051\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00052}00052\ \textcolor{keywordtype}{bool}\ Graph::addEdge(\textcolor{keyword}{const}\ std::string\ \&sourc,\ \textcolor{keyword}{const}\ std::string\ \&dest,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keyword}{const}\ std::string\ \&service)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{auto}\ v1\ =\ findVertex(sourc);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{auto}\ v2\ =\ findVertex(dest);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (v1\ ==\ \textcolor{keyword}{nullptr}\ ||\ v2\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00057}00057\ \ \ \ \ v1-\/>addEdge(v2,\ w,\ service);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00062}00062\ \textcolor{keywordtype}{bool}\ Graph::addBidirectionalEdge(\textcolor{keyword}{const}\ std::string\ \&sourc,\ \textcolor{keyword}{const}\ std::string\ \&dest,\ \textcolor{keywordtype}{int}\ w,\ std::string\ service)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{auto}\ v1\ =\ findVertex(sourc);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{auto}\ v2\ =\ findVertex(dest);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{if}\ (v1\ ==\ \textcolor{keyword}{nullptr}\ ||\ v2\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{auto}\ e1\ =\ v1-\/>addEdge(v2,\ w,\ service);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{auto}\ e2\ =\ v2-\/>addEdge(v1,\ w,\ service);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00069}00069\ \ \ \ \ e1-\/>setReverse(e2);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00070}00070\ \ \ \ \ e2-\/>setReverse(e1);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00075}00075\ \textcolor{keywordtype}{void}\ deleteMatrix(\textcolor{keywordtype}{int}\ **m,\ \textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m[i]\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ m[i];}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ m;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00084}00084\ \textcolor{keywordtype}{void}\ deleteMatrix(\textcolor{keywordtype}{double}\ **m,\ \textcolor{keywordtype}{int}\ n)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n;\ i++)}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m[i]\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ m[i];}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ m;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00093}00093\ Graph::\string~Graph()\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00094}00094\ \ \ \ \ deleteMatrix(distMatrix,\ vertexSet.size());}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00095}00095\ \ \ \ \ deleteMatrix(pathMatrix,\ vertexSet.size());}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00099}00099\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00100}00100\ \textcolor{comment}{\ *\ \ print\ graph\ content}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00101}00101\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00102}00102\ \textcolor{keywordtype}{void}\ Graph::print()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00103}00103\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Graph-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00104}00104\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Number\ of\ vertices:\ "{}}\ <<\ vertexSet.size()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00105}00105\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vertices:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&vertex:\ vertexSet)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ std::cout\ <<\ vertex-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00109}00109\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nEdges:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&vertex:\ vertexSet)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&edge:\ vertex-\/>getAdj())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ vertex-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ edge-\/>getDest()-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ (weight:\ "{}}\ <<\ edge-\/>getWeight()\ <<\ \textcolor{stringliteral}{"{},\ service:\ "{}}\ <<\ edge-\/>getService()\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00117}00117\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Edmonds-\/Karp\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00119}00119\ \textcolor{keywordtype}{void}\ Graph::testAndVisit(std::queue<Vertex\ *>\ \&q,\ \mbox{\hyperlink{classEdge}{Edge}}\ *e,\ \mbox{\hyperlink{classVertex}{Vertex}}\ *w,\ \textcolor{keywordtype}{double}\ residual)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{if}\ (!w-\/>isVisited()\ \&\&\ residual\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ w-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ w-\/>setPath(e);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ q.push(w);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00125}00125\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00127}00127\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00128}00128\ \textcolor{comment}{\ *\ An\ augmenting\ path\ is\ a\ simple\ path\ -\/\ a\ path\ that\ does\ not\ contain\ cycles}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00129}00129\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00130}00130\ \textcolor{keywordtype}{bool}\ Graph::findAugmentingPath(\textcolor{keyword}{const}\ std::string\ \&s,\ \textcolor{keyword}{const}\ std::string\ \&t)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *source\ =\ findVertex(s);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *target\ =\ findVertex(t);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (source\ ==\ \textcolor{keyword}{nullptr}\ ||\ target\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ v:\ vertexSet)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ v-\/>setVisited(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ v-\/>setPath(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00140}00140\ \ \ \ \ source-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00141}00141\ \ \ \ \ std::queue<Vertex\ *>\ q;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00142}00142\ \ \ \ \ q.push(source);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v\ =\ q.front();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ e:\ v-\/>getAdj())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ w\ =\ e-\/>getDest();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ residual\ =\ e-\/>getWeight()\ -\/\ e-\/>getFlow();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ testAndVisit(q,\ e,\ w,\ residual);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ e:\ v-\/>getIncoming())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ w\ =\ e-\/>getDest();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ residual\ =\ e-\/>getFlow();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ testAndVisit(q,\ e-\/>getReverse(),\ w,\ residual);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (target-\/>isVisited())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00161}00161\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00163}00163\ \textcolor{keywordtype}{int}\ Graph::findMinResidual(\mbox{\hyperlink{classVertex}{Vertex}}\ *s,\ \mbox{\hyperlink{classVertex}{Vertex}}\ *t)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordtype}{double}\ minResidual\ =\ INT\_MAX;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ v\ =\ t;\ v\ !=\ s;)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ e\ =\ v-\/>getPath();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e-\/>getDest()\ ==\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ minResidual\ =\ std::min(minResidual,\ e-\/>getWeight()\ -\/\ e-\/>getFlow());}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ e-\/>getOrig();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ minResidual\ =\ std::min(minResidual,\ e-\/>getFlow());}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ e-\/>getDest();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00174}00174\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{return}\ minResidual;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00176}00176\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00178}00178\ \textcolor{keywordtype}{void}\ Graph::updateFlow(\mbox{\hyperlink{classVertex}{Vertex}}\ *s,\ \mbox{\hyperlink{classVertex}{Vertex}}\ *t,\ \textcolor{keywordtype}{int}\ bottleneck)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ v\ =\ t;\ v\ !=\ s;)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ e\ =\ v-\/>getPath();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ flow\ =\ e-\/>getFlow();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e-\/>getDest()\ ==\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ e-\/>setFlow(flow\ +\ bottleneck);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ e-\/>getOrig();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ e-\/>setFlow(flow\ -\/\ bottleneck);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ e-\/>getDest();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00189}00189\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00190}00190\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00192}00192\ \textcolor{keywordtype}{int}\ Graph::edmondsKarp(\textcolor{keyword}{const}\ std::string\ \&s,\ \textcolor{keyword}{const}\ std::string\ \&t)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ e:\ vertexSet)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i:\ e-\/>getAdj())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>setFlow(0);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00197}00197\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{while}\ (findAugmentingPath(s,\ t))\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bottleneck\ =\ findMinResidual(findVertex(s),\ findVertex(t));}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ updateFlow(findVertex(s),\ findVertex(t),\ bottleneck);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ maxFlow\ +=\ bottleneck;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{return}\ maxFlow;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00205}00205\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00207}00207\ std::vector<std::string>\ Graph::find\_sources(std::vector<std::string>\ desired\_stations)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00208}00208\ \ \ \ \ std::vector<std::string>\ res;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00209}00209\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ s:\ desired\_stations)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v\ =\ findVertex(s);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Trouble\ finding\ source\ "{}}\ <<\ s\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ e:\ v-\/>getIncoming())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isIn(e-\/>getOrig()-\/>getId(),\ desired\_stations))\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.push\_back(s);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00222}00222\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00224}00224\ std::vector<std::string>\ Graph::find\_targets(std::vector<std::string>\ desired\_stations)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00225}00225\ \ \ \ \ std::vector<std::string>\ res;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00226}00226\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ s:\ desired\_stations)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ v\ =\ findVertex(s);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Trouble\ finding\ target\ "{}}\ <<\ s\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ e:\ v-\/>getAdj())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isIn(e-\/>getDest()-\/>getId(),\ desired\_stations))\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.push\_back(s);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00237}00237\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00239}00239\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00242}00242\ \textcolor{keywordtype}{bool}\ Graph::isIn(std::string\ n,\ std::vector<std::string>\ vec)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ s:\ vec)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ ==\ n)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00245}00245\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00246}00246\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00247}00247\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00250}00250\ \textcolor{keywordtype}{int}\ Graph::mul\_edmondsKarp(std::vector<std::string>\ souces,\ std::vector<std::string>\ targets)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{keyword}{auto}\ it1\ =\ souces.begin();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{keywordflow}{while}\ (it1\ !=\ souces.end())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isIn(*it1,\ targets))\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ it1\ =\ souces.erase(it1);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ it1++;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00256}00256\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keyword}{auto}\ it2\ =\ targets.begin();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{while}\ (it2\ !=\ targets.end())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isIn(*it2,\ souces))\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ it2\ =\ souces.erase(it2);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ it2++;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00263}00263\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00265}00265\ \ \ \ \ addVertex(\textcolor{stringliteral}{"{}temp\_source"{}});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ s:\ souces)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ addEdge(\textcolor{stringliteral}{"{}temp\_source"{}},\ s,\ INT32\_MAX,\ \textcolor{stringliteral}{"{}STANDARD"{}});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00268}00268\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00270}00270\ \ \ \ \ addVertex(\textcolor{stringliteral}{"{}temp\_targets"{}});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00271}00271\ \ \ \ \ \textcolor{keywordflow}{for}\ (std::string\ s:\ targets)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ addEdge(s,\ \textcolor{stringliteral}{"{}temp\_targets"{}},\ INT32\_MAX,\ \textcolor{stringliteral}{"{}STANDARD"{}});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00273}00273\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ e:\ vertexSet)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i:\ e-\/>getAdj())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ i-\/>setFlow(0);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00278}00278\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00279}00279\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00280}00280\ \ \ \ \ \textcolor{keywordflow}{while}\ (findAugmentingPath(\textcolor{stringliteral}{"{}temp\_source"{}},\ \textcolor{stringliteral}{"{}temp\_targets"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bottleneck\ =\ findMinResidual(findVertex(\textcolor{stringliteral}{"{}temp\_source"{}}),\ findVertex(\textcolor{stringliteral}{"{}temp\_targets"{}}));}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ updateFlow(findVertex(\textcolor{stringliteral}{"{}temp\_source"{}}),\ findVertex(\textcolor{stringliteral}{"{}temp\_targets"{}}),\ bottleneck);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ maxFlow\ +=\ bottleneck;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00284}00284\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00285}00285\ \ \ \ \ \textcolor{keywordflow}{return}\ maxFlow;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00286}00286\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00288}00288\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Find\ ALL\ existing\ augmenting\ paths\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00290}00290\ \textcolor{keywordtype}{void}\ Graph::findAllPaths(\mbox{\hyperlink{classVertex}{Vertex}}\ *source,\ \mbox{\hyperlink{classVertex}{Vertex}}\ *destination,\ std::vector<Vertex\ *>\ \&path,}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<Vertex\ *>>\ \&allPaths)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00292}00292\ \ \ \ \ path.push\_back(source);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00293}00293\ \ \ \ \ source-\/>setVisited(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00295}00295\ \ \ \ \ \textcolor{keywordflow}{if}\ (source\ ==\ destination)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ allPaths.push\_back(path);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00297}00297\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ edge:\ source-\/>getAdj())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *adjacent\ =\ edge-\/>getDest();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!adjacent-\/>isVisited())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ findAllPaths(adjacent,\ destination,\ path,\ allPaths);}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00304}00304\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00306}00306\ \ \ \ \ path.pop\_back();}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00307}00307\ \ \ \ \ source-\/>setVisited(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00308}00308\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00311}00311\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00312}00312\ \textcolor{comment}{\ *\ find\ edge\ based\ on\ source\ and\ destination}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00313}00313\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00314}00314\ \mbox{\hyperlink{classEdge}{Edge}}\ *Graph::findEdge(\mbox{\hyperlink{classVertex}{Vertex}}\ *source,\ \mbox{\hyperlink{classVertex}{Vertex}}\ *destination)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00316}00316\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ edge:\ source-\/>getAdj())\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (edge-\/>getDest()\ ==\ destination)\ \{}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ edge;}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00320}00320\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00322}00322\ \}}
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{Graph_8cpp_source_l00326}00326\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ find\ all\ stations\ that\ have\ more\ than\ one\ path\ to\ the\ destination\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+
+\end{DoxyCode}

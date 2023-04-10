@@ -66,7 +66,8 @@ int main() {
                 cout << "Enter municipality: " << endl;
                 cout << "For example, PENAFIEL: ";
                 getline(cin, c);
-                cout << "The maximum flow im Municipality " << c << " is " << CP.T2_3municipality(c) << endl;
+                cout << "The maximum flow in Municipality " << c << " is " << CP.T2_3municipality(c) << endl;
+                cout << endl;
                 break;
             }
 

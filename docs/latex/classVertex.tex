@@ -1,0 +1,534 @@
+\hypertarget{classVertex}{}\doxysection{Vertex Class Reference}
+\label{classVertex}\index{Vertex@{Vertex}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVertex_aa502b0a56babec5f066b5c0ba9f0115d}{Vertex}} (std\+::string id)
+\item 
+bool \mbox{\hyperlink{classVertex_ad4ccd48170a1530ec1db5eb306357a74}{operator$<$}} (\mbox{\hyperlink{classVertex}{Vertex}} \&vertex) const
+\item 
+std\+::string \mbox{\hyperlink{classVertex_a1b37a5f676e1e5539a3d89947daed0d6}{get\+Id}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classEdge}{Edge}} $\ast$ $>$ \mbox{\hyperlink{classVertex_a9858f2aa388d2bfb49d9df8f4504b5a0}{get\+Adj}} () const
+\item 
+bool \mbox{\hyperlink{classVertex_aa4bd82105b85ee53a917391f4811cd8a}{is\+Visited}} () const
+\item 
+bool \mbox{\hyperlink{classVertex_a126e306f0534b99cd97aa864fdb243d4}{is\+Processing}} () const
+\item 
+unsigned int \mbox{\hyperlink{classVertex_ad7348af9376d4b9ada5ceeca3bd1b2b7}{get\+Indegree}} () const
+\item 
+double \mbox{\hyperlink{classVertex_aa36ca926de23a6e7283be42e2930957c}{get\+Dist}} () const
+\item 
+\mbox{\hyperlink{classEdge}{Edge}} $\ast$ \mbox{\hyperlink{classVertex_a6e120e57da6af94892fae44e05868794}{get\+Path}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classEdge}{Edge}} $\ast$ $>$ \mbox{\hyperlink{classVertex_a84b20dae22321e5a729606885357b015}{get\+Incoming}} () const
+\item 
+void \mbox{\hyperlink{classVertex_a5fbffd695323f52f0b93276176781c7d}{set\+Id}} (int info)
+\item 
+void \mbox{\hyperlink{classVertex_a15eeabbbb6d517af746ae137c6d5b595}{set\+Visited}} (bool visited)
+\item 
+void \mbox{\hyperlink{classVertex_a1c93b166281b30db2edef03791748ace}{set\+Processsing}} (bool processing)
+\item 
+void \mbox{\hyperlink{classVertex_aeb605d2ba9296a5e40496a9e37557d03}{set\+Indegree}} (unsigned int indegree)
+\item 
+void \mbox{\hyperlink{classVertex_a6939bef79bfe5fe5bf77d9fd1bd70085}{set\+Dist}} (double dist)
+\item 
+void \mbox{\hyperlink{classVertex_abe4bc30005eec65e775d0cd51f456460}{set\+Path}} (\mbox{\hyperlink{classEdge}{Edge}} $\ast$path)
+\item 
+\mbox{\hyperlink{classEdge}{Edge}} $\ast$ \mbox{\hyperlink{classVertex_a1392ae08f7d2f171a251c534f2e8eeb2}{add\+Edge}} (\mbox{\hyperlink{classVertex}{Vertex}} $\ast$dest, int w, const std\+::string \&service)
+\item 
+bool \mbox{\hyperlink{classVertex_a07e16bdb9e97df1e6a7e4bedb76d27b5}{remove\+Edge}} (std\+::string dest\+ID)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVertex_a59d7eb90e37338f4ad2d0be3ba41e8a1}{print}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classVertex_aaa8d1e0e3b2883b01174f9afcaafd3cf}{id}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classEdge}{Edge}} $\ast$ $>$ \mbox{\hyperlink{classVertex_a0be7a8d322f99d4812261af91c3e2178}{adj}}
+\item 
+bool \mbox{\hyperlink{classVertex_aaef9f7de91b4b8f1752d391a1aae9c2e}{visited}} = false
+\item 
+bool \mbox{\hyperlink{classVertex_a305dc8fcad6e4c7ef2491409ca7ddaa4}{processing}} = false
+\item 
+unsigned int \mbox{\hyperlink{classVertex_a94ae99aae9b1a426feda5ecda70c598b}{indegree}}
+\item 
+double \mbox{\hyperlink{classVertex_a11d98611f5101fe7f46785d8b9c53f44}{dist}} = 0
+\item 
+\mbox{\hyperlink{classEdge}{Edge}} $\ast$ \mbox{\hyperlink{classVertex_a4e83821f961f6eb63ad210260ba0e1e2}{path}} = nullptr
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classEdge}{Edge}} $\ast$ $>$ \mbox{\hyperlink{classVertex_a2d41654d7aee77d99edacca6a923f4ee}{incoming}}
+\item 
+int \mbox{\hyperlink{classVertex_a78ba760e405ba9f66129b3870065b48f}{queue\+Index}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00019}{19}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVertex_aa502b0a56babec5f066b5c0ba9f0115d}\label{classVertex_aa502b0a56babec5f066b5c0ba9f0115d} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ :\ id(\textcolor{keywordtype}{id})\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVertex_a1392ae08f7d2f171a251c534f2e8eeb2}\label{classVertex_a1392ae08f7d2f171a251c534f2e8eeb2} 
+\index{Vertex@{Vertex}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{Edge}} $\ast$ Vertex\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}} $\ast$}]{dest,  }\item[{int}]{w,  }\item[{const std\+::string \&}]{service }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{auto}\ newEdge\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classEdge}{Edge}}(\textcolor{keyword}{this},\ d,\ w,\ service);}
+\DoxyCodeLine{00015\ \ \ \ \ adj.push\_back(newEdge);}
+\DoxyCodeLine{00016\ \ \ \ \ d-\/>incoming.push\_back(newEdge);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{return}\ newEdge;}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a9858f2aa388d2bfb49d9df8f4504b5a0}\label{classVertex_a9858f2aa388d2bfb49d9df8f4504b5a0} 
+\index{Vertex@{Vertex}!getAdj@{getAdj}}
+\index{getAdj@{getAdj}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{getAdj()}{getAdj()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classEdge}{Edge}} $\ast$ $>$ Vertex\+::get\+Adj (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>adj;}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_aa36ca926de23a6e7283be42e2930957c}\label{classVertex_aa36ca926de23a6e7283be42e2930957c} 
+\index{Vertex@{Vertex}!getDist@{getDist}}
+\index{getDist@{getDist}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{getDist()}{getDist()}}
+{\footnotesize\ttfamily double Vertex\+::get\+Dist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>dist;}
+\DoxyCodeLine{00077\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a1b37a5f676e1e5539a3d89947daed0d6}\label{classVertex_a1b37a5f676e1e5539a3d89947daed0d6} 
+\index{Vertex@{Vertex}!getId@{getId}}
+\index{getId@{getId}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily std\+::string Vertex\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>id;}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a84b20dae22321e5a729606885357b015}\label{classVertex_a84b20dae22321e5a729606885357b015} 
+\index{Vertex@{Vertex}!getIncoming@{getIncoming}}
+\index{getIncoming@{getIncoming}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{getIncoming()}{getIncoming()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classEdge}{Edge}} $\ast$ $>$ Vertex\+::get\+Incoming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>incoming;}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_ad7348af9376d4b9ada5ceeca3bd1b2b7}\label{classVertex_ad7348af9376d4b9ada5ceeca3bd1b2b7} 
+\index{Vertex@{Vertex}!getIndegree@{getIndegree}}
+\index{getIndegree@{getIndegree}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{getIndegree()}{getIndegree()}}
+{\footnotesize\ttfamily unsigned int Vertex\+::get\+Indegree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>indegree;}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a6e120e57da6af94892fae44e05868794}\label{classVertex_a6e120e57da6af94892fae44e05868794} 
+\index{Vertex@{Vertex}!getPath@{getPath}}
+\index{getPath@{getPath}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{Edge}} $\ast$ Vertex\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>path;}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a126e306f0534b99cd97aa864fdb243d4}\label{classVertex_a126e306f0534b99cd97aa864fdb243d4} 
+\index{Vertex@{Vertex}!isProcessing@{isProcessing}}
+\index{isProcessing@{isProcessing}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{isProcessing()}{isProcessing()}}
+{\footnotesize\ttfamily bool Vertex\+::is\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>processing;}
+\DoxyCodeLine{00069\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_aa4bd82105b85ee53a917391f4811cd8a}\label{classVertex_aa4bd82105b85ee53a917391f4811cd8a} 
+\index{Vertex@{Vertex}!isVisited@{isVisited}}
+\index{isVisited@{isVisited}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{isVisited()}{isVisited()}}
+{\footnotesize\ttfamily bool Vertex\+::is\+Visited (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>visited;}
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_ad4ccd48170a1530ec1db5eb306357a74}\label{classVertex_ad4ccd48170a1530ec1db5eb306357a74} 
+\index{Vertex@{Vertex}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Vertex\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVertex}{Vertex}} \&}]{vertex }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>dist\ <\ vertex.dist;}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a59d7eb90e37338f4ad2d0be3ba41e8a1}\label{classVertex_a59d7eb90e37338f4ad2d0be3ba41e8a1} 
+\index{Vertex@{Vertex}!print@{print}}
+\index{print@{print}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Vertex\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Vertex:\ "{}}\ <<\ \textcolor{keywordtype}{id}\ <<\ std::endl;}
+\DoxyCodeLine{00114\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Adjacent\ to:\ "{}};}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classEdge}{Edge}}\ *e:\ adj)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ std::cout\ <<\ e-\/>getDest()-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00119\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Visited:\ "{}}\ <<\ visited\ <<\ std::endl;}
+\DoxyCodeLine{00120\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Indegree:\ "{}}\ <<\ indegree\ <<\ std::endl;}
+\DoxyCodeLine{00121\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Distance:\ "{}}\ <<\ dist\ <<\ std::endl;}
+\DoxyCodeLine{00122\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Path:\ "{}}\ <<\ path\ <<\ std::endl;}
+\DoxyCodeLine{00123\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a07e16bdb9e97df1e6a7e4bedb76d27b5}\label{classVertex_a07e16bdb9e97df1e6a7e4bedb76d27b5} 
+\index{Vertex@{Vertex}!removeEdge@{removeEdge}}
+\index{removeEdge@{removeEdge}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{removeEdge()}{removeEdge()}}
+{\footnotesize\ttfamily bool Vertex\+::remove\+Edge (\begin{DoxyParamCaption}\item[{std\+::string}]{dest\+ID }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{bool}\ removedEdge\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ adj.begin();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{while}\ (it\ !=\ adj.end())\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{Edge}}\ *edge\ =\ *it;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *dest\ =\ edge-\/>getDest();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dest-\/>getId()\ ==\ destID)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ it\ =\ adj.erase(it);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Also\ remove\ the\ corresponding\ edge\ from\ the\ incoming\ list}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it2\ =\ dest-\/>incoming.begin();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (it2\ !=\ dest-\/>incoming.end())\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*it2)-\/>getOrig()-\/>getId()\ ==\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it2\ =\ dest-\/>incoming.erase(it2);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ it2++;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ edge;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ removedEdge\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ allows\ for\ multiple\ edges\ to\ connect\ the\ same\ pair\ of\ vertices\ (multigraph)}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ it++;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ removedEdge;}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a6939bef79bfe5fe5bf77d9fd1bd70085}\label{classVertex_a6939bef79bfe5fe5bf77d9fd1bd70085} 
+\index{Vertex@{Vertex}!setDist@{setDist}}
+\index{setDist@{setDist}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{setDist()}{setDist()}}
+{\footnotesize\ttfamily void Vertex\+::set\+Dist (\begin{DoxyParamCaption}\item[{double}]{dist }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ this-\/>dist\ =\ dist;}
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a5fbffd695323f52f0b93276176781c7d}\label{classVertex_a5fbffd695323f52f0b93276176781c7d} 
+\index{Vertex@{Vertex}!setId@{setId}}
+\index{setId@{setId}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Vertex\+::set\+Id (\begin{DoxyParamCaption}\item[{int}]{info }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ this-\/>\textcolor{keywordtype}{id}\ =\ id;}
+\DoxyCodeLine{00089\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_aeb605d2ba9296a5e40496a9e37557d03}\label{classVertex_aeb605d2ba9296a5e40496a9e37557d03} 
+\index{Vertex@{Vertex}!setIndegree@{setIndegree}}
+\index{setIndegree@{setIndegree}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{setIndegree()}{setIndegree()}}
+{\footnotesize\ttfamily void Vertex\+::set\+Indegree (\begin{DoxyParamCaption}\item[{unsigned int}]{indegree }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ this-\/>indegree\ =\ indegree;}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_abe4bc30005eec65e775d0cd51f456460}\label{classVertex_abe4bc30005eec65e775d0cd51f456460} 
+\index{Vertex@{Vertex}!setPath@{setPath}}
+\index{setPath@{setPath}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{setPath()}{setPath()}}
+{\footnotesize\ttfamily void Vertex\+::set\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{Edge}} $\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ this-\/>path\ =\ path;}
+\DoxyCodeLine{00109\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a1c93b166281b30db2edef03791748ace}\label{classVertex_a1c93b166281b30db2edef03791748ace} 
+\index{Vertex@{Vertex}!setProcesssing@{setProcesssing}}
+\index{setProcesssing@{setProcesssing}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{setProcesssing()}{setProcesssing()}}
+{\footnotesize\ttfamily void Vertex\+::set\+Processsing (\begin{DoxyParamCaption}\item[{bool}]{processing }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00095}{95}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ this-\/>processing\ =\ processing;}
+\DoxyCodeLine{00097\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classVertex_a15eeabbbb6d517af746ae137c6d5b595}\label{classVertex_a15eeabbbb6d517af746ae137c6d5b595} 
+\index{Vertex@{Vertex}!setVisited@{setVisited}}
+\index{setVisited@{setVisited}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{setVisited()}{setVisited()}}
+{\footnotesize\ttfamily void Vertex\+::set\+Visited (\begin{DoxyParamCaption}\item[{bool}]{visited }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{VertexEdge_8cpp_source}{Vertex\+Edge.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ this-\/>visited\ =\ visited;}
+\DoxyCodeLine{00093\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classVertex_a0be7a8d322f99d4812261af91c3e2178}\label{classVertex_a0be7a8d322f99d4812261af91c3e2178} 
+\index{Vertex@{Vertex}!adj@{adj}}
+\index{adj@{adj}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{adj}{adj}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classEdge}{Edge}} $\ast$$>$ Vertex\+::adj\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00060}{60}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+\Hypertarget{classVertex_a11d98611f5101fe7f46785d8b9c53f44}\label{classVertex_a11d98611f5101fe7f46785d8b9c53f44} 
+\index{Vertex@{Vertex}!dist@{dist}}
+\index{dist@{dist}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{dist}{dist}}
+{\footnotesize\ttfamily double Vertex\+::dist = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00066}{66}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+\Hypertarget{classVertex_aaa8d1e0e3b2883b01174f9afcaafd3cf}\label{classVertex_aaa8d1e0e3b2883b01174f9afcaafd3cf} 
+\index{Vertex@{Vertex}!id@{id}}
+\index{id@{id}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily std\+::string Vertex\+::id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00059}{59}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+\Hypertarget{classVertex_a2d41654d7aee77d99edacca6a923f4ee}\label{classVertex_a2d41654d7aee77d99edacca6a923f4ee} 
+\index{Vertex@{Vertex}!incoming@{incoming}}
+\index{incoming@{incoming}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{incoming}{incoming}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classEdge}{Edge}} $\ast$$>$ Vertex\+::incoming\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00069}{69}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+\Hypertarget{classVertex_a94ae99aae9b1a426feda5ecda70c598b}\label{classVertex_a94ae99aae9b1a426feda5ecda70c598b} 
+\index{Vertex@{Vertex}!indegree@{indegree}}
+\index{indegree@{indegree}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{indegree}{indegree}}
+{\footnotesize\ttfamily unsigned int Vertex\+::indegree\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00065}{65}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+\Hypertarget{classVertex_a4e83821f961f6eb63ad210260ba0e1e2}\label{classVertex_a4e83821f961f6eb63ad210260ba0e1e2} 
+\index{Vertex@{Vertex}!path@{path}}
+\index{path@{path}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{Edge}}$\ast$ Vertex\+::path = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00067}{67}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+\Hypertarget{classVertex_a305dc8fcad6e4c7ef2491409ca7ddaa4}\label{classVertex_a305dc8fcad6e4c7ef2491409ca7ddaa4} 
+\index{Vertex@{Vertex}!processing@{processing}}
+\index{processing@{processing}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{processing}{processing}}
+{\footnotesize\ttfamily bool Vertex\+::processing = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00064}{64}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+\Hypertarget{classVertex_a78ba760e405ba9f66129b3870065b48f}\label{classVertex_a78ba760e405ba9f66129b3870065b48f} 
+\index{Vertex@{Vertex}!queueIndex@{queueIndex}}
+\index{queueIndex@{queueIndex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{queueIndex}{queueIndex}}
+{\footnotesize\ttfamily int Vertex\+::queue\+Index = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00071}{71}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+\Hypertarget{classVertex_aaef9f7de91b4b8f1752d391a1aae9c2e}\label{classVertex_aaef9f7de91b4b8f1752d391a1aae9c2e} 
+\index{Vertex@{Vertex}!visited@{visited}}
+\index{visited@{visited}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{visited}{visited}}
+{\footnotesize\ttfamily bool Vertex\+::visited = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{VertexEdge_8h_source_l00063}{63}} of file \mbox{\hyperlink{VertexEdge_8h_source}{Vertex\+Edge.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Vertex\+Edge.\+h\item 
+Vertex\+Edge.\+cpp\end{DoxyCompactItemize}
