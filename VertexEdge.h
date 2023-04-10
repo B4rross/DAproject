@@ -50,7 +50,7 @@ public:
 
     void setPath(Edge *path);
 
-    Edge *addEdge(Vertex *dest, int w, std::string service);
+    Edge *addEdge(Vertex *dest, int w, const std::string &service);
 
     bool removeEdge(std::string destID);
 
@@ -77,7 +77,7 @@ protected:
 
 class Edge {
 public:
-    Edge(Vertex *orig, Vertex *dest, int w, std::string service);
+    Edge(Vertex *orig, Vertex *dest, int w, const std::string &service);
 
     Vertex *getDest() const;
 
@@ -97,7 +97,9 @@ public:
 
     void setFlow(double flow);
 
-    std::string getService() const;
+    [[nodiscard]] std::string getService() const;
+
+    void setService(const std::string &service);
 
 protected:
     Vertex *dest; // destination vertex

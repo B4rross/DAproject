@@ -9,16 +9,17 @@
 using namespace std;
 
 void CPheadquarters::read_files() {
-    ifstream inputFile1;
-    ifstream inputFile2;
-    inputFile1.open(R"(../network.csv)");
-    inputFile2.open(R"(../stations.csv)");
+
+    //--------------------------------------------Read network.csv--------------------------------------------
+    std::ifstream inputFile1(R"(../network.csv)");
     string line1;
+    std::getline(inputFile1, line1); // ignore first line
+    while (getline(inputFile1, line1, '\n')) {
 
-    getline(inputFile1, line1);
-    line1 = "";
+        if (!line1.empty() && line1.back() == '\r') { // Check if the last character is '\r'
+            line1.pop_back(); // Remove the '\r' character
+        }
 
-    while (getline(inputFile1, line1)) {
         string station_A;
         string station_B;
         string temp;
@@ -27,30 +28,37 @@ void CPheadquarters::read_files() {
 
         stringstream inputString(line1);
 
-        getline(inputString, station_A, ';');
-        getline(inputString, station_B, ';');
-        getline(inputString, temp, ';');
-        capacity = stoi(temp);
-        getline(inputString, service, ';');
+        getline(inputString, station_A, ',');
+        getline(inputString, station_B, ',');
+        getline(inputString, temp, ',');
+        getline(inputString, service, ',');
 
+        capacity = stoi(temp);
         lines.addVertex(station_A);
         lines.addVertex(station_B);
-        lines.addEdge(station_A, station_B, capacity, service);
 
-        line1 = "";
+        lines.addEdge(station_A, station_B, capacity, service);
     }
 
-    getline(inputFile1, line1);
-    line1 = "";
 
-    while (getline(inputFile2, line1)) {
+    //--------------------------------------------Read stations.csv--------------------------------------------
+    std::ifstream inputFile2(R"(../stations.csv)");
+    string line2;
+    std::getline(inputFile2, line2); // ignore first line
+
+    while (getline(inputFile2, line2, '\n')) {
+
+        if (!line1.empty() && line1.back() == '\r') { // Check if the last character is '\r'
+            line1.pop_back(); // Remove the '\r' character
+        }
+
         string nome;
         string distrito;
         string municipality;
         string township;
         string line;
 
-        stringstream inputString(line1);
+        stringstream inputString(line2);
 
         getline(inputString, nome, ',');
         getline(inputString, distrito, ',');
@@ -61,9 +69,9 @@ void CPheadquarters::read_files() {
         Station station(nome, distrito, municipality, township, line);
         stations[nome] = station;
 
-        line1 = "";
+        // print information about the station, to make sure it was imported correctly
+        //cout << "station: " << nome << " distrito: " << distrito << " municipality: " << municipality << " township: " << township << " line: " << line << endl;
     }
-
 }
 
 Graph CPheadquarters::getLines() const {
