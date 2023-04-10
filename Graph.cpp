@@ -25,10 +25,8 @@ Vertex *Graph::findVertex(const std::string &id) const {
     return nullptr;
 }
 
-/**
+/*
  * Finds the index of the vertex with a given content.
- * @param id
- * @return
  */
 int Graph::findVertexIdx(const std::string &id) const {
     for (unsigned i = 0; i < vertexSet.size(); i++)
@@ -37,9 +35,10 @@ int Graph::findVertexIdx(const std::string &id) const {
     return -1;
 }
 
-/*
+/**
  *  Adds a vertex with a given content or info (in) to a graph (this).
- *  Returns true if successful, and false if a vertex with that content already exists.
+ * @param id
+ * @return true if successful, and false if a vertex with that content already exists.
  */
 bool Graph::addVertex(const std::string &id) {
     if (findVertex(id) != nullptr)
@@ -48,10 +47,14 @@ bool Graph::addVertex(const std::string &id) {
     return true;
 }
 
-/*
+/**
  * Adds an edge to a graph (this), given the contents of the source and
  * destination vertices and the edge weight (w).
- * Returns true if successful, and false if the source or destination vertex does not exist.
+ * @param sourc
+ * @param dest
+ * @param w
+ * @param service
+ * @return true if successful, and false if the source or destination vertex does not exist.
  */
 bool Graph::addEdge(const std::string &sourc, const std::string &dest, int w, const std::string &service) {
     auto v1 = findVertex(sourc);
@@ -60,18 +63,6 @@ bool Graph::addEdge(const std::string &sourc, const std::string &dest, int w, co
         return false;
     v1->addEdge(v2, w, service);
 
-    return true;
-}
-
-bool Graph::addBidirectionalEdge(const std::string &sourc, const std::string &dest, int w, std::string service) {
-    auto v1 = findVertex(sourc);
-    auto v2 = findVertex(dest);
-    if (v1 == nullptr || v2 == nullptr)
-        return false;
-    auto e1 = v1->addEdge(v2, w, service);
-    auto e2 = v2->addEdge(v1, w, service);
-    e1->setReverse(e2);
-    e2->setReverse(e1);
     return true;
 }
 
@@ -100,8 +91,8 @@ Graph::~Graph() {
 }
 
 
-/*
- *  print graph content
+/**
+ * prints the graph
  */
 void Graph::print() const {
     std::cout << "---------------- Graph----------------\n";
@@ -120,6 +111,13 @@ void Graph::print() const {
 
 // --------------------------------- Edmonds-Karp ---------------------------------
 
+/**
+ * auxiliary function to test and visit a vertex, given a queue, an edge, a vertex and a residual
+ * @param q
+ * @param e
+ * @param w
+ * @param residual
+ */
 void Graph::testAndVisit(std::queue<Vertex *> &q, Edge *e, Vertex *w, double residual) {
     if (!w->isVisited() && residual > 0) {
         w->setVisited(true);
@@ -128,8 +126,15 @@ void Graph::testAndVisit(std::queue<Vertex *> &q, Edge *e, Vertex *w, double res
     }
 }
 
-/*
- * An augmenting path is a simple path - a path that does not contain cycles
+
+/**
+ * auxiliary function to find an augmenting path, given a source and a target
+ * @param s
+ * @param t
+ * @return true if an augmenting path was found, and false otherwise
+ * @note An augmenting path is a simple path - a path that does not contain cycles
+ * @attention This function uses the BFS algorithm.
+ * @attention The time complexity of the BFS algorithm is O(V+E), where V is the number of vertices and E is the number of edges in the graph.
  */
 bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
     Vertex *source = findVertex(s);
@@ -164,6 +169,12 @@ bool Graph::findAugmentingPath(const std::string &s, const std::string &t) {
     return false;
 }
 
+/**
+ * auxiliary function to find the minimum residual capacity of an augmenting path
+ * @param s
+ * @param t
+ * @return the minimum residual capacity of an augmenting path
+ */
 int Graph::findMinResidual(Vertex *s, Vertex *t) {
     double minResidual = INT_MAX;
     for (auto v = t; v != s;) {
@@ -179,6 +190,13 @@ int Graph::findMinResidual(Vertex *s, Vertex *t) {
     return minResidual;
 }
 
+/**
+ * auxiliary function to update the flow of an augmenting path
+ * @param s
+ * @param t
+ * @param bottleneck
+ * @note The bottleneck is the minimum residual capacity of an augmenting path
+ */
 void Graph::updateFlow(Vertex *s, Vertex *t, int bottleneck) {
     for (auto v = t; v != s;) {
         auto e = v->getPath();
@@ -193,6 +211,15 @@ void Graph::updateFlow(Vertex *s, Vertex *t, int bottleneck) {
     }
 }
 
+/**
+ * finds the maximum flow in the graph, given a source and a target
+ * @param s
+ * @param t
+ * @return maximum flow
+ * @note The Edmonds-Karp algorithm is a special case of the Ford-Fulkerson algorithm.
+ * @note It uses Breadth-First Search to find the augmenting paths with the minimum number of edges
+ * @attention The time complexity of the Edmonds-Karp algorithm is O(V*E^2), where V is the number of vertices and E is the number of edges in the graph.
+ */
 int Graph::edmondsKarp(const std::string &s, const std::string &t) {
     for (auto e: vertexSet) {
         for (auto i: e->getAdj()) {
@@ -368,6 +395,3 @@ void Graph::deleteVertex(std::string name) {
     }
 }
 
-
-
-// ----------------------------------------------- find all stations that have more than one path to the destination -----------------------------------------------

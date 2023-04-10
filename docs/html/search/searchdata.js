@@ -1,8 +1,8 @@
 var indexSectionsWithContent =
 {
-  0: "cdegrstv",
+  0: "acdefgprstuv",
   1: "cegsv",
-  2: "grt",
+  2: "aefgprtu",
   3: "d"
 };
 

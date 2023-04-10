@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['getlines_0',['getLines',['../classCPheadquarters.html#a782036a2216e3ad38ce4779be1c5154a',1,'CPheadquarters']]],
-  ['graph_1',['Graph',['../classGraph.html',1,'']]]
+  ['edge_0',['Edge',['../classEdge.html',1,'']]],
+  ['edmondskarp_1',['edmondsKarp',['../classGraph.html#a913921c4491b06f64de526e50d1d0434',1,'Graph']]]
 ];
