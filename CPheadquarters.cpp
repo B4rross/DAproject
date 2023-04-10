@@ -5,9 +5,13 @@
 #include <fstream>
 #include <sstream>
 #include "CPheadquarters.h"
+#include <chrono>
 
 using namespace std;
 
+/**
+ * Reads the files network.csv and stations.csv and stores the information in the Graph and unordered_map
+ */
 void CPheadquarters::read_files() {
 
     //--------------------------------------------Read network.csv--------------------------------------------
@@ -73,15 +77,21 @@ void CPheadquarters::read_files() {
         //cout << "station: " << nome << " distrito: " << distrito << " municipality: " << municipality << " township: " << township << " line: " << line << endl;
     }
 }
-
+/**
+ * Returns the Graph object
+ * @return Graph
+ */
 Graph CPheadquarters::getLines() const {
     return this->lines;
 }
 
-/*
- * Calculate the maximum number of trains that can simultaneously travel between
- * two specific stations. Note that your implementation should take any valid source and destination
- * stations as input
+/**
+ * Calculates the maximum number of trains that can simultaneously travel between
+ * two specific stations.
+ * Takes any valid source and destination stations as input
+ * @param stationA
+ * @param stationB
+ * @return maxFlow
  */
 int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
     Vertex *source = lines.findVertex(stationA); // set source vertex
@@ -109,14 +119,22 @@ void CPheadquarters::test() {
 }
 
 
-/*
- * Determine, from all pairs of stations, which ones (if more than one) require the
- * most amount of trains when taking full advantage of the existing network capacity;
+/**
+ * Determines from all pairs of stations, which ones (if more than one) require the
+ * most amount of trains when taking full advantage of the existing network capacity.
+ * Print to the terminal all pairs of stations that require the most amount of trains (if more than one).
+ * Count the time it takes to run the algorithm and print it to the terminal.
+ * @see this function uses Graph::edmondsKarp() function
+ * @return maxFlow
  */
 int CPheadquarters::T2_2maxflowAllStations() {
     vector<string> stations;
     int maxFlow = 0;
     auto length = lines.getVertexSet().size();
+    // Start the timer
+    auto start_time = std::chrono::high_resolution_clock::now();
+    cout << "Calculating max flow for all pairs of stations..." << endl;
+    cout << "Please stand by..." << endl;
     for (int i = 0; i < length; ++i) {
         for (int j = i + 1; j < length; ++j) {
             string stationA = lines.getVertexSet()[i]->getId();
@@ -133,17 +151,32 @@ int CPheadquarters::T2_2maxflowAllStations() {
             }
         }
     }
+    // End the timer
+    auto end_time = std::chrono::high_resolution_clock::now();
+
+    // Compute the duration
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+
+    // Print the duration
+    std::cout << "Time taken: " << duration.count() << " ms" << std::endl;
+
     cout << "Pairs of stations with the most flow [" << maxFlow << "]:\n";
     for (int i = 0; i < stations.size(); i = i + 2) {
         cout << "------------------------\n";
-        cout << "Source:" << stations[i + 1] << '\n';
-        cout << "Target:" << stations[i] << '\n';
+        cout << "Source: " << stations[i + 1] << '\n';
+        cout << "Target: " << stations[i] << '\n';
         cout << "------------------------\n";
     }
     return 0;
 }
 
-
+/**
+ * Indicates where management should assign larger budgets for the purchasing and
+ * maintenance of trains.
+ * Reports the top-k municipalities and districts, regarding their transportation needs
+ * @param municipality
+ * @return maximum flow in the given municipality
+ */
 int CPheadquarters::T2_3municipality(string municipality) {
     vector<string> desired_stations;
     for (auto p: stations) {
@@ -166,9 +199,12 @@ int CPheadquarters::T2_3district(string district) {
     return lines.mul_edmondsKarp(lines.find_sources(desired_stations), lines.find_targets(desired_stations));
 }
 
-/*
- * Report the maximum number of trains that can simultaneously arrive at a given station,
+/**
+ * Reports the maximum number of trains that can simultaneously arrive at a given station,
  * taking into consideration the entire railway grid
+ * @param destination
+ * @return maximum flow in a given station
+ * @note we consider the source station as the station that does not have any incoming edges
  */
 int CPheadquarters::T2_4maxArrive(string destination) {
     Vertex *dest = lines.findVertex(destination);
@@ -200,16 +236,15 @@ int CPheadquarters::T2_4maxArrive(string destination) {
 }
 
 
-/*
- * Calculate the maximum amount of trains that can simultaneously travel between
+/**
+ * Calculates the maximum amount of trains that can simultaneously travel between
  * two specific stations with minimum cost for the company
- * constraints:
- * 1. Minimize cost
- * 2. 'Maintain the same level of service'
- *
  * steps:
- * 1 - find all possible paths between source and destination
- * 2 - define the optimal path
+ * *1 - find all possible paths between source and destination
+ * *2 - define the optimal path, that is, has minimum cost per train
+ * @param source
+ * @param destination
+ * @return maximum flow between two specific stations
  */
 int CPheadquarters::T3_1MinCost(string source, string destination) {
     Vertex *sourceVertex = lines.findVertex(source); // set source vertex
@@ -275,7 +310,17 @@ int CPheadquarters::T3_1MinCost(string source, string destination) {
          << "(" << resCost << " euros): " << maxTrains << " trains\n" << endl;
     return maxTrains;
 }
-
+/**
+ * Calculates the maximum number of trains that can simultaneously travel between
+ * two specific stations in a network of reduced connectivity.
+ * Reduced connectivity is a subgraph of the original railway network.
+ * Takes any valid source and destination stations as input.
+ * @note it allows a user to remove edges from the railway network.
+ * @param unwantedEdges
+ * @param s
+ * @param t
+ * @return maximum flow between two specific stations
+ */
 int CPheadquarters::T4_1ReducedConectivity(std::vector<std::string> unwantedEdges, std::string s, std::string t) {
     Graph graph;
     ifstream inputFile1;
@@ -335,6 +380,12 @@ int CPheadquarters::T4_1ReducedConectivity(std::vector<std::string> unwantedEdge
     return 1;
 }
 
+/**
+ * Provides a report on the stations that are the most affected by each segment failure,
+ * i.e., the top-k most affected stations for each segment to be considered
+ * @param unwantedEdges
+ * @return top-k most affected stations for each segment to be considered
+ */
 int CPheadquarters::T4_2Top_K_ReducedConectivity(vector<string> unwantedEdges) {
     Graph graph;
     ifstream inputFile1;
