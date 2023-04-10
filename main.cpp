@@ -23,7 +23,7 @@ int main() {
         cout << "4 - T2.4 Max number of trains that can simultaneously arrive at a given station\n";
         cout << "5 - T3.1 Max number of trains that can simultaneously travel with minimum cost\n";
         cout << "6 - T4.1 Max number of trains between stations in a network of reduced connectivity\n";
-        cout << "7 - T4.2 Top-10 most affectd stations in a network of reduced connectivity\n";
+        cout << "7 - T4.2 Top-10 most affected stations in a network of reduced connectivity\n";
         cout << "8 - Exit\n";
 
 
