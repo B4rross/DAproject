@@ -49,7 +49,7 @@ bool Graph::addVertex(const std::string &id) {
  * destination vertices and the edge weight (w).
  * Returns true if successful, and false if the source or destination vertex does not exist.
  */
-bool Graph::addEdge(const std::string &sourc, const std::string &dest, int w, std::string service) {
+bool Graph::addEdge(const std::string &sourc, const std::string &dest, int w, const std::string &service) {
     auto v1 = findVertex(sourc);
     auto v2 = findVertex(dest);
     if (v1 == nullptr || v2 == nullptr)
@@ -109,8 +109,7 @@ void Graph::print() const {
     std::cout << "\nEdges:\n";
     for (const auto &vertex: vertexSet) {
         for (const auto &edge: vertex->getAdj()) {
-            std::cout << vertex->getId() << " -> " << edge->getDest()->getId() << " (weight: " << edge->getWeight()
-                      << ", service: " << edge->getService() << ")\n";
+            std::cout << vertex->getId() << " -> " << edge->getDest()->getId() << " (weight: " << edge->getWeight() << ", service: " << edge->getService() << ")" << std::endl;
         }
     }
 }
