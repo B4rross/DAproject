@@ -153,7 +153,7 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
     // Check if these stations even exist
     if (source == nullptr || sink == nullptr) {
         std::cerr << "Source or sink vertex not found." << std::endl;
-        return 1;
+        return 0;
     }
     int maxFlow = lines.edmondsKarp(stationA, stationB);
 
@@ -164,13 +164,8 @@ int CPheadquarters::T2_1maxflow(string stationA, string stationB) {
         cout << "maxFlow:\t" << maxFlow << endl;
     }
 
-    return 1;
+    return maxFlow;
 }
-
-void CPheadquarters::test() {
-    int flow = lines.edmondsKarp(lines.getVertexSet()[324]->getId(), lines.getVertexSet()[507]->getId());
-}
-
 
 
 int CPheadquarters::T2_2maxflowAllStations() {
@@ -213,11 +208,11 @@ int CPheadquarters::T2_2maxflowAllStations() {
         cout << "Target: " << stations[i] << '\n';
         cout << "------------------------\n";
     }
-    return 0;
+    return maxFlow;
 }
 
 
-int CPheadquarters::T2_3municipality() {
+void CPheadquarters::T2_3municipality() {
     vector<pair<string , int>> top_k;
     set<string> sett;
     for (auto m : stations) {
@@ -246,7 +241,7 @@ int CPheadquarters::T2_3municipality() {
     }
 }
 
-int CPheadquarters::T2_3district() {
+void CPheadquarters::T2_3district() {
     vector<pair<string , int>> top_k;
     set<string> sett;
     for (auto m : stations) {
