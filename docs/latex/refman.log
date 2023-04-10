@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.4.10)  10 APR 2023 21:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.4.10)  10 APR 2023 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,17 +925,21 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (./md_README.tex
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 3.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 4.
-LaTeX Font Info:    Trying to load font information for TS1+phv on input line 7
-.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 6.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 6.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 1
+0.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
 LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
-(Font)              scaled to size 8.99994pt on input line 7.
+(Font)              scaled to size 8.99994pt on input line 10.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 12.
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
@@ -1042,22 +1046,22 @@ Underfull \hbox (badness 10000) detected at line 477
  []
 
 [13]
-Underfull \hbox (badness 10000) detected at line 533
+Underfull \hbox (badness 10000) detected at line 517
 [][][]
  []
 
 [14]
-Underfull \hbox (badness 10000) detected at line 618
+Underfull \hbox (badness 10000) detected at line 602
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 630
+Underfull \hbox (badness 10000) detected at line 614
 [][][]
  []
 
 [15]
-Underfull \hbox (badness 10000) detected at line 715
+Underfull \hbox (badness 10000) detected at line 699
 [][][]
  []
 
@@ -1187,12 +1191,12 @@ Underfull \hbox (badness 10000) detected at line 198
 
 ]
 Chapter 5.
-(./CPheadquarters_8cpp_source.tex [43] [44] [45] [46] [47] [48])
-(./CPheadquarters_8h_source.tex) (./Graph_8cpp_source.tex [49] [50] [51]
-[52]) (./Graph_8h_source.tex [53]) (./main_8cpp_source.tex [54] [55] [56])
-(./Station_8cpp_source.tex) (./Station_8h_source.tex [57])
-(./VertexEdge_8cpp_source.tex [58] [59]) (./VertexEdge_8h_source.tex [60])
-[61] [62
+(./CPheadquarters_8cpp_source.tex [43] [44] [45] [46] [47])
+(./CPheadquarters_8h_source.tex [48]) (./Graph_8cpp_source.tex [49] [50]
+[51] [52]) (./Graph_8h_source.tex [53]) (./main_8cpp_source.tex [54] [55])
+(./Station_8cpp_source.tex [56]) (./Station_8h_source.tex)
+(./VertexEdge_8cpp_source.tex [57] [58]) (./VertexEdge_8h_source.tex [59]
+[60]) [61] [62
 
 ] (./refman.ind [63
 
@@ -1202,16 +1206,16 @@ Chapter 5.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: CF190A037CC4050B3A6A8376F2DD7ED8;23760.
+(rerunfilecheck)             Checksum: 47A52A7E8A50758C33FD9CE2F9F020E5;24011.
  ) 
 Here is how much of TeX's memory you used:
- 19957 strings out of 480247
- 343684 string characters out of 5896151
- 625873 words of memory out of 5000000
- 35680 multiletter control sequences out of 15000+600000
- 530619 words of font info for 106 fonts, out of 8000000 for 9000
+ 19943 strings out of 480247
+ 343175 string characters out of 5896151
+ 626094 words of memory out of 5000000
+ 35681 multiletter control sequences out of 15000+600000
+ 531240 words of font info for 108 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,16n,117p,659b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,16n,117p,692b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
@@ -1226,10 +1230,10 @@ f-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhv
 ro8a.pfb>
-Output written on refman.pdf (71 pages, 335461 bytes).
+Output written on refman.pdf (71 pages, 337318 bytes).
 PDF statistics:
- 4016 PDF objects out of 4296 (max. 8388607)
- 3876 compressed objects within 39 object streams
- 1848 named destinations out of 2073 (max. 500000)
+ 4001 PDF objects out of 4296 (max. 8388607)
+ 3861 compressed objects within 39 object streams
+ 1832 named destinations out of 2073 (max. 500000)
  1049 words of extra memory for PDF output out of 10000 (max. 10000000)
 

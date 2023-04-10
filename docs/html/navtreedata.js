@@ -25,8 +25,8 @@
 var NAVTREE =
 [
   [ "An Analysis Tool for Railway Network Management", "index.html", [
-    [ "DAproject", "md_README.html", [
-      [ "Deadline is April 7, 2023 at midnight", "md_README.html#autotoc_md1", [
+    [ "An Analysis Tool for Railway Network Management", "md_README.html", [
+      [ "Project was delivered on April, 10th of 2023.", "md_README.html#autotoc_md1", [
         [ "Checklist", "md_README.html#autotoc_md2", null ]
       ] ]
     ] ],

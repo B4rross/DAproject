@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>An Analysis Tool for Railway Network Management: DAproject</title>
+<title>An Analysis Tool for Railway Network Management: An Analysis Tool for Railway Network Management</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,27 +89,33 @@ $(document).ready(function(){initNavTree('md_README.html',''); initResizable(); 
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">DAproject </div></div>
+  <div class="headertitle"><div class="title">An Analysis Tool for Railway Network Management </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Deadline is April 7, 2023 at midnight</h1>
+Project was delivered on April, 10th of 2023.</h1>
+<p>The purpose of the project is to develop an analysis tool for Railway Network. The tool will use a realistic dataset that resebles a real-life Railway Network of Portugal. The tool is to help to decide on how to best assign selected trains to lines, maximize revenue when multiple levels of service are offered, and identify sensitive sections of the network to failures to anticipate service disruption or mitigate its effects.</p>
+<p>The project was developed by bachelor students of the <em>Faculty of Engineering of the University of Porto</em> as a Theoretical-Practical component of <em>Algorithm Design</em> course.</p>
+<ul>
+<li>David Burchakov (<a href="#" onclick="location.href='mai'+'lto:'+'up2'+'02'+'203'+'77'+'7@e'+'du'+'.fe'+'.u'+'p.p'+'t'; return false;">up202<span class="obfuscator">.nosp@m.</span>2037<span class="obfuscator">.nosp@m.</span>77@ed<span class="obfuscator">.nosp@m.</span>u.fe<span class="obfuscator">.nosp@m.</span>.up.p<span class="obfuscator">.nosp@m.</span>t</a>)</li>
+<li>Pedro José Nunes Moutinho de Antas de Barros (<a href="#" onclick="location.href='mai'+'lto:'+'up2'+'02'+'108'+'70'+'6@e'+'du'+'.fe'+'.u'+'p.p'+'t'; return false;">up202<span class="obfuscator">.nosp@m.</span>1087<span class="obfuscator">.nosp@m.</span>06@ed<span class="obfuscator">.nosp@m.</span>u.fe<span class="obfuscator">.nosp@m.</span>.up.p<span class="obfuscator">.nosp@m.</span>t</a>)</li>
+</ul>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Checklist</h2>
 <ul>
-<li>[T1.1: 1.0 point] Obviously, a first task will be to create a simple interface menu exposing all the functionalities implemented in the most user-friendly way possible. This menu will also be instrumental for you to showcase the work you have developed in a short demo to be held at the end of the project.</li>
-<li>[T1.2: 1.0 point] Similarly, you will also have to develop some basic functionality (accessible through your menu) to read and parse the provided data set files. This functionality will enable you (and the eventual user) to select alternative railway networks for analysis. With the extracted information, you are to create one (or more) appropriate graphs upon which you will carry out the requested tasks. The modelling of the graph is entirely up to you, so long as it is a sensible representation of the railway network and enables the correct application of the required algorithms.</li>
-<li>[T1.3: 2.0 points] In addition, you should also include documentation of all the implemented code, using Doxygen, indicating for each implemented algorithm the corresponding time complexity</li>
+<li>[T1.1: 1.0 point] :heavy_check_mark: Obviously, a first task will be to create a simple interface menu exposing all the functionalities implemented in the most user-friendly way possible. This menu will also be instrumental for you to showcase the work you have developed in a short demo to be held at the end of the project.</li>
+<li>[T1.2: 1.0 point] :heavy_check_mark: Similarly, you will also have to develop some basic functionality (accessible through your menu) to read and parse the provided data set files. This functionality will enable you (and the eventual user) to select alternative railway networks for analysis. With the extracted information, you are to create one (or more) appropriate graphs upon which you will carry out the requested tasks. The modelling of the graph is entirely up to you, so long as it is a sensible representation of the railway network and enables the correct application of the required algorithms.</li>
+<li>[T1.3: 2.0 points] :heavy_check_mark: In addition, you should also include documentation of all the implemented code, using Doxygen, indicating for each implemented algorithm the corresponding time complexity</li>
 <li>[T2.1: 3.5 points] :heavy_check_mark: Calculate the maximum number of trains that can simultaneously travel between two specific stations. Note that your implementation should take any valid source and destination stations as input; <br  />
 </li>
 <li>[T2.2: 2.0 points] :heavy_check_mark: Determine, from all pairs of stations, which ones (if more than one) require the most amount of trains when taking full advantage of the existing network capacity;</li>
-<li>[T2.3: 1.5 points] Indicate where management should assign larger budgets for the purchasing and maintenance of trains. That is, your implementation should be able to report the top-k municipalities and districts, regarding their transportation needs;</li>
+<li>[T2.3: 1.5 points] :heavy_check_mark: Indicate where management should assign larger budgets for the purchasing and maintenance of trains. That is, your implementation should be able to report the top-k municipalities and districts, regarding their transportation needs;</li>
 <li>[T2.4: 1 point] :heavy_check_mark: Report the maximum number of trains that can simultaneously arrive at a given station, taking into consideration the entire railway grid</li>
-<li>[T3.1: 2.0 points] Calculate the maximum amount of trains that can simultaneously travel between two specific stations with minimum cost for the company. Note that your system should also take any valid source and destination stations as input;</li>
-<li>[T4.1: 2.5 points] Calculate the maximum number of trains that can simultaneously travel between two specific stations in a network of reduced connectivity. Reduced connectivity is understood as being a subgraph (generated by your system) of the original railway network. Note that your system should also take any valid source and destination stations as input;</li>
-<li>[T4.2: 1.5 points] Provide a report on the stations that are the most affected by each segment failure, i.e., the top-k most affected stations for each segment to be considered</li>
-<li>[T5.1: 2.0 points] Use the (hopefully) user-friendly interface you have developed to illustrate the various algorithm results for a sample set of railway grids which you should develop specifically for the purposes of this demo. For instance, you can develop a small set of very modest railway networks for contrived capacities so that you can highlight the “correctness” of your solution. For instance, a grid that has a “constricted” segment where all traffic must go through, will clearly have a segment very “sensitive” to failures. </li>
+<li>[T3.1: 2.0 points] :heavy_check_mark: Calculate the maximum amount of trains that can simultaneously travel between two specific stations with minimum cost for the company. Note that your system should also take any valid source and destination stations as input;</li>
+<li>[T4.1: 2.5 points] :heavy_check_mark: Calculate the maximum number of trains that can simultaneously travel between two specific stations in a network of reduced connectivity. Reduced connectivity is understood as being a subgraph (generated by your system) of the original railway network. Note that your system should also take any valid source and destination stations as input;</li>
+<li>[T4.2: 1.5 points] :heavy_check_mark: Provide a report on the stations that are the most affected by each segment failure, i.e., the top-k most affected stations for each segment to be considered</li>
+<li>[T5.1: 2.0 points] :heavy_check_mark: Use the (hopefully) user-friendly interface you have developed to illustrate the various algorithm results for a sample set of railway grids which you should develop specifically for the purposes of this demo. For instance, you can develop a small set of very modest railway networks for contrived capacities so that you can highlight the “correctness” of your solution. For instance, a grid that has a “constricted” segment where all traffic must go through, will clearly have a segment very “sensitive” to failures. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

@@ -26,7 +26,7 @@
     \subitem {T2\_3municipality}, \hyperpage{12}
     \subitem {T2\_4maxArrive}, \hyperpage{13}
     \subitem {T3\_1MinCost}, \hyperpage{13}
-    \subitem {T4\_1ReducedConectivity}, \hyperpage{15}
+    \subitem {T4\_1ReducedConectivity}, \hyperpage{14}
     \subitem {T4\_2Top\_K\_ReducedConectivity}, \hyperpage{16}
 
   \indexspace
@@ -264,7 +264,7 @@
   \item {T3\_1MinCost}
     \subitem {CPheadquarters}, \hyperpage{13}
   \item {T4\_1ReducedConectivity}
-    \subitem {CPheadquarters}, \hyperpage{15}
+    \subitem {CPheadquarters}, \hyperpage{14}
   \item {T4\_2Top\_K\_ReducedConectivity}
     \subitem {CPheadquarters}, \hyperpage{16}
   \item {testAndVisit}

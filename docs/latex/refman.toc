@@ -1,6 +1,6 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
-\contentsline {chapter}{\numberline {1}DAproject}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Deadline is April 7, 2023 at midnight}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {1}An Analysis Tool for Railway Network Management}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Project was delivered on April, 10th of 2023.}{1}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Checklist}{1}{subsection.1.1.1}%
 \contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{\numberline {4.1.2.7}T2\_3district()}{12}{subsubsection.4.1.2.7}%
 \contentsline {subsubsection}{\numberline {4.1.2.8}T2\_3municipality()}{12}{subsubsection.4.1.2.8}%
 \contentsline {subsubsection}{\numberline {4.1.2.9}T2\_4maxArrive()}{13}{subsubsection.4.1.2.9}%
-\contentsline {subsubsection}{\numberline {4.1.2.10}T3\_1MinCost()}{14}{subsubsection.4.1.2.10}%
+\contentsline {subsubsection}{\numberline {4.1.2.10}T3\_1MinCost()}{13}{subsubsection.4.1.2.10}%
 \contentsline {subsubsection}{\numberline {4.1.2.11}T4\_1ReducedConectivity()}{15}{subsubsection.4.1.2.11}%
 \contentsline {subsubsection}{\numberline {4.1.2.12}T4\_2Top\_K\_ReducedConectivity()}{16}{subsubsection.4.1.2.12}%
 \contentsline {section}{\numberline {4.2}Edge Class Reference}{17}{section.4.2}%
@@ -125,8 +125,8 @@
 \contentsline {section}{\numberline {5.3}Graph.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{49}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Graph.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{53}{section.5.4}%
 \contentsline {section}{\numberline {5.5}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{54}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Station.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{57}{section.5.6}%
+\contentsline {section}{\numberline {5.6}Station.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{56}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Station.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{57}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edge.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{58}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edge.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{60}{section.5.9}%
+\contentsline {section}{\numberline {5.8}Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edge.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{57}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Vertex\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edge.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{59}{section.5.9}%
 \contentsline {chapter}{Index}{63}{section*.11}%
