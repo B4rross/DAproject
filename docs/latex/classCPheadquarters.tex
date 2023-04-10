@@ -1,0 +1,562 @@
+\hypertarget{classCPheadquarters}{}\doxysection{CPheadquarters Class Reference}
+\label{classCPheadquarters}\index{CPheadquarters@{CPheadquarters}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCPheadquarters_a642d65a12c17e62eac74604b9e27ae2b}{read\+\_\+files}} ()
+\item 
+\mbox{\hyperlink{classGraph}{Graph}} \mbox{\hyperlink{classCPheadquarters_a782036a2216e3ad38ce4779be1c5154a}{get\+Lines}} () const
+\item 
+int \mbox{\hyperlink{classCPheadquarters_a6213807edb09bc22683a415f7a9a0f9d}{T2\+\_\+1maxflow}} (string station\+\_\+A, string station\+\_\+B)
+\item 
+int \mbox{\hyperlink{classCPheadquarters_aa3b9e281179f49e9ce567bd125461d20}{T2\+\_\+2maxflow\+All\+Stations}} ()
+\item 
+int \mbox{\hyperlink{classCPheadquarters_aa81f02c9fcfc9ea93cd1570fa4788aed}{T2\+\_\+3municipality}} (string municipality)
+\item 
+int \mbox{\hyperlink{classCPheadquarters_a44e6e04da1bc165ed34803e734786d0d}{T2\+\_\+3district}} (string district)
+\item 
+int \mbox{\hyperlink{classCPheadquarters_a5cb0b662117e73cb53720f46b6fc3bf6}{T2\+\_\+4max\+Arrive}} (string destination)
+\item 
+int \mbox{\hyperlink{classCPheadquarters_a6d1b9e408842662e3c28697e4d9cc226}{T3\+\_\+1\+Min\+Cost}} (string source, string destination)
+\item 
+int \mbox{\hyperlink{classCPheadquarters_a53554354a91a10acf0a20ef933f1efd0}{T4\+\_\+1\+Reduced\+Conectivity}} (vector$<$ string $>$ unwanted\+Edges, string s, string t)
+\item 
+int \mbox{\hyperlink{classCPheadquarters_a77d3e65a98af094685b18a8fe8829270}{T4\+\_\+2\+Top\+\_\+\+K\+\_\+\+Reduced\+Conectivity}} (vector$<$ string $>$ unwanted\+Edges)
+\item 
+void \mbox{\hyperlink{classCPheadquarters_a4e2dfb8d7f8b5966187a74db5b965ad7}{test}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8h_source_l00014}{14}} of file \mbox{\hyperlink{CPheadquarters_8h_source}{CPheadquarters.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCPheadquarters_a782036a2216e3ad38ce4779be1c5154a}\label{classCPheadquarters_a782036a2216e3ad38ce4779be1c5154a} 
+\index{CPheadquarters@{CPheadquarters}!getLines@{getLines}}
+\index{getLines@{getLines}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{getLines()}{getLines()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{Graph}} CPheadquarters\+::get\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>lines;}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_a642d65a12c17e62eac74604b9e27ae2b}\label{classCPheadquarters_a642d65a12c17e62eac74604b9e27ae2b} 
+\index{CPheadquarters@{CPheadquarters}!read\_files@{read\_files}}
+\index{read\_files@{read\_files}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{read\_files()}{read\_files()}}
+{\footnotesize\ttfamily void CPheadquarters\+::read\+\_\+files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Read\ network.csv-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00014\ \ \ \ \ std::ifstream\ inputFile1(R\textcolor{stringliteral}{"{}(../network.csv)"{});}}
+\DoxyCodeLine{00015\ \textcolor{stringliteral}{\ \ \ \ }\textcolor{keywordtype}{string}\ line1;}
+\DoxyCodeLine{00016\ \ \ \ \ std::getline(inputFile1,\ line1);\ \textcolor{comment}{//\ ignore\ first\ line}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(inputFile1,\ line1,\ \textcolor{charliteral}{'\(\backslash\)n'}))\ \{}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!line1.empty()\ \&\&\ line1.back()\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})\ \{\ \textcolor{comment}{//\ Check\ if\ the\ last\ character\ is\ '\(\backslash\)r'}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ line1.pop\_back();\ \textcolor{comment}{//\ Remove\ the\ '\(\backslash\)r'\ character}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ station\_A;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ station\_B;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ service;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ stringstream\ inputString(line1);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ getline(inputString,\ station\_A,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ getline(inputString,\ station\_B,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ getline(inputString,\ temp,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ getline(inputString,\ service,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ capacity\ =\ stoi(temp);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ lines.addVertex(station\_A);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ lines.addVertex(station\_B);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ lines.addEdge(station\_A,\ station\_B,\ capacity,\ service);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Read\ stations.csv-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00045\ \ \ \ \ std::ifstream\ inputFile2(R\textcolor{stringliteral}{"{}(../stations.csv)"{});}}
+\DoxyCodeLine{00046\ \textcolor{stringliteral}{\ \ \ \ }\textcolor{keywordtype}{string}\ line2;}
+\DoxyCodeLine{00047\ \ \ \ \ std::getline(inputFile2,\ line2);\ \textcolor{comment}{//\ ignore\ first\ line}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(inputFile2,\ line2,\ \textcolor{charliteral}{'\(\backslash\)n'}))\ \{}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!line1.empty()\ \&\&\ line1.back()\ ==\ \textcolor{charliteral}{'\(\backslash\)r'})\ \{\ \textcolor{comment}{//\ Check\ if\ the\ last\ character\ is\ '\(\backslash\)r'}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ line1.pop\_back();\ \textcolor{comment}{//\ Remove\ the\ '\(\backslash\)r'\ character}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ nome;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ distrito;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ municipality;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ township;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ line;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ stringstream\ inputString(line2);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ getline(inputString,\ nome,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ getline(inputString,\ distrito,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ getline(inputString,\ municipality,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ getline(inputString,\ township,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ getline(inputString,\ line,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classStation}{Station}}\ station(nome,\ distrito,\ municipality,\ township,\ line);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ stations[nome]\ =\ station;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ print\ information\ about\ the\ station,\ to\ make\ sure\ it\ was\ imported\ correctly}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout\ <<\ "{}station:\ "{}\ <<\ nome\ <<\ "{}\ distrito:\ "{}\ <<\ distrito\ <<\ "{}\ municipality:\ "{}\ <<\ municipality\ <<\ "{}\ township:\ "{}\ <<\ township\ <<\ "{}\ line:\ "{}\ <<\ line\ <<\ endl;}}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_a6213807edb09bc22683a415f7a9a0f9d}\label{classCPheadquarters_a6213807edb09bc22683a415f7a9a0f9d} 
+\index{CPheadquarters@{CPheadquarters}!T2\_1maxflow@{T2\_1maxflow}}
+\index{T2\_1maxflow@{T2\_1maxflow}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{T2\_1maxflow()}{T2\_1maxflow()}}
+{\footnotesize\ttfamily int CPheadquarters\+::\+T2\+\_\+1maxflow (\begin{DoxyParamCaption}\item[{string}]{station\+\_\+A,  }\item[{string}]{station\+\_\+B }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *source\ =\ lines.findVertex(stationA);\ \textcolor{comment}{//\ set\ source\ vertex}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sink\ =\ lines.findVertex(stationB);\ \textcolor{comment}{//\ set\ sink\ vertex}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ these\ stations\ even\ exist}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (source\ ==\ \textcolor{keyword}{nullptr}\ ||\ sink\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Source\ or\ sink\ vertex\ not\ found."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ lines.edmondsKarp(stationA,\ stationB);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (maxFlow\ ==\ 0)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Stations\ are\ not\ connected.\ Try\ stationB\ to\ stationA\ instead.\ "{}}\ <<\ stationB\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ stationA}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00100\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}maxFlow:\(\backslash\)t"{}}\ <<\ maxFlow\ <<\ endl;}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00105\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_aa3b9e281179f49e9ce567bd125461d20}\label{classCPheadquarters_aa3b9e281179f49e9ce567bd125461d20} 
+\index{CPheadquarters@{CPheadquarters}!T2\_2maxflowAllStations@{T2\_2maxflowAllStations}}
+\index{T2\_2maxflowAllStations@{T2\_2maxflowAllStations}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{T2\_2maxflowAllStations()}{T2\_2maxflowAllStations()}}
+{\footnotesize\ttfamily int CPheadquarters\+::\+T2\+\_\+2maxflow\+All\+Stations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ vector<string>\ stations;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ 0;}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{auto}\ length\ =\ lines.getVertexSet().size();}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ length;\ ++i)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ i\ +\ 1;\ j\ <\ length;\ ++j)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ stationA\ =\ lines.getVertexSet()[i]-\/>getId();}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ stationB\ =\ lines.getVertexSet()[j]-\/>getId();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.edmondsKarp(stationA,\ stationB);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flow\ ==\ maxFlow)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stations.push\_back(stationB);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stations.push\_back(stationA);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (flow\ >\ maxFlow)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stations.clear();}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stations.push\_back(stationB);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stations.push\_back(stationA);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxFlow\ =\ flow;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Pairs\ of\ stations\ with\ the\ most\ flow\ ["{}}\ <<\ maxFlow\ <<\ \textcolor{stringliteral}{"{}]:\(\backslash\)n"{}};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ stations.size();\ i\ =\ i\ +\ 2)\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Source:"{}}\ <<\ stations[i\ +\ 1]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Target:"{}}\ <<\ stations[i]\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00144\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_a44e6e04da1bc165ed34803e734786d0d}\label{classCPheadquarters_a44e6e04da1bc165ed34803e734786d0d} 
+\index{CPheadquarters@{CPheadquarters}!T2\_3district@{T2\_3district}}
+\index{T2\_3district@{T2\_3district}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{T2\_3district()}{T2\_3district()}}
+{\footnotesize\ttfamily int CPheadquarters\+::\+T2\+\_\+3district (\begin{DoxyParamCaption}\item[{string}]{district }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ vector<string>\ desired\_stations;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ p:\ stations)\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p.second.get\_district()\ ==\ district)\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ desired\_stations.push\_back(p.second.get\_name());}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.mul\_edmondsKarp(lines.find\_sources(desired\_stations),\ lines.find\_targets(desired\_stations));}
+\DoxyCodeLine{00167\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_aa81f02c9fcfc9ea93cd1570fa4788aed}\label{classCPheadquarters_aa81f02c9fcfc9ea93cd1570fa4788aed} 
+\index{CPheadquarters@{CPheadquarters}!T2\_3municipality@{T2\_3municipality}}
+\index{T2\_3municipality@{T2\_3municipality}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{T2\_3municipality()}{T2\_3municipality()}}
+{\footnotesize\ttfamily int CPheadquarters\+::\+T2\+\_\+3municipality (\begin{DoxyParamCaption}\item[{string}]{municipality }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00148\ \ \ \ \ vector<string>\ desired\_stations;}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ p:\ stations)\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p.second.get\_municipality()\ ==\ municipality)\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ desired\_stations.push\_back(p.second.get\_name());}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ \ \ \ \ vector<string>\ souces\ =\ lines.find\_sources(desired\_stations);}
+\DoxyCodeLine{00155\ \ \ \ \ vector<string>\ targets\ =\ lines.find\_targets(desired\_stations);}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{return}\ lines.mul\_edmondsKarp(souces,\ targets);}
+\DoxyCodeLine{00157\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_a5cb0b662117e73cb53720f46b6fc3bf6}\label{classCPheadquarters_a5cb0b662117e73cb53720f46b6fc3bf6} 
+\index{CPheadquarters@{CPheadquarters}!T2\_4maxArrive@{T2\_4maxArrive}}
+\index{T2\_4maxArrive@{T2\_4maxArrive}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{T2\_4maxArrive()}{T2\_4maxArrive()}}
+{\footnotesize\ttfamily int CPheadquarters\+::\+T2\+\_\+4max\+Arrive (\begin{DoxyParamCaption}\item[{string}]{destination }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00173}{173}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *dest\ =\ lines.findVertex(destination);}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ 0;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{comment}{//\ iterate\ over\ all\ vertices\ to\ find\ incoming\ and\ outgoing\ vertices}}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&v:\ lines.getVertexSet())\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ !=\ dest)\ \{}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.edmondsKarp(v-\/>getId(),\ destination);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ the\ maximum\ flow\ if\ this\ vertex\ contributes\ to\ a\ higher\ maximum}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flow\ >\ maxFlow)\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxFlow\ =\ flow;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ cout\ <<\ endl;}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&e:\ dest-\/>getIncoming())\ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ cout\ <<\ e-\/>getOrig()-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ e-\/>getDest()-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ :\ "{}}\ <<\ e-\/>getWeight()\ <<\ endl;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Max\ number\ of\ trains\ that\ can\ simultaneously\ arrive\ at\ "{}}\ <<\ destination\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ maxFlow\ <<\ endl;}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{return}\ maxFlow;}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_a6d1b9e408842662e3c28697e4d9cc226}\label{classCPheadquarters_a6d1b9e408842662e3c28697e4d9cc226} 
+\index{CPheadquarters@{CPheadquarters}!T3\_1MinCost@{T3\_1MinCost}}
+\index{T3\_1MinCost@{T3\_1MinCost}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{T3\_1MinCost()}{T3\_1MinCost()}}
+{\footnotesize\ttfamily int CPheadquarters\+::\+T3\+\_\+1\+Min\+Cost (\begin{DoxyParamCaption}\item[{string}]{source,  }\item[{string}]{destination }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sourceVertex\ =\ lines.findVertex(source);\ \textcolor{comment}{//\ set\ source\ vertex}}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *destVertex\ =\ lines.findVertex(destination);\ \textcolor{comment}{//\ set\ sink\ vertex}}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordflow}{if}\ (sourceVertex\ ==\ \textcolor{keyword}{nullptr}\ ||\ destVertex\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Source\ or\ destination\ vertex\ not\ found.\ Try\ again"{}}\ <<\ endl;}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph}}\ graph\ =\ lines;}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ std::vector<Vertex\ *>\ path;}
+\DoxyCodeLine{00225\ \ \ \ \ std::vector<std::vector<Vertex\ *>>\ allPaths;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ graph.findAllPaths(sourceVertex,\ destVertex,\ path,\ allPaths);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ vector<int>\ maxFlows;}
+\DoxyCodeLine{00231\ \ \ \ \ vector<int>\ totalCosts;}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}All\ possible\ paths\ between\ "{}}\ <<\ source\ <<\ \textcolor{stringliteral}{"{}\ and\ "{}}\ <<\ destination\ <<\ \textcolor{stringliteral}{"{}:\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ path:\ allPaths)\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ minWeight\ =\ 10;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ totalCost\ =\ 0;\ \textcolor{comment}{//\ total\ cost\ of\ this\ path}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ +\ 1\ <\ path.size();\ i++)\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ path[i]-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}};}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{Edge}}\ *e\ =\ graph.findEdge(path[i],\ path[i\ +\ 1]);}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ e-\/>getWeight()\ <<\ \textcolor{stringliteral}{"{}\ trains,\ "{}}\ <<\ e-\/>getService()\ <<\ \textcolor{stringliteral}{"{}\ service)\ "{}};}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e-\/>getWeight()\ <\ minWeight)\ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ minWeight\ =\ e-\/>getWeight();}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ according\ to\ the\ problem's\ specification,\ the\ cost\ of\ STANDARD\ service\ is\ 2\ euros\ and\ ALFA\ PENDULAR\ is\ 4}}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (e-\/>getService()\ ==\ \textcolor{stringliteral}{"{}STANDARD"{}})\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalCost\ +=\ 2;}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (e-\/>getService()\ ==\ \textcolor{stringliteral}{"{}ALFA\ PENDULAR"{}})\ \{}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ totalCost\ +=\ 4;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ maxFlows.push\_back(minWeight);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ totalCosts.push\_back(totalCost);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ path[path.size()\ -\/\ 1]-\/>getId()\ <<\ endl;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Max\ flow\ for\ this\ path:\ "{}}\ <<\ minWeight\ <<\ \textcolor{stringliteral}{"{}\ trains.\ "{}};}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Total\ cost:\ "{}}\ <<\ totalCost\ <<\ \textcolor{stringliteral}{"{}\ euros."{}}\ <<\ endl;}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{comment}{//\ find\ the\ path\ with\ the\ minimum\ cost\ per\ train}}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{int}\ maxTrains\ =\ 0;}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{int}\ resCost;}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{double}\ max\_value\ =\ 10000;}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ maxFlows.size();\ ++i)\ \{}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ costPerTrain\ =\ (double)\ totalCosts[i]\ /\ maxFlows[i];}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (costPerTrain\ <\ max\_value)\ \{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ max\_value\ =\ costPerTrain;}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ maxTrains\ =\ maxFlows[i];}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ resCost\ =\ totalCosts[i];}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Max\ number\ of\ trains\ that\ can\ travel\ between\ "{}}\ <<\ source\ <<\ \textcolor{stringliteral}{"{}\ and\ "{}}\ <<\ destination}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ with\ minimum\ cost"{}}}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ resCost\ <<\ \textcolor{stringliteral}{"{}\ euros):\ "{}}\ <<\ maxTrains\ <<\ \textcolor{stringliteral}{"{}\ trains\(\backslash\)n"{}}\ <<\ endl;}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordflow}{return}\ maxTrains;}
+\DoxyCodeLine{00277\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_a53554354a91a10acf0a20ef933f1efd0}\label{classCPheadquarters_a53554354a91a10acf0a20ef933f1efd0} 
+\index{CPheadquarters@{CPheadquarters}!T4\_1ReducedConectivity@{T4\_1ReducedConectivity}}
+\index{T4\_1ReducedConectivity@{T4\_1ReducedConectivity}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{T4\_1ReducedConectivity()}{T4\_1ReducedConectivity()}}
+{\footnotesize\ttfamily int CPheadquarters\+::\+T4\+\_\+1\+Reduced\+Conectivity (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{unwanted\+Edges,  }\item[{string}]{s,  }\item[{string}]{t }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00279}{279}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph}}\ graph;}
+\DoxyCodeLine{00281\ \ \ \ \ ifstream\ inputFile1;}
+\DoxyCodeLine{00282\ \ \ \ \ inputFile1.open(R\textcolor{stringliteral}{"{}(../network.csv)"{});}}
+\DoxyCodeLine{00283\ \textcolor{stringliteral}{\ \ \ \ }\textcolor{keywordtype}{string}\ line1;}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ getline(inputFile1,\ line1);}
+\DoxyCodeLine{00286\ \ \ \ \ line1\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(inputFile1,\ line1))\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ station\_A;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ station\_B;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp;}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ service;}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ stringstream\ inputString(line1);}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ getline(inputString,\ station\_A,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ getline(inputString,\ station\_B,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ getline(inputString,\ temp,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ capacity\ =\ stoi(temp);}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ getline(inputString,\ service,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ graph.addVertex(station\_A);}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ graph.addVertex(station\_B);}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ unwantedEdges.size();\ i\ =\ i\ +\ 2)\ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(station\_A==unwantedEdges[i]\ \&\&\ station\_B==unwantedEdges[i+1])\{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flag=\textcolor{keyword}{false};}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(flag)\ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ graph.addEdge(station\_A,\ station\_B,\ capacity,\ service);}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ line1\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00316\ \ \ \ \ \}}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *source\ =\ graph.findVertex(s);\ \textcolor{comment}{//\ set\ source\ vertex}}
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *sink\ =\ graph.findVertex(t);\ \textcolor{comment}{//\ set\ sink\ vertex}}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{comment}{//\ Check\ if\ these\ stations\ even\ exist}}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordflow}{if}\ (source\ ==\ \textcolor{keyword}{nullptr}\ ||\ sink\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Source\ or\ sink\ vertex\ not\ found."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00325\ \ \ \ \ \}}
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow\ =\ graph.edmondsKarp(s,\ t);}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{if}\ (maxFlow\ ==\ 0)\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ cerr\ <<\ \textcolor{stringliteral}{"{}Stations\ are\ not\ connected.\ Try\ stationB\ to\ stationA\ instead.\ "{}}\ <<\ t\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ s}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
+\DoxyCodeLine{00331\ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}maxFlow:\(\backslash\)t"{}}\ <<\ maxFlow\ <<\ endl;}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00336\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_a77d3e65a98af094685b18a8fe8829270}\label{classCPheadquarters_a77d3e65a98af094685b18a8fe8829270} 
+\index{CPheadquarters@{CPheadquarters}!T4\_2Top\_K\_ReducedConectivity@{T4\_2Top\_K\_ReducedConectivity}}
+\index{T4\_2Top\_K\_ReducedConectivity@{T4\_2Top\_K\_ReducedConectivity}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{T4\_2Top\_K\_ReducedConectivity()}{T4\_2Top\_K\_ReducedConectivity()}}
+{\footnotesize\ttfamily int CPheadquarters\+::\+T4\+\_\+2\+Top\+\_\+\+K\+\_\+\+Reduced\+Conectivity (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{unwanted\+Edges }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00338}{338}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \mbox{\hyperlink{classGraph}{Graph}}\ graph;}
+\DoxyCodeLine{00340\ \ \ \ \ ifstream\ inputFile1;}
+\DoxyCodeLine{00341\ \ \ \ \ inputFile1.open(R\textcolor{stringliteral}{"{}(../network.csv)"{});}}
+\DoxyCodeLine{00342\ \textcolor{stringliteral}{\ \ \ \ }\textcolor{keywordtype}{string}\ line1;}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ getline(inputFile1,\ line1);}
+\DoxyCodeLine{00345\ \ \ \ \ line1\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(inputFile1,\ line1))\ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ station\_A;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ station\_B;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ temp;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ capacity;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ service;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ flag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ stringstream\ inputString(line1);}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ getline(inputString,\ station\_A,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ getline(inputString,\ station\_B,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ getline(inputString,\ temp,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ capacity\ =\ stoi(temp);}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ getline(inputString,\ service,\ \textcolor{charliteral}{';'});}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ graph.addVertex(station\_A);}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ graph.addVertex(station\_B);}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ unwantedEdges.size();\ i\ =\ i\ +\ 2)\ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(station\_A==unwantedEdges[i]\ \&\&\ station\_B==unwantedEdges[i+1])\{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flag=\textcolor{keyword}{false};}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(flag)\ \{}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ graph.addEdge(station\_A,\ station\_B,\ capacity,\ service);}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ line1\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00375\ \ \ \ \ \}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ vector<pair<int,\ int>>\ top\_k;}
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keyword}{auto}\ length\ =\ lines.getVertexSet().size();}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ length;\ ++i)\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ destination\ =\ lines.getVertexSet()[i]-\/>getId();}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVertex}{Vertex}}\ *dest\ =\ lines.findVertex(destination);}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow1\ =\ 0;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxFlow2\ =\ 0;}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&v:\ lines.getVertexSet())\ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v\ !=\ dest)\ \{}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.edmondsKarp(v-\/>getId(),\ destination);}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flow\ >\ maxFlow1)\ \{}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxFlow1\ =\ flow;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ flow\ =\ graph.edmondsKarp(v-\/>getId(),\ destination);}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (flow\ >\ maxFlow2)\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ maxFlow2\ =\ flow;}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ diff\ =\ maxFlow1\ -\/\ maxFlow2;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ p\ =\ pair(i,diff);}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ top\_k.push\_back(p);}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}a"{}};}
+\DoxyCodeLine{00404\ \ \ \ \ \}}
+\DoxyCodeLine{00405\ \ \ \ \ std::sort(top\_k.begin(),\ top\_k.end(),\ [](\textcolor{keyword}{auto}\ \&left,\ \textcolor{keyword}{auto}\ \&right)\ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ return\ left.second\ >\ right.second;}
+\DoxyCodeLine{00407\ \ \ \ \ \});}
+\DoxyCodeLine{00408\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 10;\ i++)\{}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ cout\ <<\ i+1\ <<\ \textcolor{stringliteral}{"{}-\/"{}}\ <<\ lines.getVertexSet()[top\_k[i].first]-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ -\/>\ "{}}\ <<\ top\_k[i].second\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00410\ \ \ \ \ \}}
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00412\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classCPheadquarters_a4e2dfb8d7f8b5966187a74db5b965ad7}\label{classCPheadquarters_a4e2dfb8d7f8b5966187a74db5b965ad7} 
+\index{CPheadquarters@{CPheadquarters}!test@{test}}
+\index{test@{test}!CPheadquarters@{CPheadquarters}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily void CPheadquarters\+::test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{CPheadquarters_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{CPheadquarters_8cpp_source}{CPheadquarters.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{int}\ flow\ =\ lines.edmondsKarp(lines.getVertexSet()[324]-\/>getId(),\ lines.getVertexSet()[507]-\/>getId());}
+\DoxyCodeLine{00109\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+CPheadquarters.\+h\item 
+CPheadquarters.\+cpp\end{DoxyCompactItemize}
